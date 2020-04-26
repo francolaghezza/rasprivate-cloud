@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rasprivate{% endblock %}
+
+{% block body %}
+
+<main class="container-fluid ">
+    <header class="row">
+        <!--Menú de navegación-->
+        <div class="container mt-5">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbarbrand"><img src="img/logo.png" class="logo" alt="logo"></a>
+                <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <nav class="navbar-nav">
+                        <a href="#" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Seguridad</a>
+                        <a href="#" class="nav-link">Privacidad</a>
+                        <a href="#" class="nav-link">Manual del usuario</a>
+                    </nav>
+                     <!--Botones de inicio de sesión o registro-->
+                    <form class="form-inline ml-auto">
+                        <a class="btn bg-light btn-md mr-2" href="/login">Login</a>
+                        <a class="btn bg-light btn-md" href="/registro">Registro</a>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Portada -->
+    <div class="container-fluid mt-4">
+        <div class="row bg-transparent">
+            <div class="col bg-transparent fondo">
+                <div class="jumbotron bg-transparent">
+                    <h1>El almacenamiento libre</h1>
+                    <p class="lead">Guarda tus archivos de forma segura y totalmente anónima accediendo desde cualquier dispositivo</p>
+                    <button class="btn btn-secondary">Cómo funciona</button>
+                    <a class="ref"
+                       href="https://unsplash.com/@shahrizadegan?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+                       target="_blank" rel="noopener noreferrer" title="Autor: Naeem shahrizadegan">
+                        <span style="display:inline-block;padding:2px 3px">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32">
+                                <title>unsplash-logo</title>
+                                <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+                            </svg>
+                        </span>
+                        <span style="display:inline-block;padding:2px 3px">Naeem shahrizadegan</span>
+                    </a>
+                </div>
+                <!-- Secciones-->
+                <section class="container-fluid m-auto seccion bg-dark text-white">
+                    <article>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-md-6">
+                            <h3>Totalmente offline</h3>
+                            <p>Accede a tu archivos sin la necesidad de tener conexión a Internet. Podrás seguir almacenando tu información de manera offline.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/offline.png" alt="offline" class="img-responsive mx-auto d-block imagen">
+                        </div>
+                    </div>
+                </article>
+                    <article>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-6">
+                                <h3>Almacenamiento gratuito</h3>
+                                <p>Disfruta de 5 GB  de almacenamiento para alojar tus archivos sin coste alguno. Además podrás guardar cualquier archivo.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="img/free.png" alt="free" class="img-responsive mx-auto d-block imagen">
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-6">
+                                <h3>Tus archivos siempre seguros</h3>
+                                <p>Rasprivate fue diseñado para proteger tu información de posibles ataques como <em>Man in the Middle, SQL Injection, Cross Site Scripting</em> entre otros.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="img/secure.png" alt="secure" class="img-responsive mx-auto d-block imagen">
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Pie de la página -->
+<footer class="footer text-center bg-dark text-white">
+    <p>Rasprivate 2020</p>
+</footer>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+
+body,html{
+    height: 100%;
+    margin: 0;
+    padding-left: 0;
+}
+.logo{
+    margin-right: 100px;
+}
+
+.footer{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 18px;
+    line-height: 50px;
+}
+.fondo{
+    background-image: url("../img/naeem-shahrizadegan-QkD3BBW2k0I-unsplash.jpg");
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.ref{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-color:black;
+    color:white;
+    text-decoration:none;
+    padding:4px 6px;
+    font-size:12px;
+    font-weight:bold;
+    line-height:1.2;
+    display:inline-block;
+    border-radius:3px;
+}
+.ref:hover{
+    color: #00d1a0;
+}
+.seccion{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+article{
+    margin-top: 20px;
+    height: 17rem;
+}
+.imagen{
+    width: 175px;
+    height: 175px;
+}
+.footer-panel{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+.panel{
+    height: 80vh;
+}
+.menu-lateral{
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #343a40;
+}
