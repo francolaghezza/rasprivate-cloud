@@ -18,7 +18,9 @@ return [
     'nuevo' => [[], ['_controller' => 'App\\Controller\\ArchivosController::index'], [], [['text', '/nuevo']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
     'panel' => [[], ['_controller' => 'App\\Controller\\PanelController::index'], [], [['text', '/panel']], [], []],
+    'editar' => [[], ['_controller' => 'App\\Controller\\PanelController::editar'], [], [['text', '/panel/editar']], [], []],
     'registro' => [[], ['_controller' => 'App\\Controller\\RegistroController::index'], [], [['text', '/registro']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'fos_js_routing_js' => [['_format'], ['_controller' => 'fos_js_routing.controller::indexAction', '_format' => 'js'], ['_format' => 'js|json'], [['variable', '.', 'js|json', '_format', true], ['text', '/js/routing']], [], []],
 ];

@@ -4,7 +4,9 @@ namespace App\Controller;
 use App\Entity\Usuarios;
 use App\Entity\Archivos;
 use Knp\Component\Pager\PaginatorInterface;
+use mysql_xdevapi\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -28,5 +30,24 @@ class PanelController extends AbstractController
             'pagination' => $paginacion,
             'almacenamiento'=> $query2
         ]);
+    }
+
+    /**
+     * @Route("/panel/editar", options={"expose"=true}, name="editar")
+     */
+    public function editar(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $new_nombre = $request->request->get('nombre');
+            $id = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id);
+            $nombre = $archivo->getNombre();
+            $archivo->setNombre($new_nombre);
+            $em->flush();
+            return new JsonResponse(['nombre'=> $nombre]);
+        }
+        else{
+            throw new \Exception("No puedes editar este archivo");
+        }
     }
 }

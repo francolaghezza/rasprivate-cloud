@@ -16,6 +16,7 @@ return [
         '/nuevo' => [[['_route' => 'nuevo', '_controller' => 'App\\Controller\\ArchivosController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\IndexController::index'], null, null, null, false, false, null]],
         '/panel' => [[['_route' => 'panel', '_controller' => 'App\\Controller\\PanelController::index'], null, null, null, false, false, null]],
+        '/panel/editar' => [[['_route' => 'editar', '_controller' => 'App\\Controller\\PanelController::editar'], null, null, null, false, false, null]],
         '/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\RegistroController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -37,6 +38,7 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/js/routing(?:\\.(js|json))?(*:196)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -46,8 +48,9 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        196 => [
+            [['_route' => 'fos_js_routing_js', '_controller' => 'fos_js_routing.controller::indexAction', '_format' => 'js'], ['_format'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

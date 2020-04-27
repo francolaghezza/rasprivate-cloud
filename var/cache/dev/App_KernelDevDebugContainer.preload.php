@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerAKxi5UC/App_KernelDevDebugContainer.php';
+require __DIR__.'/Container0Fu2fbS/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -21,6 +21,7 @@ $classes[] = 'Symfony\Bundle\MonologBundle\MonologBundle';
 $classes[] = 'Symfony\Bundle\DebugBundle\DebugBundle';
 $classes[] = 'Symfony\Bundle\MakerBundle\MakerBundle';
 $classes[] = 'Knp\Bundle\PaginatorBundle\KnpPaginatorBundle';
+$classes[] = 'FOS\JsRoutingBundle\FOSJsRoutingBundle';
 $classes[] = 'Symfony\Component\HttpClient\TraceableHttpClient';
 $classes[] = 'Symfony\Contracts\HttpClient\HttpClientInterface';
 $classes[] = 'Symfony\Component\HttpClient\HttpClient';
@@ -215,6 +216,15 @@ $classes[] = 'Symfony\Component\Form\Extension\Validator\Type\SubmitTypeValidato
 $classes[] = 'Symfony\Component\Form\Extension\Validator\Type\UploadValidatorExtension';
 $classes[] = 'Symfony\Bridge\Doctrine\Form\DoctrineOrmTypeGuesser';
 $classes[] = 'Symfony\Component\Form\Extension\Validator\ValidatorTypeGuesser';
+$classes[] = 'FOS\JsRoutingBundle\Controller\Controller';
+$classes[] = 'FOS\JsRoutingBundle\Command\DumpCommand';
+$classes[] = 'FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor';
+$classes[] = 'FOS\JsRoutingBundle\Command\RouterDebugExposedCommand';
+$classes[] = 'Symfony\Component\Serializer\Serializer';
+$classes[] = 'FOS\JsRoutingBundle\Serializer\Normalizer\RouteCollectionNormalizer';
+$classes[] = 'FOS\JsRoutingBundle\Serializer\Normalizer\RoutesResponseNormalizer';
+$classes[] = 'FOS\JsRoutingBundle\Serializer\Denormalizer\RouteCollectionDenormalizer';
+$classes[] = 'Symfony\Component\Serializer\Encoder\JsonEncoder';
 $classes[] = 'Symfony\Component\HttpKernel\Fragment\InlineFragmentRenderer';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener';
@@ -364,7 +374,6 @@ $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener'
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\Security\ExpressionLanguage';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser';
-$classes[] = 'Symfony\Component\Serializer\Serializer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\ProblemNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\DateTimeNormalizer';
@@ -377,7 +386,6 @@ $classes[] = 'Symfony\Component\Serializer\Normalizer\ArrayDenormalizer';
 $classes[] = 'Symfony\Component\Serializer\Normalizer\ObjectNormalizer';
 $classes[] = 'Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata';
 $classes[] = 'Symfony\Component\Serializer\Encoder\XmlEncoder';
-$classes[] = 'Symfony\Component\Serializer\Encoder\JsonEncoder';
 $classes[] = 'Symfony\Component\Serializer\Encoder\YamlEncoder';
 $classes[] = 'Symfony\Component\Serializer\Encoder\CsvEncoder';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\CacheWarmer\SerializerCacheWarmer';
