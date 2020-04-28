@@ -16,6 +16,7 @@ class ArchivosController extends AbstractController
 {
     /**
      * @Route("/nuevo", name="nuevo")
+     * @throws \Exception
      */
     public function index(Request $request)
     {
@@ -31,7 +32,7 @@ class ArchivosController extends AbstractController
                 $usuario = $this->getUser();
                 $almacenamientoActual = $usuario->getAlmacenamiento();
                 if($almacenamientoActual == 5000 || $mb+$almacenamientoActual >= 5000){
-                    return $this->redirectToRoute('panel');
+                    throw new \Exception("No puedes subir más archivos");
                 }
                 else{
                     try {
@@ -40,7 +41,7 @@ class ArchivosController extends AbstractController
                             $file->getClientOriginalName()
                         );
                     } catch (FileException $e) {
-                        // handle exception..
+                        throw new \Exception("No se ha podido guardar el archivo");
                     }
                     $archivo->setNombre($file->getClientOriginalName());
                     $archivo->setSize($mb);

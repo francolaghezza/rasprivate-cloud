@@ -47,24 +47,37 @@
         </div>
         {# Panel de archivos #}
         <div class="container bg-dark mt-5 panel">
-            <table class="table table-striped table-dark" id="archivos">
+            <table class="table table-striped table-dark" id="archivos" style="width: 80%">
                 <thead>
                     <tr>
                         <th scope="col">Nombre del archivo</th>
                         <th scope="col">Tamaño</th>
                         <th scope="col">Fecha</th>
                         <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for archivo in pagination %}
-                    <tr {% if loop.index is odd %}class="color"{% endif %}>
+                    <tr>
                         {% set id = archivo.id %}
                         <td>{{ archivo.nombre }}</td>
                         <td>{{ archivo.size }} MB</td>
                         <td>{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</td>
-                        <td><button class="btn bg-light btn-md my-4 my-sm-0" data-toggle="modal" data-target="#editar">Editar</button></td>
-                        <td><a class="btn bg-light btn-md my-4 my-sm-0" href="{{ asset('uploads/archivos/' ~ archivo.nombre) }}" download="{{ archivo.nombre }}">Descargar</a></td>
+                        <td width="1em"><button class="btn bg-transparent btn-md" data-toggle="modal" data-target="#editar" title="Editar">
+                                <svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 00.5.5H4v.5a.5.5 0 00.5.5H5v.5a.5.5 0 00.5.5H6v-1.5a.5.5 0 00-.5-.5H5v-.5a.5.5 0 00-.5-.5H3z" clip-rule="evenodd"/>
+                                </svg>
+                            </button></td>
+                        <td width="1em" ><a class="btn bg-transparent btn-md" href="{{ asset('uploads/archivos/' ~ archivo.nombre) }}" download="{{ archivo.nombre }}" title="Descargar">
+                                <svg class="bi bi-download" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z" clip-rule="evenodd"/>
+                                </svg>
+                            </a></td>
                         <td><input type="hidden" name="{{ id }}" value="{{ id }}"></td>
                     </tr>
                 {% endfor %}

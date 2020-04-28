@@ -166,99 +166,87 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         ";
         // line 49
         echo "        <div class=\"container bg-dark mt-5 panel\">
-            <table class=\"table table-striped table-dark\" id=\"archivos\">
+            <table class=\"table table-striped table-dark\" id=\"archivos\" style=\"width: 80%\">
                 <thead>
                     <tr>
                         <th scope=\"col\">Nombre del archivo</th>
                         <th scope=\"col\">Tamaño</th>
                         <th scope=\"col\">Fecha</th>
                         <th scope=\"col\"></th>
+                        <th scope=\"col\"></th>
+                        <th scope=\"col\"></th>
                     </tr>
                 </thead>
                 <tbody>
                 ";
-        // line 60
+        // line 62
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 60, $this->source); })()));
-        $context['loop'] = [
-          'parent' => $context['_parent'],
-          'index0' => 0,
-          'index'  => 1,
-          'first'  => true,
-        ];
-        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
-            $length = count($context['_seq']);
-            $context['loop']['revindex0'] = $length - 1;
-            $context['loop']['revindex'] = $length;
-            $context['loop']['length'] = $length;
-            $context['loop']['last'] = 1 === $length;
-        }
+        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 62, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["archivo"]) {
-            // line 61
-            echo "                    <tr ";
-            if ((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 61) % 2 == 1)) {
-                echo "class=\"color\"";
-            }
-            echo ">
-                        ";
-            // line 62
-            $context["id"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "id", [], "any", false, false, false, 62);
             // line 63
+            echo "                    <tr>
+                        ";
+            // line 64
+            $context["id"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "id", [], "any", false, false, false, 64);
+            // line 65
             echo "                        <td>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 63), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 65), "html", null, true);
             echo "</td>
                         <td>";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "size", [], "any", false, false, false, 64), "html", null, true);
+            // line 66
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "size", [], "any", false, false, false, 66), "html", null, true);
             echo " MB</td>
                         <td>";
-            // line 65
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 65), "d-m-Y"), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 65), "H:i"), "html", null, true);
-            echo "</td>
-                        <td><button class=\"btn bg-light btn-md my-4 my-sm-0\" data-toggle=\"modal\" data-target=\"#editar\">Editar</button></td>
-                        <td><a class=\"btn bg-light btn-md my-4 my-sm-0\" href=\"";
             // line 67
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/archivos/" . twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 67))), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 67), "d-m-Y"), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 67), "H:i"), "html", null, true);
+            echo "</td>
+                        <td width=\"1em\"><button class=\"btn bg-transparent btn-md\" data-toggle=\"modal\" data-target=\"#editar\" title=\"Editar\">
+                                <svg class=\"bi bi-pencil\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"white\" xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path fill-rule=\"evenodd\" d=\"M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z\" clip-rule=\"evenodd\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 00.5.5H4v.5a.5.5 0 00.5.5H5v.5a.5.5 0 00.5.5H6v-1.5a.5.5 0 00-.5-.5H5v-.5a.5.5 0 00-.5-.5H3z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                            </button></td>
+                        <td width=\"1em\" ><a class=\"btn bg-transparent btn-md\" href=\"";
+            // line 74
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/archivos/" . twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 74))), "html", null, true);
             echo "\" download=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 67), "html", null, true);
-            echo "\">Descargar</a></td>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 74), "html", null, true);
+            echo "\" title=\"Descargar\">
+                                <svg class=\"bi bi-download\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"white\" xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path fill-rule=\"evenodd\" d=\"M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z\" clip-rule=\"evenodd\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z\" clip-rule=\"evenodd\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                            </a></td>
                         <td><input type=\"hidden\" name=\"";
-            // line 68
-            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 68, $this->source); })()), "html", null, true);
+            // line 81
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 81, $this->source); })()), "html", null, true);
             echo "\" value=\"";
-            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 68, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 81, $this->source); })()), "html", null, true);
             echo "\"></td>
                     </tr>
                 ";
-            ++$context['loop']['index0'];
-            ++$context['loop']['index'];
-            $context['loop']['first'] = false;
-            if (isset($context['loop']['length'])) {
-                --$context['loop']['revindex0'];
-                --$context['loop']['revindex'];
-                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['archivo'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 84
         echo "                </tbody>
             </table>
             ";
-        // line 74
+        // line 87
         echo "            <div class=\"navigation\">
                 ";
-        // line 75
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 75, $this->source); })()));
+        // line 88
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 88, $this->source); })()));
         echo "
             </div>
         </div>
     </main>
     ";
-        // line 80
+        // line 93
         echo "    <section class=\"modal\" id=\"editar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -281,7 +269,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         </div>
     </section>
     ";
-        // line 102
+        // line 115
         echo "    <div class=\"footer-panel text-center bg-dark text-white justify-content-center\">
         <p>Rasprivate <script>document.write(new Date().getFullYear());</script></p>
     </div>
@@ -295,7 +283,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     }
 
-    // line 107
+    // line 120
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -305,20 +293,20 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 108
+        // line 121
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 109
+        // line 122
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 110
+        // line 123
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 111
+        // line 124
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/editar.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -342,7 +330,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     public function getDebugInfo()
     {
-        return array (  322 => 111,  318 => 110,  314 => 109,  309 => 108,  299 => 107,  285 => 102,  262 => 80,  255 => 75,  252 => 74,  248 => 71,  229 => 68,  223 => 67,  216 => 65,  212 => 64,  207 => 63,  205 => 62,  198 => 61,  181 => 60,  168 => 49,  165 => 47,  155 => 45,  151 => 44,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  128 => 37,  124 => 35,  115 => 28,  112 => 27,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  310 => 124,  306 => 123,  302 => 122,  297 => 121,  287 => 120,  273 => 115,  250 => 93,  243 => 88,  240 => 87,  236 => 84,  225 => 81,  213 => 74,  201 => 67,  197 => 66,  192 => 65,  190 => 64,  187 => 63,  183 => 62,  168 => 49,  165 => 47,  155 => 45,  151 => 44,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  128 => 37,  124 => 35,  115 => 28,  112 => 27,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -396,24 +384,37 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         </div>
         {# Panel de archivos #}
         <div class=\"container bg-dark mt-5 panel\">
-            <table class=\"table table-striped table-dark\" id=\"archivos\">
+            <table class=\"table table-striped table-dark\" id=\"archivos\" style=\"width: 80%\">
                 <thead>
                     <tr>
                         <th scope=\"col\">Nombre del archivo</th>
                         <th scope=\"col\">Tamaño</th>
                         <th scope=\"col\">Fecha</th>
                         <th scope=\"col\"></th>
+                        <th scope=\"col\"></th>
+                        <th scope=\"col\"></th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for archivo in pagination %}
-                    <tr {% if loop.index is odd %}class=\"color\"{% endif %}>
+                    <tr>
                         {% set id = archivo.id %}
                         <td>{{ archivo.nombre }}</td>
                         <td>{{ archivo.size }} MB</td>
                         <td>{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</td>
-                        <td><button class=\"btn bg-light btn-md my-4 my-sm-0\" data-toggle=\"modal\" data-target=\"#editar\">Editar</button></td>
-                        <td><a class=\"btn bg-light btn-md my-4 my-sm-0\" href=\"{{ asset('uploads/archivos/' ~ archivo.nombre) }}\" download=\"{{ archivo.nombre }}\">Descargar</a></td>
+                        <td width=\"1em\"><button class=\"btn bg-transparent btn-md\" data-toggle=\"modal\" data-target=\"#editar\" title=\"Editar\">
+                                <svg class=\"bi bi-pencil\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"white\" xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path fill-rule=\"evenodd\" d=\"M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z\" clip-rule=\"evenodd\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 00.5.5H4v.5a.5.5 0 00.5.5H5v.5a.5.5 0 00.5.5H6v-1.5a.5.5 0 00-.5-.5H5v-.5a.5.5 0 00-.5-.5H3z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                            </button></td>
+                        <td width=\"1em\" ><a class=\"btn bg-transparent btn-md\" href=\"{{ asset('uploads/archivos/' ~ archivo.nombre) }}\" download=\"{{ archivo.nombre }}\" title=\"Descargar\">
+                                <svg class=\"bi bi-download\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"white\" xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path fill-rule=\"evenodd\" d=\"M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z\" clip-rule=\"evenodd\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z\" clip-rule=\"evenodd\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                            </a></td>
                         <td><input type=\"hidden\" name=\"{{ id }}\" value=\"{{ id }}\"></td>
                     </tr>
                 {% endfor %}
