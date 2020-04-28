@@ -218,11 +218,17 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 65), "H:i"), "html", null, true);
             echo "</td>
                         <td><button class=\"btn bg-light btn-md my-4 my-sm-0\" data-toggle=\"modal\" data-target=\"#editar\">Editar</button></td>
-                        <td><input type=\"hidden\" name=\"";
+                        <td><a class=\"btn bg-light btn-md my-4 my-sm-0\" href=\"";
             // line 67
-            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 67, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/archivos/" . twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 67))), "html", null, true);
+            echo "\" download=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 67), "html", null, true);
+            echo "\">Descargar</a></td>
+                        <td><input type=\"hidden\" name=\"";
+            // line 68
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 68, $this->source); })()), "html", null, true);
             echo "\" value=\"";
-            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 67, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 68, $this->source); })()), "html", null, true);
             echo "\"></td>
                     </tr>
                 ";
@@ -238,21 +244,21 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['archivo'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
+        // line 71
         echo "                </tbody>
             </table>
             ";
-        // line 73
+        // line 74
         echo "            <div class=\"navigation\">
                 ";
-        // line 74
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 74, $this->source); })()));
+        // line 75
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 75, $this->source); })()));
         echo "
             </div>
         </div>
     </main>
     ";
-        // line 79
+        // line 80
         echo "    <section class=\"modal\" id=\"editar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -275,7 +281,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         </div>
     </section>
     ";
-        // line 101
+        // line 102
         echo "    <div class=\"footer-panel text-center bg-dark text-white justify-content-center\">
         <p>Rasprivate <script>document.write(new Date().getFullYear());</script></p>
     </div>
@@ -289,7 +295,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     }
 
-    // line 106
+    // line 107
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -299,20 +305,20 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 107
+        // line 108
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 108
+        // line 109
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 109
+        // line 110
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 110
+        // line 111
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/editar.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -336,7 +342,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     public function getDebugInfo()
     {
-        return array (  316 => 110,  312 => 109,  308 => 108,  303 => 107,  293 => 106,  279 => 101,  256 => 79,  249 => 74,  246 => 73,  242 => 70,  223 => 67,  216 => 65,  212 => 64,  207 => 63,  205 => 62,  198 => 61,  181 => 60,  168 => 49,  165 => 47,  155 => 45,  151 => 44,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  128 => 37,  124 => 35,  115 => 28,  112 => 27,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  322 => 111,  318 => 110,  314 => 109,  309 => 108,  299 => 107,  285 => 102,  262 => 80,  255 => 75,  252 => 74,  248 => 71,  229 => 68,  223 => 67,  216 => 65,  212 => 64,  207 => 63,  205 => 62,  198 => 61,  181 => 60,  168 => 49,  165 => 47,  155 => 45,  151 => 44,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  128 => 37,  124 => 35,  115 => 28,  112 => 27,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -407,6 +413,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                         <td>{{ archivo.size }} MB</td>
                         <td>{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</td>
                         <td><button class=\"btn bg-light btn-md my-4 my-sm-0\" data-toggle=\"modal\" data-target=\"#editar\">Editar</button></td>
+                        <td><a class=\"btn bg-light btn-md my-4 my-sm-0\" href=\"{{ asset('uploads/archivos/' ~ archivo.nombre) }}\" download=\"{{ archivo.nombre }}\">Descargar</a></td>
                         <td><input type=\"hidden\" name=\"{{ id }}\" value=\"{{ id }}\"></td>
                     </tr>
                 {% endfor %}

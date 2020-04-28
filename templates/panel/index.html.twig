@@ -64,6 +64,7 @@
                         <td>{{ archivo.size }} MB</td>
                         <td>{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</td>
                         <td><button class="btn bg-light btn-md my-4 my-sm-0" data-toggle="modal" data-target="#editar">Editar</button></td>
+                        <td><a class="btn bg-light btn-md my-4 my-sm-0" href="{{ asset('uploads/archivos/' ~ archivo.nombre) }}" download="{{ archivo.nombre }}">Descargar</a></td>
                         <td><input type="hidden" name="{{ id }}" value="{{ id }}"></td>
                     </tr>
                 {% endfor %}

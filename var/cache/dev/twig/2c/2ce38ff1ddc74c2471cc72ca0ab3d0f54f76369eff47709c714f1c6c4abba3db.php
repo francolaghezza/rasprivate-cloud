@@ -129,10 +129,10 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38)) {
             // line 39
             echo "                    <div class=\"mb-3\">
-                       Ya has iniciado sesión como ";
+                       ¿No eres ";
             // line 40
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "user", [], "any", false, false, false, 40), "username", [], "any", false, false, false, 40), "html", null, true);
-            echo ", <a href=\"";
+            echo " ? <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Cerrar sesión</a>
                     </div>
@@ -232,7 +232,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
 
                 {% if app.user %}
                     <div class=\"mb-3\">
-                       Ya has iniciado sesión como {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Cerrar sesión</a>
+                       ¿No eres {{ app.user.username }} ? <a href=\"{{ path('app_logout') }}\">Cerrar sesión</a>
                     </div>
                 {% endif %}
 
@@ -265,6 +265,6 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
         </div>
     </div>
 </div>
-{% endblock %}", "security/login.html.twig", "C:\\xampp\\htdocs\\rasprivate\\templates\\security\\login.html.twig");
+{% endblock %}", "security/login.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\security\\login.html.twig");
     }
 }

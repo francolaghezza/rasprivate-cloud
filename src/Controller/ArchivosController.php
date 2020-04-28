@@ -6,11 +6,11 @@ use App\Entity\Archivos;
 use App\Entity\Usuarios;
 use App\Form\ArchivosType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ArchivosController extends AbstractController
 {
@@ -31,7 +31,7 @@ class ArchivosController extends AbstractController
                 $usuario = $this->getUser();
                 $almacenamientoActual = $usuario->getAlmacenamiento();
                 if($almacenamientoActual == 5000 || $mb+$almacenamientoActual >= 5000){
-                    return $this->render('panel/index.html.twig');
+                    return $this->redirectToRoute('panel');
                 }
                 else{
                     try {
@@ -56,5 +56,27 @@ class ArchivosController extends AbstractController
         return $this->render('archivos/index.html.twig', [
             'formulario' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/editar", options={"expose"=true}, name="editar")
+     */
+    public function editar(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $new_nombre = $request->request->get('nombre');
+            $id = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id);
+            $nombre = $archivo->getNombre();
+            $archivo->setNombre($new_nombre);
+            $archivo->setFecha(new \DateTime());
+            copy("C:/xampp/htdocs/proyecto/public/uploads/archivos/$nombre","C:/xampp/htdocs/proyecto/public/uploads/archivos/$new_nombre");
+            $em->persist($archivo);
+            $em->flush();
+            return new JsonResponse(['nombre'=> $nombre]);
+        }
+        else{
+            throw new \Exception("No puedes editar este archivo");
+        }
     }
 }

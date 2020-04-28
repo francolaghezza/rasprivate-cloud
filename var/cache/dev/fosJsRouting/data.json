@@ -1,1 +1,1 @@
-{"editar":{"path":"\/panel\/editar","host":"","defaults":{"_controller":"App\\Controller\\PanelController::editar"},"requirements":[],"options":{"compiler_class":"Symfony\\Component\\Routing\\RouteCompiler","expose":true,"utf8":true},"schemes":[],"methods":[],"condition":""}}
+{"editar":{"path":"\/editar","host":"","defaults":{"_controller":"App\\Controller\\ArchivosController::editar"},"requirements":[],"options":{"compiler_class":"Symfony\\Component\\Routing\\RouteCompiler","expose":true,"utf8":true},"schemes":[],"methods":[],"condition":""}}
