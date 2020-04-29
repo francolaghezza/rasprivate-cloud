@@ -220,11 +220,17 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                                     <path fill-rule=\"evenodd\" d=\"M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z\" clip-rule=\"evenodd\"/>
                                 </svg>
                             </a></td>
+                        <td width=\"1em\" ><button class=\"btn bg-transparent btn-md\" data-toggle=\"modal\" data-target=\"#borrar\" title=\"Eliminar\">
+                                <svg class=\"bi bi-trash\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"white\" xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path d=\"M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                            </button></td>
                         <td><input type=\"hidden\" name=\"";
-            // line 81
-            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 81, $this->source); })()), "html", null, true);
+            // line 87
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 87, $this->source); })()), "html", null, true);
             echo "\" value=\"";
-            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 81, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 87, $this->source); })()), "html", null, true);
             echo "\"></td>
                     </tr>
                 ";
@@ -232,21 +238,21 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['archivo'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 90
         echo "                </tbody>
             </table>
             ";
-        // line 87
+        // line 93
         echo "            <div class=\"navigation\">
                 ";
-        // line 88
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 88, $this->source); })()));
+        // line 94
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 94, $this->source); })()));
         echo "
             </div>
         </div>
     </main>
     ";
-        // line 93
+        // line 99
         echo "    <section class=\"modal\" id=\"editar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -269,7 +275,30 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         </div>
     </section>
     ";
-        // line 115
+        // line 121
+        echo "    <section class=\"modal\" id=\"borrar\">
+        <div class=\"modal-dialog modal-dialog-centered\">
+            <div class=\"modal-content\">
+                <div class=\"modal-header\">
+                    <p class=\"modal-title\">Eliminar archivo</p>
+                    <button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+                </div>
+                <form>
+                    <div class=\"modal-body\">
+                        <div class=\"form-group\" id=\"nombre_archivo\">
+
+                        </div>
+                    </div>
+                    <div class=\"modal-footer\">
+                        <button type=\"button\" class=\"btn btn-secondary\" id=\"eliminar_nombre\">Eliminar</button>
+                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    ";
+        // line 143
         echo "    <div class=\"footer-panel text-center bg-dark text-white justify-content-center\">
         <p>Rasprivate <script>document.write(new Date().getFullYear());</script></p>
     </div>
@@ -283,7 +312,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     }
 
-    // line 120
+    // line 148
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -293,21 +322,21 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 121
+        // line 149
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 122
+        // line 150
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 123
+        // line 151
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 124
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/editar.js"), "html", null, true);
+        // line 152
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
         
@@ -330,7 +359,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     public function getDebugInfo()
     {
-        return array (  310 => 124,  306 => 123,  302 => 122,  297 => 121,  287 => 120,  273 => 115,  250 => 93,  243 => 88,  240 => 87,  236 => 84,  225 => 81,  213 => 74,  201 => 67,  197 => 66,  192 => 65,  190 => 64,  187 => 63,  183 => 62,  168 => 49,  165 => 47,  155 => 45,  151 => 44,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  128 => 37,  124 => 35,  115 => 28,  112 => 27,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  339 => 152,  335 => 151,  331 => 150,  326 => 149,  316 => 148,  302 => 143,  279 => 121,  256 => 99,  249 => 94,  246 => 93,  242 => 90,  231 => 87,  213 => 74,  201 => 67,  197 => 66,  192 => 65,  190 => 64,  187 => 63,  183 => 62,  168 => 49,  165 => 47,  155 => 45,  151 => 44,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  128 => 37,  124 => 35,  115 => 28,  112 => 27,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -415,6 +444,12 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                                     <path fill-rule=\"evenodd\" d=\"M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z\" clip-rule=\"evenodd\"/>
                                 </svg>
                             </a></td>
+                        <td width=\"1em\" ><button class=\"btn bg-transparent btn-md\" data-toggle=\"modal\" data-target=\"#borrar\" title=\"Eliminar\">
+                                <svg class=\"bi bi-trash\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"white\" xmlns=\"http://www.w3.org/2000/svg\">
+                                    <path d=\"M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                            </button></td>
                         <td><input type=\"hidden\" name=\"{{ id }}\" value=\"{{ id }}\"></td>
                     </tr>
                 {% endfor %}
@@ -426,7 +461,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
             </div>
         </div>
     </main>
-    {# Ventana de inicio de sesión #}
+    {# Editar un archivo #}
     <section class=\"modal\" id=\"editar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -448,6 +483,28 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
             </div>
         </div>
     </section>
+    {# Eliminar un archivo #}
+    <section class=\"modal\" id=\"borrar\">
+        <div class=\"modal-dialog modal-dialog-centered\">
+            <div class=\"modal-content\">
+                <div class=\"modal-header\">
+                    <p class=\"modal-title\">Eliminar archivo</p>
+                    <button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+                </div>
+                <form>
+                    <div class=\"modal-body\">
+                        <div class=\"form-group\" id=\"nombre_archivo\">
+
+                        </div>
+                    </div>
+                    <div class=\"modal-footer\">
+                        <button type=\"button\" class=\"btn btn-secondary\" id=\"eliminar_nombre\">Eliminar</button>
+                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     {# Pie de la página #}
     <div class=\"footer-panel text-center bg-dark text-white justify-content-center\">
         <p>Rasprivate <script>document.write(new Date().getFullYear());</script></p>
@@ -458,7 +515,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
     {{ parent() }}
     <script src=\"{{ asset('bundles/fosjsrouting/js/router.min.js') }}\"></script>
     <script src=\"{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}\"></script>
-    <script src=\"{{ asset('js/editar.js') }}\"></script>
+    <script src=\"{{ asset('js/accion.js') }}\"></script>
 {% endblock %}", "panel/index.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\panel\\index.html.twig");
     }
 }

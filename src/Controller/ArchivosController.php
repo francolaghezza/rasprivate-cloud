@@ -71,13 +71,32 @@ class ArchivosController extends AbstractController
             $nombre = $archivo->getNombre();
             $archivo->setNombre($new_nombre);
             $archivo->setFecha(new \DateTime());
-            copy("C:/xampp/htdocs/proyecto/public/uploads/archivos/$nombre","C:/xampp/htdocs/proyecto/public/uploads/archivos/$new_nombre");
+            rename("C:/xampp/htdocs/proyecto/public/uploads/archivos/$nombre","C:/xampp/htdocs/proyecto/public/uploads/archivos/$new_nombre");
             $em->persist($archivo);
             $em->flush();
             return new JsonResponse(['nombre'=> $nombre]);
         }
         else{
             throw new \Exception("No puedes editar este archivo");
+        }
+    }
+
+    /**
+     * @Route("/borrar", options={"expose"=true}, name="borrar")
+     */
+    public function borrar(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id);
+            $nombre = $archivo->getNombre();
+            $em->remove($archivo);
+            unlink("C:/xampp/htdocs/proyecto/public/uploads/archivos/$nombre");
+            $em->flush();
+            return new JsonResponse(['id'=> $id]);
+        }
+        else{
+            throw new \Exception("No puedes borrar este archivo");
         }
     }
 }
