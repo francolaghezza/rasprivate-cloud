@@ -79,7 +79,7 @@ class ArchivosController extends AbstractController
             $nombre = $archivo->getNombre();
             $archivo->setNombre($new_nombre);
             $archivo->setFecha(new \DateTime());
-            rename("C:/xampp/htdocs/proyecto/public/uploads/archivos/$nombre_usuario/$nombre","C:/xampp/htdocs/proyecto/public/uploads/archivos/$nombre_usuario/$new_nombre");
+            rename("uploads/archivos/$nombre_usuario/$nombre","uploads/archivos/$nombre_usuario/$new_nombre");
             $em->persist($archivo);
             $em->flush();
             return new JsonResponse(['nombre'=> $nombre]);
@@ -103,7 +103,7 @@ class ArchivosController extends AbstractController
             $nombre_usuario = $usuario->getUsername();
             $almacenamiento = $usuario->getAlmacenamiento();
             $em->remove($archivo);
-            unlink("C:/xampp/htdocs/proyecto/public/uploads/archivos/$nombre_usuario/$nombre");
+            unlink("uploads/archivos/$nombre_usuario/$nombre");
             $usuario-> setAlmacenamiento($almacenamiento-$size);
             $em->flush();
             return new JsonResponse(['id'=> $id]);
