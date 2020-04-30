@@ -126,8 +126,9 @@ class ArchivosController extends AbstractController
             $nombre_usuario = $usuario->getUsername();
             $almacenamiento = $usuario->getAlmacenamiento();
             $zip = new \ZipArchive();
-            $archivo_zip = $nombre.".zip";
             $ext =  substr($nombre, -3);
+            $nombre_archivo = substr($nombre,0,-4);
+            $archivo_zip = $nombre_archivo.".zip";
             $ext_comprimido = array("cbr","jar","pit","rar","jar","tgz","dl_","bz2","cbz","war","zip","z01");
 
             //Si el archivo ya está comprimido
@@ -145,7 +146,8 @@ class ArchivosController extends AbstractController
                     }
                 }
             }
-            move_uploaded_file($archivo_zip,"uploads/archivos/$nombre_usuario/$archivo_zip");
+
+            //copy($zip,"uploads/archivos/$nombre_usuario/$archivo_zip");
             $em->persist($archivo);
             $em->flush();
             return new JsonResponse(['id'=> $id]);

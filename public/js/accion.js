@@ -24,8 +24,9 @@ $("table tbody tr").click(function() {
         });
     });
 
-    //Párrafo de información al eliminar el archivo
-    $("#parrafo").text("¿Desea eliminar "+nombre+"?");
+    //Párrafo de información al usuario
+    $("#p_borrar").text("¿Desea eliminar "+nombre+"?");
+    $("#p_comprimir").text("¿Desea comprimir "+nombre+"?");
 
     //Eliminar archivo
     $("#eliminar_nombre").click(function () {
@@ -44,6 +45,7 @@ $("table tbody tr").click(function() {
 
     //Comprimiendo archivos
     $("#comprimir").click(function () {
+        console.log(1);
         var ruta = Routing.generate('comprimir');
         $.ajax({
             type:'POST',

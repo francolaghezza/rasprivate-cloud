@@ -64,7 +64,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
         // line 13
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 26
+        // line 25
         echo "    </body>
 </html>
 ";
@@ -153,7 +153,6 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
             <script>
                 \$(function () {
                     var alto = \$(document).height();
-                    console.log(alto);
                     \$(\"footer\").css({\"top\":alto+\"px\"});
                 });
             </script>
@@ -173,7 +172,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 
     public function getDebugInfo()
     {
-        return array (  149 => 14,  139 => 13,  121 => 12,  109 => 7,  99 => 6,  80 => 5,  68 => 26,  65 => 13,  63 => 12,  59 => 10,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  149 => 14,  139 => 13,  121 => 12,  109 => 7,  99 => 6,  80 => 5,  68 => 25,  65 => 13,  63 => 12,  59 => 10,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -198,7 +197,6 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
             <script>
                 \$(function () {
                     var alto = \$(document).height();
-                    console.log(alto);
                     \$(\"footer\").css({\"top\":alto+\"px\"});
                 });
             </script>

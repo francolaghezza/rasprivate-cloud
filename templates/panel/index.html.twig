@@ -119,13 +119,13 @@
                                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
                                 </svg>
                             </a></td>
-                        <td width="1em"><a class="btn bg-transparent btn-md" id="comprimir" title="Comprimir">
+                        <td width="1em"><button class="btn bg-transparent btn-md" data-toggle="modal" data-target="#comprimir" title="Comprimir">
                                 <svg class="bi bi-file-zip" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M4 1h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2zm0 1a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V3a1 1 0 00-1-1H4z" clip-rule="evenodd"/>
                                     <path fill-rule="evenodd" d="M6.5 8.5a1 1 0 011-1h1a1 1 0 011 1v.938l.4 1.599a1 1 0 01-.416 1.074l-.93.62a1 1 0 01-1.109 0l-.93-.62a1 1 0 01-.415-1.074l.4-1.599V8.5zm2 0h-1v.938a1 1 0 01-.03.243l-.4 1.598.93.62.93-.62-.4-1.598a1 1 0 01-.03-.243V8.5z" clip-rule="evenodd"/>
                                     <path d="M7.5 2H9v1H7.5zm-1 1H8v1H6.5zm1 1H9v1H7.5zm-1 1H8v1H6.5zm1 1H9v1H7.5V6z"/>
                                 </svg>
-                            </a></td>
+                            </button></td>
                         <td><input type="hidden" name="{{ id }}" value="{{ id }}"></td>
                     </tr>
                 {% endfor %}
@@ -170,11 +170,33 @@
                 <form>
                     <div class="modal-body">
                         <div class="form-group">
-                            <p id="parrafo"></p>
+                            <p id="p_borrar"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="eliminar_nombre">Eliminar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelar">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    {# Comprimir un archivo #}
+    <section class="modal" id="comprimir">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">Comprimir archivo</span>
+                    <button type="button" data-dismiss="modal" class="close" aria-hidden="true" id="cancel">&times;</button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <p id="p_comprimir"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="comprimir">Comprimir</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelar">Cancelar</button>
                     </div>
                 </form>
