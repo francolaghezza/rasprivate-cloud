@@ -45,7 +45,6 @@ $("table tbody tr").click(function() {
 
     //Comprimiendo archivos
     $("#comprimir").click(function () {
-        console.log(1);
         var ruta = Routing.generate('comprimir');
         $.ajax({
             type:'POST',
