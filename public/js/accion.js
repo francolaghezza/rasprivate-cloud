@@ -1,11 +1,13 @@
 $("table tbody tr").click(function() {
 
+    //Obteniendo el nombre del archivo para editarlo
     var nombre = $(this).find("td:first-child").text();
     $("#input_nombre").val(nombre);
 
+    //Obteniendo el ID del archivo
     var id_archivo = $(this).find("input:first-child").val();
-    var parrafo = "<p>¿Desea eliminar "+nombre+"?</p>";
-    $("#nombre_archivo").append(parrafo);
+
+    //Modificar archivo
     $("#editar_nombre").click(function () {
         var new_nombre =  $("#input_nombre").val();
         var ruta = Routing.generate('editar');
@@ -21,10 +23,28 @@ $("table tbody tr").click(function() {
             }
         });
     });
-    $("#eliminar_nombre").click(function () {
-        //Nombre del archivo a eliminar
 
+    //Párrafo de información al eliminar el archivo
+    $("#parrafo").text("¿Desea eliminar "+nombre+"?");
+
+    //Eliminar archivo
+    $("#eliminar_nombre").click(function () {
         var ruta = Routing.generate('borrar');
+        $.ajax({
+            type:'POST',
+            url:ruta,
+            data:({id:id_archivo}),
+            async:true,
+            dataType:"json",
+            success: function (data) {
+                window.location.reload();
+            }
+        });
+    });
+
+    //Comprimiendo archivos
+    $("#comprimir").click(function () {
+        var ruta = Routing.generate('comprimir');
         $.ajax({
             type:'POST',
             url:ruta,

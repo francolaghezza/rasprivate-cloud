@@ -16,6 +16,7 @@ return [
         '/nuevo' => [[['_route' => 'nuevo', '_controller' => 'App\\Controller\\ArchivosController::index'], null, null, null, false, false, null]],
         '/editar' => [[['_route' => 'editar', '_controller' => 'App\\Controller\\ArchivosController::editar'], null, null, null, false, false, null]],
         '/borrar' => [[['_route' => 'borrar', '_controller' => 'App\\Controller\\ArchivosController::borrar'], null, null, null, false, false, null]],
+        '/comprimir' => [[['_route' => 'comprimir', '_controller' => 'App\\Controller\\ArchivosController::comprimir'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\IndexController::index'], null, null, null, false, false, null]],
         '/panel' => [[['_route' => 'panel', '_controller' => 'App\\Controller\\PanelController::index'], null, null, null, false, false, null]],
         '/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\RegistroController::index'], null, null, null, false, false, null]],

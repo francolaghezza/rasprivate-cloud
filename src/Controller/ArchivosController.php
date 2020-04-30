@@ -112,4 +112,46 @@ class ArchivosController extends AbstractController
             throw new \Exception("No puedes borrar este archivo");
         }
     }
+
+    /**
+     * @Route("/comprimir", options={"expose"=true}, name="comprimir")
+     */
+    public function comprimir(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id);
+            $nombre = $archivo->getNombre();
+            $usuario = $this->getUser();
+            $nombre_usuario = $usuario->getUsername();
+            $almacenamiento = $usuario->getAlmacenamiento();
+            $zip = new \ZipArchive();
+            $archivo_zip = $nombre.".zip";
+            $ext =  substr($nombre, -3);
+            $ext_comprimido = array("cbr","jar","pit","rar","jar","tgz","dl_","bz2","cbz","war","zip","z01");
+
+            //Si el archivo ya está comprimido
+            foreach( $ext_comprimido as $extension ) {
+                if ($ext == $extension){
+                    throw new \Exception("Este archivo ya está comprimido");
+                }
+                else{
+                    if ($zip->open($archivo_zip,\ZipArchive::CREATE) === true){
+                        $zip->addFile($nombre);
+                        $zip->close();
+                    }
+                    else{
+                        throw new \Exception("No se ha podido comprimido este archivo");
+                    }
+                }
+            }
+            move_uploaded_file($archivo_zip,"uploads/archivos/$nombre_usuario/$archivo_zip");
+            $em->persist($archivo);
+            $em->flush();
+            return new JsonResponse(['id'=> $id]);
+        }
+        else{
+            throw new \Exception("No puedes borrar este archivo");
+        }
+    }
 }

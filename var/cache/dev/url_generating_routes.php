@@ -18,6 +18,7 @@ return [
     'nuevo' => [[], ['_controller' => 'App\\Controller\\ArchivosController::index'], [], [['text', '/nuevo']], [], []],
     'editar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::editar'], [], [['text', '/editar']], [], []],
     'borrar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::borrar'], [], [['text', '/borrar']], [], []],
+    'comprimir' => [[], ['_controller' => 'App\\Controller\\ArchivosController::comprimir'], [], [['text', '/comprimir']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
     'panel' => [[], ['_controller' => 'App\\Controller\\PanelController::index'], [], [['text', '/panel']], [], []],
     'registro' => [[], ['_controller' => 'App\\Controller\\RegistroController::index'], [], [['text', '/registro']], [], []],
