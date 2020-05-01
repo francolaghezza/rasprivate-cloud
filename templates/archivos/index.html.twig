@@ -1,10 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Subir archivo{% endblock %}
+{% block title %}Sube un archivo{% endblock %}
 
 {% block body %}
-<div class="container">
+    {# Menú de navegación
+    <header class="row">
+        <div class="container mt-5">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbarbrand"><img src="img/logo.png" class="logo" alt="logo"></a>
+                <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <nav class="navbar-nav">
+                        <a href="#" class="nav-link">Perfil</a>
+                    </nav>
+                    //Cerrar sesión
+                    <form class="form-inline ml-auto">
+                        <a href="{{ logout_path() }}" class="btn bg-light btn-md mr-2">Cerrar sesión</a>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>#}
+<div class="container mt-5">
     <h3>Sube un archivo</h3>
-    {{form(formulario)}}
+
+    {{ form_start(formulario) }}
+    {{ form_row(formulario.nombre) }}
+    {{ form_end(formulario) }}
+
 </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script src="{{ asset('js/accion.js') }}"></script>
+    <script>
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
 {% endblock %}

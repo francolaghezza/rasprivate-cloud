@@ -27,37 +27,59 @@ class ArchivosController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('nombre')->getData();
             if ($file) {
-                $size = filesize($file);
-                //Almaceno la información en Kilobytes
-                $kb = $size/1024;
-                //Genero un número aleatorio para que ningún archivo se repita
-                $aleatorio = mt_rand(0,30000);
-                $usuario = $this->getUser();
-                $nombre_usuario = $usuario->getUsername();
-                $almacenamientoActual = $usuario->getAlmacenamiento();
-                if($almacenamientoActual == 5242880 || $kb+$almacenamientoActual >= 5242880){
-                    throw new \Exception("No puedes subir más archivos");
-                }
-                else{
-                    try {
+                $file_name_with_full_path = realpath($file);
+                $api_key = getenv('VT_API_KEY') ? getenv('VT_API_KEY') :'33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
+                $cfile = curl_file_create($file_name_with_full_path);
 
-                        $file->move(
+                $post = array('apikey' => $api_key,'file'=> $cfile);
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/scan');
+                curl_setopt($ch, CURLOPT_POST, True);
+                curl_setopt($ch, CURLOPT_VERBOSE, 1); // remove this if your not debugging
+                curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate'); // please compress data
+                curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER ,True);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-                            'uploads/archivos/'.$nombre_usuario,
-                            $aleatorio.'-'.$file->getClientOriginalName()
-                        );
-                    } catch (FileException $e) {
-                        throw new \Exception("No se ha podido guardar el archivo");
+                $result=curl_exec ($ch);
+                $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                print("status = $status_code\n");
+                if ($status_code == 200) { // OK
+                    $js = json_decode($result, true);
+                    print_r($js);
+                    $size = filesize($file);
+                    //Almaceno la información en Kilobytes
+                    $kb = $size/1024;
+                    //Genero un número aleatorio para que ningún archivo se repita
+                    $aleatorio = mt_rand(0,30000);
+                    $usuario = $this->getUser();
+                    $nombre_usuario = $usuario->getUsername();
+                    $almacenamientoActual = $usuario->getAlmacenamiento();
+                    if($almacenamientoActual == 5242880 || $kb+$almacenamientoActual >= 5242880){
+                        throw new \Exception("No puedes subir más archivos");
                     }
-                    $archivo->setNombre( $aleatorio.'-'.$file->getClientOriginalName());
-                    $archivo->setSize($kb);
-                    $usuario->setAlmacenamiento($almacenamientoActual+$kb);
-                    $archivo->setUsuario($usuario);
-                    $em = $this->getDoctrine()->getManager();
-                    $em->persist($archivo);
-                    $em->flush();
-                    return $this->redirectToRoute('panel');
+                    else{
+                        try {
+                            $file->move(
+                                'uploads/archivos/'.$nombre_usuario,
+                                $aleatorio.'-'.$file->getClientOriginalName()
+                            );
+                        } catch (FileException $e) {
+                            throw new \Exception("No se ha podido guardar el archivo");
+                        }
+                        $archivo->setNombre( $aleatorio.'-'.$file->getClientOriginalName());
+                        $archivo->setSize($kb);
+                        $usuario->setAlmacenamiento($almacenamientoActual+$kb);
+                        $archivo->setUsuario($usuario);
+                        $em = $this->getDoctrine()->getManager();
+                        $em->persist($archivo);
+                        $em->flush();
+                        //return $this->redirectToRoute('panel');
+                    }
+                } else {  // Error occured
+                    print($result);
                 }
+                curl_close ($ch);
             }
         }
         return $this->render('archivos/index.html.twig', [
