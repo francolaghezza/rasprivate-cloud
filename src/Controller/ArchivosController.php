@@ -26,37 +26,81 @@ class ArchivosController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('nombre')->getData();
+
             if ($file) {
-                $file_name_with_full_path = realpath($file);
-                $api_key = getenv('VT_API_KEY') ? getenv('VT_API_KEY') :'33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
-                $cfile = curl_file_create($file_name_with_full_path);
-
-                $post = array('apikey' => $api_key,'file'=> $cfile);
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/scan');
-                curl_setopt($ch, CURLOPT_POST, True);
-                curl_setopt($ch, CURLOPT_VERBOSE, 1); // remove this if your not debugging
-                curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate'); // please compress data
-                curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER ,True);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-
-                $result=curl_exec ($ch);
-                $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                print("status = $status_code\n");
-                if ($status_code == 200) { // OK
-                    $js = json_decode($result, true);
-                    print_r($js);
-                    $size = filesize($file);
-                    //Almaceno la información en Kilobytes
-                    $kb = $size/1024;
-                    //Genero un número aleatorio para que ningún archivo se repita
-                    $aleatorio = mt_rand(0,30000);
+                $size = filesize($file);
+                //Almaceno la información en Kilobytes
+                $kb = $size/1024;
+                //Genero un número aleatorio para que ningún archivo se repita
+                $aleatorio = mt_rand(0,30000);
+                //Si el archivo pesa menos de 32 MB
+                if ($kb <= 32768){
+                    $file_name_with_full_path = realpath($file);
+                    $api_key = getenv('VT_API_KEY') ? getenv('VT_API_KEY') :'33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
+                    $cfile = curl_file_create($file_name_with_full_path);
+                    $post = array('apikey' => $api_key,'file'=> $cfile);
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/scan');
+                    curl_setopt($ch, CURLOPT_POST, True);
+                    curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate'); // please compress data
+                    curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER ,True);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+                    $result=curl_exec ($ch);
+                    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                    print("status = $status_code\n");
+                    //Si devuelve un HTTP de 200, el archivo está libre de cualquier tipo de malware
+                    if ($status_code == 200) {
+                        $js = json_decode($result, true);
+                        print_r($js);
+                        $usuario = $this->getUser();
+                        $nombre_usuario = $usuario->getUsername();
+                        $almacenamientoActual = $usuario->getAlmacenamiento();
+                        if($almacenamientoActual == 5242880 || $kb+$almacenamientoActual >= 5242880){
+                            $this->addFlash(
+                                'error_almacenamiento',
+                                'El archivo es demasiado grande para su espacio de almacenamiento'
+                            );
+                            return $this->redirectToRoute('nuevo');
+                        }
+                        else{
+                            try {
+                                $file->move(
+                                    'uploads/archivos/'.$nombre_usuario,
+                                    $aleatorio.'-'.$file->getClientOriginalName()
+                                );
+                            } catch (FileException $e) {
+                                throw new \Exception("No se ha podido guardar el archivo");
+                            }
+                            $archivo->setNombre( $aleatorio.'-'.$file->getClientOriginalName());
+                            $archivo->setSize($kb);
+                            $usuario->setAlmacenamiento($almacenamientoActual+$kb);
+                            $archivo->setUsuario($usuario);
+                            $em = $this->getDoctrine()->getManager();
+                            $em->persist($archivo);
+                            $em->flush();
+                            $this->addFlash(
+                                'exito',
+                                $aleatorio.'-'.$file->getClientOriginalName().' se ha subido correctamente'
+                            );
+                            return $this->redirectToRoute('panel');
+                        }
+                    } else {  // Error occured
+                        print($result);
+                    }
+                    curl_close ($ch);
+                }
+                //El archivo pesa más de 32 MB y menos de 5GB
+                elseif($kb > 32769 && $kb <= 5242880){
                     $usuario = $this->getUser();
                     $nombre_usuario = $usuario->getUsername();
                     $almacenamientoActual = $usuario->getAlmacenamiento();
                     if($almacenamientoActual == 5242880 || $kb+$almacenamientoActual >= 5242880){
-                        throw new \Exception("No puedes subir más archivos");
+                        $this->addFlash(
+                            'error_almacenamiento',
+                            'El archivo es demasiado grande para su espacio de almacenamiento'
+                        );
+                        return $this->redirectToRoute('nuevo');
                     }
                     else{
                         try {
@@ -74,12 +118,21 @@ class ArchivosController extends AbstractController
                         $em = $this->getDoctrine()->getManager();
                         $em->persist($archivo);
                         $em->flush();
-                        //return $this->redirectToRoute('panel');
+                        $this->addFlash(
+                            'exito',
+                            $aleatorio.'-'.$file->getClientOriginalName().' se ha subido correctamente'
+                        );
+                        return $this->redirectToRoute('panel');
                     }
-                } else {  // Error occured
-                    print($result);
                 }
-                curl_close ($ch);
+                //El archivo pesa más de 5GB
+                else{
+                    $this->addFlash(
+                        'error_size',
+                        'El archivo es demasiado grande'
+                    );
+                    return $this->redirectToRoute('nuevo');
+                }
             }
         }
         return $this->render('archivos/index.html.twig', [

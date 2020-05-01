@@ -25,7 +25,7 @@ class PanelController extends AbstractController
         $paginacion = $paginator->paginate(
         $query,
         $request->query->getInt('page', 1), /*Número de página*/
-        10 /*Límite de registros por página*/
+        9 /*Límite de registros por página*/
         );
         return $this->render('panel/index.html.twig',[
             'pagination' => $paginacion,
