@@ -199,45 +199,45 @@ class ArchivosController extends AbstractController
             $archivo = $em->getRepository(Archivos::class)->find($id);
             $nombre = $archivo->getNombre();
             $nombre_usuario = $usuario->getUsername();
-            $zip = new \ZipArchive();
             $ext =  substr($nombre, -3);
             $nombre_archivo = substr($nombre,0,-5);
             $archivo_zip = $nombre_archivo.".zip";
-            $ext_comprimido = array("cbr","jar","pit","rar","jar","tgz","dl_","bz2","cbz","war","zip","z01");
+            $ext_comprimido = array("cbr","jar","pit","rar","jar","tgz","dl_",'bz2','cbz','war',"zip",'z01');
 
             //Si el archivo ya está comprimido
-            foreach($ext_comprimido as $extension) {
-                if ($ext == $extension){
-                    throw new \Exception("Este archivo ya está comprimido");
-                }
-                else{
-                    if ($zip->open("uploads/archivos/$nombre_usuario/$archivo_zip",\ZipArchive::CREATE) === true){
-                        $zip->addFile("uploads/archivos/$nombre_usuario/$nombre","$nombre");
-                        set_time_limit(300);
-                        $zip->close();
-                    }
-                    else{
-                        throw new \Exception("No se ha podido comprimido este archivo");
-                    }
-                }
+            if (in_array($ext,$ext_comprimido)){
+                $this->addFlash(
+                        'error_zip',
+                        'El archivo ya está comprimido'
+                );
+                return new JsonResponse(['id'=> $id]);
             }
-            $archivo->setNombre($archivo_zip);
-            $archivo->setFecha(new \DateTime());
-            $old_size = filesize("uploads/archivos/$nombre_usuario/$nombre");
-            $old_kb = $old_size/1024;
-            unlink("uploads/archivos/$nombre_usuario/$nombre");
-            $almacenamiento = $usuario->getAlmacenamiento();
-            $usuario-> setAlmacenamiento($almacenamiento-$old_kb);
-            $new_size = filesize("uploads/archivos/$nombre_usuario/$archivo_zip");
-            $kb = $new_size/1024;
-            $archivo->setSize($kb);
-            $almacenamiento = $usuario->getAlmacenamiento();
-            $usuario-> setAlmacenamiento($almacenamiento+$kb);
-            $em->flush();
-            return new JsonResponse(['id'=> $id]);
+            else{
+                $zip = new \ZipArchive();
+                $zip->open("uploads/archivos/$nombre_usuario/$archivo_zip",\ZipArchive::CREATE);
+                $zip->addFile("uploads/archivos/$nombre_usuario/$nombre","$nombre");
+                set_time_limit(300);
+                $zip->close();
+                $archivo->setNombre($archivo_zip);
+                $archivo->setFecha(new \DateTime());
+                $old_size = filesize("uploads/archivos/$nombre_usuario/$nombre");
+                $old_kb = $old_size/1024;
+                unlink("uploads/archivos/$nombre_usuario/$nombre");
+                $almacenamiento = $usuario->getAlmacenamiento();
+                $usuario-> setAlmacenamiento($almacenamiento-$old_kb);
+                $new_size = filesize("uploads/archivos/$nombre_usuario/$archivo_zip");
+                $kb = $new_size/1024;
+                $archivo->setSize($kb);
+                $almacenamiento = $usuario->getAlmacenamiento();
+                $usuario-> setAlmacenamiento($almacenamiento+$kb);
+                $em->flush();
+                return new JsonResponse(['id'=> $id]);
+            }
         }
         else{
             throw new \Exception("No puedes borrar este archivo");
         }
+
     }
+
 }

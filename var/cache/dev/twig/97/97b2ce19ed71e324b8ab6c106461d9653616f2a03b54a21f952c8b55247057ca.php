@@ -128,33 +128,31 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
     ";
         // line 33
         echo "    <div class=\"alert alert-warning alert-dismissible w-50 mx-auto show fade\">
-        <p>
-            <svg class=\"bi bi-exclamation-triangle\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+            <h5><svg class=\"bi bi-exclamation-triangle\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                 <path fill-rule=\"evenodd\" d=\"M7.938 2.016a.146.146 0 00-.054.057L1.027 13.74a.176.176 0 00-.002.183c.016.03.037.05.054.06.015.01.034.017.066.017h13.713a.12.12 0 00.066-.017.163.163 0 00.055-.06.176.176 0 00-.003-.183L8.12 2.073a.146.146 0 00-.054-.057A.13.13 0 008.002 2a.13.13 0 00-.064.016zm1.044-.45a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z\" clip-rule=\"evenodd\"/>
                 <path d=\"M7.002 12a1 1 0 112 0 1 1 0 01-2 0zM7.1 5.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 5.995z\"/>
-            </svg>
-        </p>
+                </svg></h5>
         <p>Los archivos con un tamaño superior a 32 MB no se podrán escanear en busca de malware</p>
         <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
             <span aria-hidden=\"true\">&times;</span>
         </button>
     </div>
     ";
-        // line 46
+        // line 44
         echo "    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "session", [], "any", false, false, false, 46), "flashbag", [], "any", false, false, false, 46), "get", [0 => "error_almacenamiento"], "method", false, false, false, 46));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "session", [], "any", false, false, false, 44), "flashbag", [], "any", false, false, false, 44), "get", [0 => "error_almacenamiento"], "method", false, false, false, 44));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 47
+            // line 45
             echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
-            <p>
+            <h5>
                 <svg class=\"bi bi-exclamation-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                     <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
                     <path d=\"M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z\"/>
                 </svg>
-            </p>
+            </h5>
             <p>";
-            // line 54
+            // line 52
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
             echo "</p>
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
@@ -166,21 +164,22 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 58
+        echo "
+    ";
         // line 60
         echo "    ";
-        // line 61
-        echo "    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "session", [], "any", false, false, false, 61), "flashbag", [], "any", false, false, false, 61), "get", [0 => "error_size"], "method", false, false, false, 61));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "session", [], "any", false, false, false, 60), "flashbag", [], "any", false, false, false, 60), "get", [0 => "error_size"], "method", false, false, false, 60));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 62
+            // line 61
             echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
             <svg class=\"bi bi-dash-circle\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                 <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z\" clip-rule=\"evenodd\"/>
                 <path fill-rule=\"evenodd\" d=\"M3.5 8a.5.5 0 01.5-.5h8a.5.5 0 010 1H4a.5.5 0 01-.5-.5z\" clip-rule=\"evenodd\"/>
             </svg>
             ";
-            // line 67
+            // line 66
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
             echo "
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
@@ -192,7 +191,35 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 73
+        // line 72
+        echo "
+    ";
+        // line 74
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 74, $this->source); })()), "session", [], "any", false, false, false, 74), "flashbag", [], "any", false, false, false, 74), "get", [0 => "error_malware"], "method", false, false, false, 74));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 75
+            echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+           <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+               </svg></h5>
+            <p> ";
+            // line 81
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo " </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 87
         echo "</div>
 
 ";
@@ -204,7 +231,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
 
     }
 
-    // line 76
+    // line 90
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -214,20 +241,20 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 77
+        // line 91
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 78
+        // line 92
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 79
+        // line 93
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 80
+        // line 94
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
     <script>
@@ -258,7 +285,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
 
     public function getDebugInfo()
     {
-        return array (  231 => 80,  227 => 79,  223 => 78,  218 => 77,  208 => 76,  196 => 73,  184 => 67,  177 => 62,  172 => 61,  170 => 60,  158 => 54,  149 => 47,  144 => 46,  130 => 33,  125 => 30,  121 => 29,  117 => 28,  105 => 19,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  258 => 94,  254 => 93,  250 => 92,  245 => 91,  235 => 90,  223 => 87,  211 => 81,  203 => 75,  198 => 74,  195 => 72,  183 => 66,  176 => 61,  171 => 60,  168 => 58,  156 => 52,  147 => 45,  142 => 44,  130 => 33,  125 => 30,  121 => 29,  117 => 28,  105 => 19,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -296,12 +323,10 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
 
     {# Aviso #}
     <div class=\"alert alert-warning alert-dismissible w-50 mx-auto show fade\">
-        <p>
-            <svg class=\"bi bi-exclamation-triangle\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+            <h5><svg class=\"bi bi-exclamation-triangle\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                 <path fill-rule=\"evenodd\" d=\"M7.938 2.016a.146.146 0 00-.054.057L1.027 13.74a.176.176 0 00-.002.183c.016.03.037.05.054.06.015.01.034.017.066.017h13.713a.12.12 0 00.066-.017.163.163 0 00.055-.06.176.176 0 00-.003-.183L8.12 2.073a.146.146 0 00-.054-.057A.13.13 0 008.002 2a.13.13 0 00-.064.016zm1.044-.45a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z\" clip-rule=\"evenodd\"/>
                 <path d=\"M7.002 12a1 1 0 112 0 1 1 0 01-2 0zM7.1 5.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 5.995z\"/>
-            </svg>
-        </p>
+                </svg></h5>
         <p>Los archivos con un tamaño superior a 32 MB no se podrán escanear en busca de malware</p>
         <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
             <span aria-hidden=\"true\">&times;</span>
@@ -310,18 +335,19 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
     {# No queda espacio de almacenamiento #}
     {% for flash_message in app.session.flashbag.get('error_almacenamiento') %}
         <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
-            <p>
+            <h5>
                 <svg class=\"bi bi-exclamation-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                     <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
                     <path d=\"M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z\"/>
                 </svg>
-            </p>
+            </h5>
             <p>{{ flash_message }}</p>
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
                 <span aria-hidden=\"true\">&times;</span>
             </button>
         </div>
     {% endfor %}
+
     {# El archivo es demasiado grande #}
     {% for flash_message in app.session.flashbag.get('error_size') %}
         <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
@@ -330,6 +356,21 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
                 <path fill-rule=\"evenodd\" d=\"M3.5 8a.5.5 0 01.5-.5h8a.5.5 0 010 1H4a.5.5 0 01-.5-.5z\" clip-rule=\"evenodd\"/>
             </svg>
             {{ flash_message }}
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+
+    {# Se ha detectado un archivo malicioso #}
+    {% for flash_message in app.session.flashbag.get('error_malware') %}
+        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+           <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+               </svg></h5>
+            <p> {{ flash_message }} </p>
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
                 <span aria-hidden=\"true\">&times;</span>
             </button>
