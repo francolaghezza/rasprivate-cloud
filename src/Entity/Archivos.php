@@ -17,6 +17,7 @@ class Archivos
     private $id;
     
     /**
+     * Uno o varios archivos sólo se relacionan con un usuario
      * @ORM\ManyToOne(targetEntity="App\Entity\Usuarios", inversedBy="archivos")
      */
     private $usuario;

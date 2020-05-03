@@ -87,29 +87,8 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
 
         // line 6
         echo "    ";
-        // line 7
-        echo "    <header class=\"row\">
-        <div class=\"container mt-5\">
-            <nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">
-                <a class=\"navbarbrand\"><img src=\"img/logo.png\" class=\"logo\" alt=\"logo\"></a>
-                <button class=\"navbar-toggler ml-auto\" data-toggle=\"collapse\" data-target=\"#menu\">
-                    <span class=\"navbar-toggler-icon\"></span>
-                </button>
-                <div class=\"collapse navbar-collapse\" id=\"menu\">
-                    <nav class=\"navbar-nav\">
-                        <a href=\"#\" class=\"nav-link\">Perfil</a>
-                    </nav>
-                    <form class=\"form-inline ml-auto\">
-                        <a href=\"";
-        // line 19
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\LogoutUrlExtension']->getLogoutPath(), "html", null, true);
-        echo "\" class=\"btn bg-light btn-md mr-2\">Cerrar sesión</a>
-                    </form>
-                </div>
-            </nav>
-        </div>
-    </header>
-<div class=\"container mt-5\">
+        // line 25
+        echo "<div class=\"container mt-5\">
     <h3>Sube un archivo</h3>
 
     ";
@@ -220,6 +199,141 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 87
+        echo "    ";
+        // line 88
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 88, $this->source); })()), "session", [], "any", false, false, false, 88), "flashbag", [], "any", false, false, false, 88), "get", [0 => "error_0"], "method", false, false, false, 88));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 89
+            echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> ";
+            // line 95
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo " </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 101
+        echo "    ";
+        // line 102
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 102, $this->source); })()), "session", [], "any", false, false, false, 102), "flashbag", [], "any", false, false, false, 102), "get", [0 => "error_0"], "method", false, false, false, 102));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 103
+            echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> ";
+            // line 109
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo " </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 115
+        echo "    ";
+        // line 116
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 116, $this->source); })()), "session", [], "any", false, false, false, 116), "flashbag", [], "any", false, false, false, 116), "get", [0 => "error_1"], "method", false, false, false, 116));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 117
+            echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> ";
+            // line 123
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo " </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 129
+        echo "    ";
+        // line 130
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 130, $this->source); })()), "session", [], "any", false, false, false, 130), "flashbag", [], "any", false, false, false, 130), "get", [0 => "error_2"], "method", false, false, false, 130));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 131
+            echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> ";
+            // line 137
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo " </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 143
+        echo "    ";
+        // line 144
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 144, $this->source); })()), "session", [], "any", false, false, false, 144), "flashbag", [], "any", false, false, false, 144), "get", [0 => "error_3"], "method", false, false, false, 144));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 145
+            echo "        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> ";
+            // line 151
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo " </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 157
         echo "</div>
 
 ";
@@ -231,7 +345,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
 
     }
 
-    // line 90
+    // line 160
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -241,20 +355,20 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 91
+        // line 161
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 92
+        // line 162
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 93
+        // line 163
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 94
+        // line 164
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
     <script>
@@ -285,7 +399,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
 
     public function getDebugInfo()
     {
-        return array (  258 => 94,  254 => 93,  250 => 92,  245 => 91,  235 => 90,  223 => 87,  211 => 81,  203 => 75,  198 => 74,  195 => 72,  183 => 66,  176 => 61,  171 => 60,  168 => 58,  156 => 52,  147 => 45,  142 => 44,  130 => 33,  125 => 30,  121 => 29,  117 => 28,  105 => 19,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  372 => 164,  368 => 163,  364 => 162,  359 => 161,  349 => 160,  337 => 157,  325 => 151,  317 => 145,  312 => 144,  310 => 143,  298 => 137,  290 => 131,  285 => 130,  283 => 129,  271 => 123,  263 => 117,  258 => 116,  256 => 115,  244 => 109,  236 => 103,  231 => 102,  229 => 101,  217 => 95,  209 => 89,  204 => 88,  202 => 87,  190 => 81,  182 => 75,  177 => 74,  174 => 72,  162 => 66,  155 => 61,  150 => 60,  147 => 58,  135 => 52,  126 => 45,  121 => 44,  109 => 33,  104 => 30,  100 => 29,  96 => 28,  91 => 25,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -295,7 +409,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
 {% block title %}Sube un archivo{% endblock %}
 
 {% block body %}
-    {# Menú de navegación #}
+    {# Menú de navegación
     <header class=\"row\">
         <div class=\"container mt-5\">
             <nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">
@@ -313,7 +427,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
                 </div>
             </nav>
         </div>
-    </header>
+    </header>#}
 <div class=\"container mt-5\">
     <h3>Sube un archivo</h3>
 
@@ -370,6 +484,76 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
                 <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
                 <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
                </svg></h5>
+            <p> {{ flash_message }} </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    {# Error 0 #}
+    {% for flash_message in app.session.flashbag.get('error_0') %}
+        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> {{ flash_message }} </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    {# Error 0 #}
+    {% for flash_message in app.session.flashbag.get('error_0') %}
+        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> {{ flash_message }} </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    {# Error 1 #}
+    {% for flash_message in app.session.flashbag.get('error_1') %}
+        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> {{ flash_message }} </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    {# Error 2 #}
+    {% for flash_message in app.session.flashbag.get('error_2') %}
+        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
+            <p> {{ flash_message }} </p>
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                <span aria-hidden=\"true\">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    {# Error 3 #}
+    {% for flash_message in app.session.flashbag.get('error_3') %}
+        <div class=\"alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade\">
+            <h5><svg class=\"bi bi-x-octagon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <path fill-rule=\"evenodd\" d=\"M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                    <path fill-rule=\"evenodd\" d=\"M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z\" clip-rule=\"evenodd\"/>
+                </svg></h5>
             <p> {{ flash_message }} </p>
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
                 <span aria-hidden=\"true\">&times;</span>
