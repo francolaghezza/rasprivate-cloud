@@ -32,6 +32,7 @@ class ArchivosController extends AbstractController
                 //Almaceno la información en Kilobytes
                 $kb = $size/1024;
                 //Genero un número aleatorio para que ningún archivo se repita
+
                 $aleatorio = mt_rand(0,30000);
                 //Si el archivo pesa menos de 32 MB
                 if ($kb <= 32768){
@@ -43,7 +44,7 @@ class ArchivosController extends AbstractController
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/scan');
                     curl_setopt($ch, CURLOPT_POST, True);
-                    curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate'); // please compress data
+                    curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
                     curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER ,True);
                     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
@@ -62,17 +63,14 @@ class ArchivosController extends AbstractController
                         curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER ,true);
                         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-                        $result=curl_exec ($ch);
+                        $result = curl_exec ($ch);
                         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-                        if ($status_code == 200) { // OK
+                        if ($status_code == 200) {
                             $js = json_decode($result, true);
+                            $respuesta = $js['positives']; //Antivirus que han detectado un virus
 
-                            //Antivirus que han detectado un virus
-                            $respuesta = $js['positives'];
-
-                            if ($respuesta == 0){ //Sin virus
-
+                            if ($respuesta == 0){
                                 $usuario = $this->getUser();
                                 $nombre_usuario = $usuario->getUsername();
                                 $almacenamientoActual = $usuario->getAlmacenamiento();
@@ -110,7 +108,7 @@ class ArchivosController extends AbstractController
                                     return $this->redirectToRoute('panel');
                                  }
                             }
-                            else{ //Con virus
+                            else{ //Malware detectado
                                 $this->addFlash(
                                     'error_malware',
                                     'Se ha detectado un archivo malicioso'
@@ -229,6 +227,10 @@ class ArchivosController extends AbstractController
             $em->remove($archivo);
             unlink("uploads/archivos/$nombre_usuario/$nombre");
             $usuario-> setAlmacenamiento($almacenamiento-$size);
+            $this->addFlash(
+                'delete',
+                ''
+            );
             $em->flush();
             return new JsonResponse(['id'=> $id]);
         }
@@ -251,7 +253,7 @@ class ArchivosController extends AbstractController
             $ext =  substr($nombre, -3);
             $nombre_archivo = substr($nombre,0,-5);
             $archivo_zip = $nombre_archivo.".zip";
-            $ext_comprimido = array("cbr","jar","pit","rar","jar","tgz","dl_",'bz2','cbz','war',"zip",'z01');
+            $ext_comprimido = array("cbr","jar","pit","rar","jar","tgz","dl_","bz2","cbz","war","zip","z01");
 
             //Si el archivo ya está comprimido
             if (in_array($ext,$ext_comprimido)){

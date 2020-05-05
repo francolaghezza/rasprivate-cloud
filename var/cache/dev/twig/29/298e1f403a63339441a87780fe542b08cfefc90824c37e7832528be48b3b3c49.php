@@ -104,8 +104,8 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                     </nav>
                      <!--Botones de inicio de sesión o registro-->
                     <form class=\"form-inline ml-auto\">
-                        <a class=\"btn bg-light btn-md mr-2\" href=\"/login\">Login</a>
-                        <a class=\"btn bg-light btn-md\" href=\"/registro\">Registro</a>
+                        <a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
+                        <a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
                     </form>
                 </div>
             </nav>
@@ -118,7 +118,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                 <div class=\"jumbotron bg-transparent\">
                     <h1>El almacenamiento libre</h1>
                     <p class=\"lead\">Guarda tus archivos de forma segura y totalmente anónima accediendo desde cualquier dispositivo</p>
-                    <button class=\"btn btn-secondary\">Cómo funciona</button>
+                    <button class=\"btn btn-secondary redondo\">Cómo funciona</button>
                     <a class=\"ref\"
                        href=\"https://unsplash.com/@shahrizadegan?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge\"
                        target=\"_blank\" rel=\"noopener noreferrer\" title=\"Autor: Naeem shahrizadegan\">
@@ -226,8 +226,8 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                     </nav>
                      <!--Botones de inicio de sesión o registro-->
                     <form class=\"form-inline ml-auto\">
-                        <a class=\"btn bg-light btn-md mr-2\" href=\"/login\">Login</a>
-                        <a class=\"btn bg-light btn-md\" href=\"/registro\">Registro</a>
+                        <a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
+                        <a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
                     </form>
                 </div>
             </nav>
@@ -240,7 +240,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                 <div class=\"jumbotron bg-transparent\">
                     <h1>El almacenamiento libre</h1>
                     <p class=\"lead\">Guarda tus archivos de forma segura y totalmente anónima accediendo desde cualquier dispositivo</p>
-                    <button class=\"btn btn-secondary\">Cómo funciona</button>
+                    <button class=\"btn btn-secondary redondo\">Cómo funciona</button>
                     <a class=\"ref\"
                        href=\"https://unsplash.com/@shahrizadegan?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge\"
                        target=\"_blank\" rel=\"noopener noreferrer\" title=\"Autor: Naeem shahrizadegan\">
@@ -299,6 +299,6 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 </footer>
 
 {% endblock %}
-", "index/index.html.twig", "C:\\xampp\\htdocs\\rasprivate\\templates\\index\\index.html.twig");
+", "index/index.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\index\\index.html.twig");
     }
 }

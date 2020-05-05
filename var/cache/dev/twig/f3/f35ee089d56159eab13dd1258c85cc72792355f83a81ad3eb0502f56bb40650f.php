@@ -105,8 +105,8 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t";
         // line 23
         echo "\t\t\t\t\t<form class=\"form-inline ml-auto\">
-\t\t\t\t\t\t<a class=\"btn bg-light btn-md mr-2\" href=\"/login\">Login</a>
-\t\t\t\t\t\t<a class=\"btn bg-light btn-md\" href=\"/registro\">Registro</a>
+\t\t\t\t\t\t<a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
+\t\t\t\t\t\t<a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
 \t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t</nav>
@@ -145,22 +145,21 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <a href=\"#\">Política de privacidad</a> </label>
 \t\t\t\t</div>
 \t\t\t</div>
-\t\t\t
 \t\t</div>
 \t\t
 \t";
-        // line 54
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 54, $this->source); })()), 'form_end');
+        // line 53
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 53, $this->source); })()), 'form_end');
         echo "
 \t\t\t\t";
-        // line 55
+        // line 54
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 55, $this->source); })()), "flashes", [0 => "exito"], "method", false, false, false, 55));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "flashes", [0 => "exito"], "method", false, false, false, 54));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 56
+            // line 55
             echo "\t\t\t\t\t<div class=\"alert alert-success\">
 \t\t\t\t\t\t";
-            // line 57
+            // line 56
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
 \t\t\t\t\t</div>
@@ -169,7 +168,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
+        // line 59
         echo "\t\t</div>
 \t</div>
 </div>
@@ -194,7 +193,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
     public function getDebugInfo()
     {
-        return array (  173 => 60,  164 => 57,  161 => 56,  157 => 55,  153 => 54,  141 => 45,  136 => 43,  131 => 41,  124 => 37,  117 => 32,  107 => 23,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  172 => 59,  163 => 56,  160 => 55,  156 => 54,  152 => 53,  141 => 45,  136 => 43,  131 => 41,  124 => 37,  117 => 32,  107 => 23,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -222,8 +221,8 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t</nav>
 \t\t\t\t\t{# Botones de inicio de sesión o registro #}
 \t\t\t\t\t<form class=\"form-inline ml-auto\">
-\t\t\t\t\t\t<a class=\"btn bg-light btn-md mr-2\" href=\"/login\">Login</a>
-\t\t\t\t\t\t<a class=\"btn bg-light btn-md\" href=\"/registro\">Registro</a>
+\t\t\t\t\t\t<a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
+\t\t\t\t\t\t<a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
 \t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t</nav>
@@ -249,7 +248,6 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <a href=\"#\">Política de privacidad</a> </label>
 \t\t\t\t</div>
 \t\t\t</div>
-\t\t\t
 \t\t</div>
 \t\t
 \t{{ form_end(formulario) }}
@@ -261,6 +259,6 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t</div>
 \t</div>
 </div>
-{% endblock %}", "registro/index.html.twig", "C:\\xampp\\htdocs\\rasprivate\\templates\\registro\\index.html.twig");
+{% endblock %}", "registro/index.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\registro\\index.html.twig");
     }
 }

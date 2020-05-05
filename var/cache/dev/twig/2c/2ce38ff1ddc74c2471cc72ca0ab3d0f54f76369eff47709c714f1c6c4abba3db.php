@@ -104,8 +104,8 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                     ";
         // line 22
         echo "                    <form class=\"form-inline ml-auto\">
-                        <a class=\"btn bg-light btn-md mr-2\" href=\"/login\">Login</a>
-                        <a class=\"btn bg-light btn-md\" href=\"/registro\">Registro</a>
+                        <a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
+                        <a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
                     </form>
                 </div>
             </nav>
@@ -148,7 +148,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
                 <label for=\"inputPassword\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
-                <button class=\"btn btn-dark mt-2\" type=\"submit\">
+                <button class=\"btn btn-dark mt-2 redondo\" type=\"submit\">
                     Entrar
                 </button>
                 <span>¿Todavía no tienes una cuenta? <a href=\"registro\">Crea una nueva</a></span>
@@ -215,8 +215,8 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                     </nav>
                     {# Botones de inicio de sesión o registro #}
                     <form class=\"form-inline ml-auto\">
-                        <a class=\"btn bg-light btn-md mr-2\" href=\"/login\">Login</a>
-                        <a class=\"btn bg-light btn-md\" href=\"/registro\">Registro</a>
+                        <a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
+                        <a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
                     </form>
                 </div>
             </nav>
@@ -241,7 +241,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                 <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
                 <label for=\"inputPassword\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
-                <button class=\"btn btn-dark mt-2\" type=\"submit\">
+                <button class=\"btn btn-dark mt-2 redondo\" type=\"submit\">
                     Entrar
                 </button>
                 <span>¿Todavía no tienes una cuenta? <a href=\"registro\">Crea una nueva</a></span>

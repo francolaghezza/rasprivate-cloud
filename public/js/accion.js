@@ -56,8 +56,14 @@ $("table tbody tr").click(function() {
                 window.location.reload();
             }
         });
-
     });
 });
-
+$(document).ready(function(){
+    $("#buscar").on("keyup", function() {
+        var archivo = $(this).val().toLowerCase();
+        $("#archivos tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(archivo) > -1)
+        });
+    });
+});
 
