@@ -18,7 +18,6 @@ $("table tbody tr").click(function() {
             async:true,
             dataType:"json",
             success: function (data) {
-                console.log(data['nombre']);
                 window.location.reload();
             }
         });
@@ -44,7 +43,7 @@ $("table tbody tr").click(function() {
     });
 
     //Comprimiendo archivos
-    $("#comprimir").click(function () {
+    $("#comprimir_nombre").click(function () {
         var ruta = Routing.generate('comprimir');
         $.ajax({
             type:'POST',
@@ -58,12 +57,22 @@ $("table tbody tr").click(function() {
         });
     });
 });
+
 $(document).ready(function(){
+    //Buscar archivo
     $("#buscar").on("keyup", function() {
         var archivo = $(this).val().toLowerCase();
         $("#archivos tr").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(archivo) > -1)
         });
     });
+
+    //Volver arriba
+    $("#home").click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 600);
+    });
+
+
 });
 

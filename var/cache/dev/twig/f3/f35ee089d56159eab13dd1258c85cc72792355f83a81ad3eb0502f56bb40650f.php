@@ -98,12 +98,11 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t<div class=\"collapse navbar-collapse\" id=\"menu\">
 \t\t\t\t\t<nav class=\"navbar-nav\">
 \t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Home</a>
-\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Seguridad</a>
 \t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Privacidad</a>
 \t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Manual del usuario</a>
 \t\t\t\t\t</nav>
 \t\t\t\t\t";
-        // line 23
+        // line 22
         echo "\t\t\t\t\t<form class=\"form-inline ml-auto\">
 \t\t\t\t\t\t<a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
 \t\t\t\t\t\t<a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
@@ -113,32 +112,32 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t</div>
 \t</header>
 \t";
-        // line 32
+        // line 31
         echo "<div class=\"container mt-5\">
     <div class=\"row justify-content-center align-items-center minh-100\">
         <div class=\"col-md-6\">
 \t\t<h1 class=\"h3 mb-3 font-weight-normal\">Crea una cuenta</h1>
 \t\t\t
 \t\t\t";
-        // line 37
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 37, $this->source); })()), 'form_start');
+        // line 36
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 36, $this->source); })()), 'form_start');
         echo "
 
 \t\t<div class=\"row\">
 \t\t\t<div class=\"col\">
 \t\t\t\t";
-        // line 41
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 41, $this->source); })()), "email", [], "any", false, false, false, 41), 'row');
+        // line 40
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 40, $this->source); })()), "email", [], "any", false, false, false, 40), 'row');
         echo "
 
 \t\t\t\t";
-        // line 43
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 43, $this->source); })()), "usuario", [], "any", false, false, false, 43), 'row');
+        // line 42
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 42, $this->source); })()), "usuario", [], "any", false, false, false, 42), 'row');
         echo "
 \t\t\t
 \t\t\t\t";
-        // line 45
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 45, $this->source); })()), "password", [], "any", false, false, false, 45), 'row');
+        // line 44
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 44, $this->source); })()), "password", [], "any", false, false, false, 44), 'row');
         echo "
 \t\t\t\t<div class=\"form-check mb-2\">
 \t\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\" required>
@@ -148,18 +147,18 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t</div>
 \t\t
 \t";
-        // line 53
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 53, $this->source); })()), 'form_end');
+        // line 52
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 52, $this->source); })()), 'form_end');
         echo "
 \t\t\t\t";
-        // line 54
+        // line 53
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "flashes", [0 => "exito"], "method", false, false, false, 54));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "flashes", [0 => "exito"], "method", false, false, false, 53));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 55
+            // line 54
             echo "\t\t\t\t\t<div class=\"alert alert-success\">
 \t\t\t\t\t\t";
-            // line 56
+            // line 55
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
 \t\t\t\t\t</div>
@@ -168,7 +167,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 58
         echo "\t\t</div>
 \t</div>
 </div>
@@ -193,7 +192,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
     public function getDebugInfo()
     {
-        return array (  172 => 59,  163 => 56,  160 => 55,  156 => 54,  152 => 53,  141 => 45,  136 => 43,  131 => 41,  124 => 37,  117 => 32,  107 => 23,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  171 => 58,  162 => 55,  159 => 54,  155 => 53,  151 => 52,  140 => 44,  135 => 42,  130 => 40,  123 => 36,  116 => 31,  106 => 22,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -215,7 +214,6 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t<div class=\"collapse navbar-collapse\" id=\"menu\">
 \t\t\t\t\t<nav class=\"navbar-nav\">
 \t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Home</a>
-\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Seguridad</a>
 \t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Privacidad</a>
 \t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Manual del usuario</a>
 \t\t\t\t\t</nav>

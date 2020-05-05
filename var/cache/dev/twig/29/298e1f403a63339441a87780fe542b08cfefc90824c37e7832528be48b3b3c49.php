@@ -27,6 +27,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -97,8 +98,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                 </button>
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
-                        <a href=\"#\" class=\"nav-link\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Seguridad</a>
+                        <a href=\"#\" class=\"nav-link\" id=\"home\">Home</a>
                         <a href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>
@@ -185,6 +185,33 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
     }
 
+    // line 97
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 98
+        echo "    ";
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+    <script src=\"";
+        // line 99
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
+        echo "\"></script>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "index/index.html.twig";
@@ -197,7 +224,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  204 => 99,  199 => 98,  189 => 97,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -219,8 +246,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                 </button>
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
-                        <a href=\"#\" class=\"nav-link\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Seguridad</a>
+                        <a href=\"#\" class=\"nav-link\" id=\"home\">Home</a>
                         <a href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>
@@ -298,6 +324,10 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
     <p>Rasprivate 2020</p>
 </footer>
 
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src=\"{{ asset('js/accion.js') }}\"></script>
 {% endblock %}
 ", "index/index.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\index\\index.html.twig");
     }

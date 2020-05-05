@@ -97,12 +97,11 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
                         <a href=\"#\" class=\"nav-link\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Seguridad</a>
                         <a href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>
                     ";
-        // line 22
+        // line 21
         echo "                    <form class=\"form-inline ml-auto\">
                         <a class=\"btn bg-light btn-md mr-2 redondo\" href=\"/login\">Login</a>
                         <a class=\"btn bg-light btn-md redondo\" href=\"/registro\">Registro</a>
@@ -116,35 +115,35 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
         <div class=\"col-md-6\">
             <form method=\"post\">
                 ";
-        // line 34
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 34, $this->source); })())) {
-            // line 35
+        // line 33
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 33, $this->source); })())) {
+            // line 34
             echo "                    <div class=\"alert alert-danger\">Usuario o contraseña incorrectos</div>
                 ";
         }
-        // line 37
+        // line 36
         echo "
                 ";
-        // line 38
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38)) {
-            // line 39
+        // line 37
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37)) {
+            // line 38
             echo "                    <div class=\"mb-3\">
                        ¿No eres ";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "user", [], "any", false, false, false, 40), "username", [], "any", false, false, false, 40), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 39, $this->source); })()), "user", [], "any", false, false, false, 39), "username", [], "any", false, false, false, 39), "html", null, true);
             echo " ? <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Cerrar sesión</a>
                     </div>
                 ";
         }
-        // line 43
+        // line 42
         echo "
                 <h1 class=\"h3 mb-3 font-weight-normal\">Iniciar sesión</h1>
                 <label for=\"inputEmail\">Email</label>
                 <input type=\"email\" value=\"";
-        // line 46
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 46, $this->source); })()), "html", null, true);
+        // line 45
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 45, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
                 <label for=\"inputPassword\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
@@ -154,13 +153,13 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                 <span>¿Todavía no tienes una cuenta? <a href=\"registro\">Crea una nueva</a></span>
                 <input type=\"hidden\" name=\"_csrf_token\"
                     value=\"";
-        // line 54
+        // line 53
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
                 >
 
                 ";
-        // line 67
+        // line 66
         echo "
 
             </form>
@@ -188,7 +187,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
 
     public function getDebugInfo()
     {
-        return array (  164 => 67,  158 => 54,  147 => 46,  142 => 43,  134 => 40,  131 => 39,  129 => 38,  126 => 37,  122 => 35,  120 => 34,  106 => 22,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  163 => 66,  157 => 53,  146 => 45,  141 => 42,  133 => 39,  130 => 38,  128 => 37,  125 => 36,  121 => 34,  119 => 33,  105 => 21,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -209,7 +208,6 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
                         <a href=\"#\" class=\"nav-link\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Seguridad</a>
                         <a href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>

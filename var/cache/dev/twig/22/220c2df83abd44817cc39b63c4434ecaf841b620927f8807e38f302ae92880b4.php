@@ -468,7 +468,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
     </main>
     ";
         // line 187
-        echo "    <section class=\"modal\" id=\"editar\">
+        echo "    <section class=\"modal fade\" id=\"editar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
                 <div class=\"modal-header\">
@@ -491,7 +491,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
     </section>
     ";
         // line 209
-        echo "    <section class=\"modal\" id=\"borrar\">
+        echo "    <section class=\"modal fade\" id=\"borrar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
                 <div class=\"modal-header\">
@@ -506,7 +506,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                     </div>
                     <div class=\"modal-footer\">
                         <button type=\"button\" class=\"btn btn-secondary\" id=\"eliminar_nombre\">Eliminar</button>
-                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\" id=\"cancelar\">Cancelar</button>
+                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>
                     </div>
                 </form>
             </div>
@@ -514,7 +514,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
     </section>
     ";
         // line 231
-        echo "    <section class=\"modal\" id=\"comprimir\">
+        echo "    <section class=\"modal fade\" id=\"comprimir\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
                 <div class=\"modal-header\">
@@ -528,7 +528,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                         </div>
                     </div>
                     <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-secondary\" id=\"comprimir\">Comprimir</button>
+                        <button type=\"button\" class=\"btn btn-secondary\" id=\"comprimir_nombre\">Comprimir</button>
                         <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\" id=\"cancelar\">Cancelar</button>
                     </div>
                 </form>
@@ -788,7 +788,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         </div>
     </main>
     {# Editar un archivo #}
-    <section class=\"modal\" id=\"editar\">
+    <section class=\"modal fade\" id=\"editar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
                 <div class=\"modal-header\">
@@ -810,7 +810,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         </div>
     </section>
     {# Eliminar un archivo #}
-    <section class=\"modal\" id=\"borrar\">
+    <section class=\"modal fade\" id=\"borrar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
                 <div class=\"modal-header\">
@@ -825,14 +825,14 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                     </div>
                     <div class=\"modal-footer\">
                         <button type=\"button\" class=\"btn btn-secondary\" id=\"eliminar_nombre\">Eliminar</button>
-                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\" id=\"cancelar\">Cancelar</button>
+                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
     {# Comprimir un archivo #}
-    <section class=\"modal\" id=\"comprimir\">
+    <section class=\"modal fade\" id=\"comprimir\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
                 <div class=\"modal-header\">
@@ -846,7 +846,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                         </div>
                     </div>
                     <div class=\"modal-footer\">
-                        <button type=\"button\" class=\"btn btn-secondary\" id=\"comprimir\">Comprimir</button>
+                        <button type=\"button\" class=\"btn btn-secondary\" id=\"comprimir_nombre\">Comprimir</button>
                         <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\" id=\"cancelar\">Cancelar</button>
                     </div>
                 </form>
