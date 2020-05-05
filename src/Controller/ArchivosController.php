@@ -229,7 +229,7 @@ class ArchivosController extends AbstractController
             $usuario-> setAlmacenamiento($almacenamiento-$size);
             $this->addFlash(
                 'delete',
-                ''
+                'Se ha eliminado un archivo'
             );
             $em->flush();
             return new JsonResponse(['id'=> $id]);
@@ -286,7 +286,7 @@ class ArchivosController extends AbstractController
             }
         }
         else{
-            throw new \Exception("No puedes borrar este archivo");
+            throw new \Exception("No puedes comprimir este archivo");
         }
 
     }

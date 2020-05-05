@@ -153,6 +153,15 @@
                     </button>
                 </div>
             {% endfor %}
+            {# El archivo se ha eliminado #}
+            {% for flash_message in app.session.flashbag.get('delete') %}
+                <div class="alert alert-info alert-dismissible w-50 mx-auto mt-2 show fade">
+                    {{ flash_message }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
             {# Este archivo ya está comprimido #}
             {% for flash_message in app.session.flashbag.get('error_zip') %}
                 <div class="alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade">
