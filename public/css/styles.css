@@ -79,3 +79,6 @@ article{
 .redondo{
     border-radius: 50px;
 }
+.derecha{
+    outline: none;
+}

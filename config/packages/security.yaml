@@ -36,4 +36,5 @@ security:
     access_control:
          - { path: ^/panel$, roles: 'IS_AUTHENTICATED_FULLY' }
          - { path: ^/nuevo$, roles: 'IS_AUTHENTICATED_FULLY' }
+         - { path: ^/perfil$, roles: 'IS_AUTHENTICATED_FULLY' }
         # - { path: ^/profile, roles: ROLE_USER }

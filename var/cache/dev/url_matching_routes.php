@@ -19,6 +19,7 @@ return [
         '/comprimir' => [[['_route' => 'comprimir', '_controller' => 'App\\Controller\\ArchivosController::comprimir'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\IndexController::index'], null, null, null, false, false, null]],
         '/panel' => [[['_route' => 'panel', '_controller' => 'App\\Controller\\PanelController::index'], null, null, null, false, false, null]],
+        '/perfil' => [[['_route' => 'perfil', '_controller' => 'App\\Controller\\PerfilController::index'], null, null, null, false, false, null]],
         '/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\RegistroController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],

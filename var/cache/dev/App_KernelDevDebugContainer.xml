@@ -348,6 +348,13 @@
         <argument type="service" id=".service_locator.pNNo5z3.App\Controller\PanelController"/>
       </call>
     </service>
+    <service id="App\Controller\PerfilController" class="App\Controller\PerfilController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\PerfilController"/>
+      </call>
+    </service>
     <service id="App\Controller\RegistroController" class="App\Controller\RegistroController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -4031,6 +4038,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.7iqbgQk"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_FULLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
@@ -4443,6 +4457,9 @@
     </service>
     <service id=".security.request_matcher.s.ivqdv" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/nuevo$</argument>
+    </service>
+    <service id=".security.request_matcher.7iqbgQk" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/perfil$</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -4885,6 +4902,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PanelController" class="App\Controller\PanelController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PanelController" class="App\Controller\PanelController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PanelController" class="App\Controller\PanelController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PerfilController" class="App\Controller\PerfilController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PerfilController" class="App\Controller\PerfilController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PerfilController" class="App\Controller\PerfilController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5437,6 +5457,12 @@
     <service id=".service_locator.pNNo5z3.App\Controller\PanelController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\PanelController"/>
       <argument>App\Controller\PanelController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\PerfilController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\PerfilController"/>
+      <argument>App\Controller\PerfilController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pNNo5z3" method="withContext"/>
     </service>

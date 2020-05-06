@@ -21,6 +21,7 @@ return [
     'comprimir' => [[], ['_controller' => 'App\\Controller\\ArchivosController::comprimir'], [], [['text', '/comprimir']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
     'panel' => [[], ['_controller' => 'App\\Controller\\PanelController::index'], [], [['text', '/panel']], [], []],
+    'perfil' => [[], ['_controller' => 'App\\Controller\\PerfilController::index'], [], [['text', '/perfil']], [], []],
     'registro' => [[], ['_controller' => 'App\\Controller\\RegistroController::index'], [], [['text', '/registro']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
