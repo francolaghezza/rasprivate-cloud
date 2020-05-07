@@ -73,20 +73,32 @@ $(document).ready(function(){
         $('html, body').animate({scrollTop: 0}, 600);
     });
 
-    //Cambiar email
-    $("#cambiar_email").click(function () {
-        var email = $("#input_email").val();
-        var ruta = Routing.generate('email');
-        $.ajax({
-            type:'POST',
-            url:ruta,
-            data:({email:email}),
-            async:true,
-            dataType:"json",
-            success: function (data) {
-                window.location.reload();
-            }
-        });
+
+    $("#input_email").on("keyup",function () {
+        var email = $(this).val();
+        var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+        console.log(email);
+        if (exp.test(email) == true){
+            email = $(this).val();
+            $("#cambiar_email").show();
+            $("#cambiar_email").click(function () {
+                var ruta = Routing.generate('email');
+                $.ajax({
+                    type:'POST',
+                    url:ruta,
+                    data:({email:email}),
+                    async:true,
+                    dataType:"json",
+                    success: function (data) {
+                        window.location.reload();
+                    }
+                });
+            });
+        }
+        else{
+            $("#cambiar_email").hide();
+            return false;
+        }
     });
 });
 
