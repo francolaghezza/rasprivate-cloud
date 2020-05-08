@@ -75,24 +75,49 @@ $(document).ready(function(){
 
 
     $("#input_email").on("keyup",function () {
+        $("#valido").css({display:"none"});
+        $("#no_valido").css({display:"block"});
         var email = $(this).val();
         var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
-        console.log(email);
         if (exp.test(email) == true){
             email = $(this).val();
-            $("#cambiar_email").show();
-            $("#cambiar_email").click(function () {
-                var ruta = Routing.generate('email');
-                $.ajax({
-                    type:'POST',
-                    url:ruta,
-                    data:({email:email}),
-                    async:true,
-                    dataType:"json",
-                    success: function (data) {
-                        window.location.reload();
+            var ruta = Routing.generate('email');
+            $("#no_valido").css({display:"none"});
+            $("#valido").css({display:"none"});
+            $("#animacion").css({display:"block"});
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({email:email}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    if(data.email == 0){
+                        $("#cambiar_email").hide();
+                        $("#animacion").css({display:"none"});
+                        $("#no_valido").css({display:"block"});
+                        $("#valido").css({display:"none"});
                     }
-                });
+                    else {
+                        $("#animacion").css({display:"none"});
+                        $("#no_valido").css({display:"none"});
+                        $("#valido").css({display:"block"});
+                        $("#cambiar_email").show();
+                        $("#cambiar_email").click(function () {
+                            var ruta = Routing.generate('c_email');
+                            $.ajax({
+                                type:'POST',
+                                url:ruta,
+                                data:({email:email}),
+                                async:true,
+                                dataType:"json",
+                                success: function (data) {
+                                    window.location.reload();
+                                }
+                            });
+                        });
+                    }
+                }
             });
         }
         else{

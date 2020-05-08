@@ -113,7 +113,22 @@
                 <form>
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="email" id="input_email" class="form-control" value="{{ app.user.email }}" required>
+                            <div class="row align-items-center">
+                                <div class="col-md-9">
+                                    <input type="email" id="input_email" class="form-control" value="{{ app.user.email }}" required>
+                                </div>
+                                <div class="col-md-1">
+                                    <span class="spinner-border" role="status" style="width: 1.5em; height: 1.5em; display: none;" id="animacion"></span>
+                                    <svg id="no_valido" class="bi bi-exclamation-circle" style="width: 1.5em; height: 1.5em; display: none;" viewBox="0 0 16 16" fill="red" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/>
+                                        <path d="M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z"/>
+                                    </svg>
+                                    <svg id="valido" class="bi bi-check" style="width: 1.5em; height: 1.5em; display: none;" viewBox="0 0 16 16" fill="green" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="modal-footer">

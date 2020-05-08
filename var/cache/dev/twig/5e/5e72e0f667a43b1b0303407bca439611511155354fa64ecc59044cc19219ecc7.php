@@ -213,10 +213,25 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                 <form>
                     <div class=\"modal-body\">
                         <div class=\"form-group\">
-                            <input type=\"email\" id=\"input_email\" class=\"form-control\" value=\"";
-        // line 116
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 116, $this->source); })()), "user", [], "any", false, false, false, 116), "email", [], "any", false, false, false, 116), "html", null, true);
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-md-9\">
+                                    <input type=\"email\" id=\"input_email\" class=\"form-control\" value=\"";
+        // line 118
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 118, $this->source); })()), "user", [], "any", false, false, false, 118), "email", [], "any", false, false, false, 118), "html", null, true);
         echo "\" required>
+                                </div>
+                                <div class=\"col-md-1\">
+                                    <span class=\"spinner-border\" role=\"status\" style=\"width: 1.5em; height: 1.5em; display: none;\" id=\"animacion\"></span>
+                                    <svg id=\"no_valido\" class=\"bi bi-exclamation-circle\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"red\" xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z\" clip-rule=\"evenodd\"/>
+                                        <path d=\"M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z\"/>
+                                    </svg>
+                                    <svg id=\"valido\" class=\"bi bi-check\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"green\" xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path fill-rule=\"evenodd\" d=\"M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                                    </svg>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class=\"modal-footer\">
@@ -227,7 +242,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         </div>
     </section>
     ";
-        // line 127
+        // line 142
         echo "    <section class=\"modal fade\" id=\"usuario\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -239,8 +254,8 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <div class=\"modal-body\">
                         <div class=\"form-group\">
                             <input type=\"text\" id=\"input_usuario\" class=\"form-control\" value=\"";
-        // line 137
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 137, $this->source); })()), "user", [], "any", false, false, false, 137), "username", [], "any", false, false, false, 137), "html", null, true);
+        // line 152
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 152, $this->source); })()), "user", [], "any", false, false, false, 152), "username", [], "any", false, false, false, 152), "html", null, true);
         echo "\" required>
                         </div>
                     </div>
@@ -262,7 +277,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
 
     }
 
-    // line 150
+    // line 165
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -272,20 +287,20 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 151
+        // line 166
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 152
+        // line 167
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 153
+        // line 168
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 154
+        // line 169
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -309,7 +324,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
 
     public function getDebugInfo()
     {
-        return array (  289 => 154,  285 => 153,  281 => 152,  276 => 151,  266 => 150,  243 => 137,  231 => 127,  218 => 116,  206 => 106,  189 => 91,  177 => 81,  162 => 68,  150 => 58,  128 => 38,  121 => 34,  111 => 26,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  304 => 169,  300 => 168,  296 => 167,  291 => 166,  281 => 165,  258 => 152,  246 => 142,  220 => 118,  206 => 106,  189 => 91,  177 => 81,  162 => 68,  150 => 58,  128 => 38,  121 => 34,  111 => 26,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -429,7 +444,22 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                 <form>
                     <div class=\"modal-body\">
                         <div class=\"form-group\">
-                            <input type=\"email\" id=\"input_email\" class=\"form-control\" value=\"{{ app.user.email }}\" required>
+                            <div class=\"row align-items-center\">
+                                <div class=\"col-md-9\">
+                                    <input type=\"email\" id=\"input_email\" class=\"form-control\" value=\"{{ app.user.email }}\" required>
+                                </div>
+                                <div class=\"col-md-1\">
+                                    <span class=\"spinner-border\" role=\"status\" style=\"width: 1.5em; height: 1.5em; display: none;\" id=\"animacion\"></span>
+                                    <svg id=\"no_valido\" class=\"bi bi-exclamation-circle\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"red\" xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z\" clip-rule=\"evenodd\"/>
+                                        <path d=\"M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z\"/>
+                                    </svg>
+                                    <svg id=\"valido\" class=\"bi bi-check\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"green\" xmlns=\"http://www.w3.org/2000/svg\">
+                                        <path fill-rule=\"evenodd\" d=\"M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z\" clip-rule=\"evenodd\"/>
+                                    </svg>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class=\"modal-footer\">

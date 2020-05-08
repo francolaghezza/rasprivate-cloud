@@ -29,6 +29,15 @@ class UsuariosRepository extends ServiceEntityRepository implements PasswordUpgr
             FROM App:Usuarios u
             WHERE u.id = :id')->setParameter('id',$usuario)->getResult();
     }
+
+    public function email($email){
+        return $this->getEntityManager()
+            ->createQuery('
+            SELECT u.email
+            FROM App:Usuarios u
+            WHERE u.email = :email')->setParameter('email',$email)->getResult();
+    }
+
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
      */
