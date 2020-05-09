@@ -22,6 +22,8 @@ return [
         '/perfil' => [[['_route' => 'perfil', '_controller' => 'App\\Controller\\PerfilController::index'], null, null, null, false, false, null]],
         '/email' => [[['_route' => 'email', '_controller' => 'App\\Controller\\PerfilController::buscarEmail'], null, null, null, false, false, null]],
         '/c_email' => [[['_route' => 'c_email', '_controller' => 'App\\Controller\\PerfilController::cambiarEmail'], null, null, null, false, false, null]],
+        '/usuario' => [[['_route' => 'usuario', '_controller' => 'App\\Controller\\PerfilController::buscarUsuario'], null, null, null, false, false, null]],
+        '/c_usuario' => [[['_route' => 'c_usuario', '_controller' => 'App\\Controller\\PerfilController::cambiarUsuario'], null, null, null, false, false, null]],
         '/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\RegistroController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],

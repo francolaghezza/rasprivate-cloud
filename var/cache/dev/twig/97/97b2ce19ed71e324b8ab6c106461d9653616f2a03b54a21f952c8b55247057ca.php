@@ -120,7 +120,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
         echo "
                             </button>
                             <div class=\"dropdown-menu dropdown-menu-right\">
-                                <a href=\"/perfil\" class=\"dropdown-item\">Cuenta</a>
+                                <a href=\"/perfil\" class=\"dropdown-item\">Perfil</a>
                                 <a href=\"";
         // line 36
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\LogoutUrlExtension']->getLogoutPath(), "html", null, true);
@@ -482,7 +482,7 @@ class __TwigTemplate_43afda857c31dcc0c6b85cd3697af6ceb7784f310dd82a1a03455c1265c
                                 {{app.user.username}}
                             </button>
                             <div class=\"dropdown-menu dropdown-menu-right\">
-                                <a href=\"/perfil\" class=\"dropdown-item\">Cuenta</a>
+                                <a href=\"/perfil\" class=\"dropdown-item\">Perfil</a>
                                 <a href=\"{{ logout_path() }}\" class=\"dropdown-item\">Cerrar sesión</a>
                             </div>
                         </div>

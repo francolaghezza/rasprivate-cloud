@@ -53,4 +53,37 @@ class PerfilController extends AbstractController
         $em->flush();
         return new JsonResponse(['email'=> $email]);
     }
+
+    /**
+     * @Route("/usuario", options={"expose"=true}, name="usuario")
+     */
+    public function buscarUsuario(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $nombre_usuario = $request->request->get('usuario');
+            $buscar = $this->getDoctrine()
+                ->getRepository(Usuarios::class)
+                ->usuario($nombre_usuario);
+            if (!$buscar){
+                return new JsonResponse(['usuario'=> $nombre_usuario]);
+            }
+            else{
+                return new JsonResponse(['usuario'=> 0]);
+            }
+        }
+        else{
+            throw new \Exception("No puedes cambiar tu nombre de usuario");
+        }
+    }
+
+    /**
+     * @Route("/c_usuario", options={"expose"=true}, name="c_usuario")
+     */
+    public function cambiarUsuario(Request $request){
+        $nombre_usuario = $request->request->get('usuario');
+        $em = $this->getDoctrine()->getManager();
+        $usuario = $this->getUser();
+        $usuario->setUsuario($nombre_usuario);
+        $em->flush();
+        return new JsonResponse(['usuario'=> $nombre_usuario]);
+    }
 }

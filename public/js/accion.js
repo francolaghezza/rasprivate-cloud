@@ -73,13 +73,13 @@ $(document).ready(function(){
         $('html, body').animate({scrollTop: 0}, 600);
     });
 
-
+    //Cambiar email
     $("#input_email").on("keyup",function () {
         $("#valido").css({display:"none"});
         $("#no_valido").css({display:"block"});
         var email = $(this).val();
         var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
-        if (exp.test(email) == true){
+        if (exp.test(email) === true){
             email = $(this).val();
             var ruta = Routing.generate('email');
             $("#no_valido").css({display:"none"});
@@ -92,7 +92,7 @@ $(document).ready(function(){
                 async:true,
                 dataType:"json",
                 success: function (data) {
-                    if(data.email == 0){
+                    if(data.email === 0){
                         $("#cambiar_email").hide();
                         $("#animacion").css({display:"none"});
                         $("#no_valido").css({display:"block"});
@@ -105,6 +105,7 @@ $(document).ready(function(){
                         $("#cambiar_email").show();
                         $("#cambiar_email").click(function () {
                             var ruta = Routing.generate('c_email');
+                            email = data.email;
                             $.ajax({
                                 type:'POST',
                                 url:ruta,
@@ -122,6 +123,60 @@ $(document).ready(function(){
         }
         else{
             $("#cambiar_email").hide();
+            return false;
+        }
+    });
+
+    //Cambiar nombre de usuario
+    $("#input_usuario").on("keyup",function () {
+        $("#valido_u").css({display:"none"});
+        $("#no_valido_u").css({display:"block"});
+        var usuario = $(this).val();
+        var exp = new RegExp(/^([a-zA-Z0-9]{6,15})+$/);
+        if (exp.test(usuario) === true){
+            usuario = $(this).val();
+            var ruta = Routing.generate('usuario');
+            $("#no_valido_u").css({display:"none"});
+            $("#valido_u").css({display:"none"});
+            $("#animacion_u").css({display:"block"});
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({usuario:usuario}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    if(data.usuario === 0){
+                        $("#cambiar_usuario").hide();
+                        $("#animacion_u").css({display:"none"});
+                        $("#no_valido_u").css({display:"block"});
+                        $("#valido_u").css({display:"none"});
+                    }
+                    else {
+                        $("#animacion_u").css({display:"none"});
+                        $("#no_valido_u").css({display:"none"});
+                        $("#valido_u").css({display:"block"});
+                        $("#cambiar_usuario").show();
+                        $("#cambiar_usuario").click(function () {
+                            var ruta = Routing.generate('c_usuario');
+                            usuario = data.usuario;
+                            $.ajax({
+                                type:'POST',
+                                url:ruta,
+                                data:({usuario:usuario}),
+                                async:true,
+                                dataType:"json",
+                                success: function (data) {
+                                    window.location.reload();
+                                }
+                            });
+                        });
+                    }
+                }
+            });
+        }
+        else{
+            $("#cambiar_usuario").hide();
             return false;
         }
     });
