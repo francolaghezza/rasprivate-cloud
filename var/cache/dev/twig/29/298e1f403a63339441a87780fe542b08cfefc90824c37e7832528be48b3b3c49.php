@@ -26,6 +26,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
@@ -75,7 +76,30 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
     }
 
-    // line 5
+    // line 4
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 5
+        echo "    ";
+        $this->displayParentBlock("stylesheets", $context, $blocks);
+        echo "
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -85,14 +109,14 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 8
         echo "
-<main class=\"container-fluid \">
+<main class=\"container-fluid\">
     <header class=\"row\">
         <!--Menú de navegación-->
         <div class=\"container mt-5\">
-            <nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">
-                <a class=\"navbarbrand\"><img src=\"img/logo.png\" class=\"logo\" alt=\"logo\"></a>
+            <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark fixed-top\">
+                <a class=\"navbarbrand\"><img src=\"img/logo.png\" alt=\"logo\"></a>
                 <button class=\"navbar-toggler ml-auto\" data-toggle=\"collapse\" data-target=\"#menu\">
                     <span class=\"navbar-toggler-icon\"></span>
                 </button>
@@ -116,7 +140,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
         <div class=\"row bg-transparent\">
             <div class=\"col bg-transparent fondo\">
                 <div class=\"jumbotron bg-transparent\">
-                    <h1>El almacenamiento libre</h1>
+                    <h1 class=\"mt-4\">El almacenamiento libre</h1>
                     <p class=\"lead\">Guarda tus archivos de forma segura y totalmente anónima accediendo desde cualquier dispositivo</p>
                     <button class=\"btn btn-secondary redondo\">Cómo funciona</button>
                     <a class=\"ref\"
@@ -185,7 +209,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
     }
 
-    // line 97
+    // line 99
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -195,12 +219,12 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 98
+        // line 100
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 99
+        // line 101
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -224,7 +248,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
     public function getDebugInfo()
     {
-        return array (  204 => 99,  199 => 98,  189 => 97,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  228 => 101,  223 => 100,  213 => 99,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -232,15 +256,17 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Rasprivate{% endblock %}
-
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 {% block body %}
 
-<main class=\"container-fluid \">
+<main class=\"container-fluid\">
     <header class=\"row\">
         <!--Menú de navegación-->
         <div class=\"container mt-5\">
-            <nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">
-                <a class=\"navbarbrand\"><img src=\"img/logo.png\" class=\"logo\" alt=\"logo\"></a>
+            <nav class=\"navbar navbar-expand-sm navbar-dark bg-dark fixed-top\">
+                <a class=\"navbarbrand\"><img src=\"img/logo.png\" alt=\"logo\"></a>
                 <button class=\"navbar-toggler ml-auto\" data-toggle=\"collapse\" data-target=\"#menu\">
                     <span class=\"navbar-toggler-icon\"></span>
                 </button>
@@ -264,7 +290,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
         <div class=\"row bg-transparent\">
             <div class=\"col bg-transparent fondo\">
                 <div class=\"jumbotron bg-transparent\">
-                    <h1>El almacenamiento libre</h1>
+                    <h1 class=\"mt-4\">El almacenamiento libre</h1>
                     <p class=\"lead\">Guarda tus archivos de forma segura y totalmente anónima accediendo desde cualquier dispositivo</p>
                     <button class=\"btn btn-secondary redondo\">Cómo funciona</button>
                     <a class=\"ref\"

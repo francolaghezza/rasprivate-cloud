@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Sube un archivo{% endblock %}
-
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 {% block body %}
     {# Menú de navegación #}
     <header class="row">

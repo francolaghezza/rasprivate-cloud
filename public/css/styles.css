@@ -4,9 +4,6 @@ body,html{
     margin: 0;
     padding-left: 0;
 }
-.logo{
-    margin-right: 100px;
-}
 
 .footer{
     width: 100%;
@@ -27,10 +24,24 @@ body,html{
     width: 100%;
     height: 100%;
 }
+.login{
+    overflow: hidden;
+    background-image: url("../img/tomasz-sroka-A4AJVLFu-Ug-unsplash.jpg");
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.registro{
+    overflow: hidden;
+    background-image: url("../img/an-tran-xa-X3YICs3s-unsplash.jpg");
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .ref{
     position: absolute;
-    top: 20px;
-    right: 10px;
+    bottom: 20%;
+    right: 10%;
     background-color:black;
     color:white;
     text-decoration:none;
@@ -81,4 +92,31 @@ article{
 }
 .derecha{
     outline: none;
+}
+
+
+@media (max-width: 576px) {
+    body{
+        overflow-x: hidden;
+    }
+    .navbar-nav{
+        width: 80%;
+    }
+    .img-responsive{
+        width: 30%;
+        height: 30%;
+        margin-bottom: 0;
+    }
+    article{
+        height: 10%;
+    }
+    .btn-responsive{
+        margin-right: 4%;
+    }
+    .menu-lateral{
+        display: none;
+    }
+    .footer-panel{
+        display: none;
+    }
 }

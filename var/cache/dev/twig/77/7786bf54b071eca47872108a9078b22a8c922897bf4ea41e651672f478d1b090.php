@@ -48,23 +48,24 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 <html>
     <head>
         <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>";
-        // line 5
+        // line 6
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         ";
-        // line 6
+        // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
+        // line 11
         echo "    </head>
     <body>
         ";
-        // line 12
-        $this->displayBlock('body', $context, $blocks);
         // line 13
+        $this->displayBlock('body', $context, $blocks);
+        // line 14
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 25
+        // line 26
         echo "    </body>
 </html>
 ";
@@ -76,7 +77,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -95,7 +96,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 
     }
 
-    // line 6
+    // line 7
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -105,7 +106,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 7
+        // line 8
         echo "            <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
             <link rel=\"stylesheet\" href=\"css/styles.css\">
         ";
@@ -117,7 +118,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 
     }
 
-    // line 12
+    // line 13
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -135,7 +136,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 
     }
 
-    // line 13
+    // line 14
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -145,7 +146,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 14
+        // line 15
         echo "            <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
             <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\"></script>
             <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
@@ -172,7 +173,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 
     public function getDebugInfo()
     {
-        return array (  149 => 14,  139 => 13,  121 => 12,  109 => 7,  99 => 6,  80 => 5,  68 => 25,  65 => 13,  63 => 12,  59 => 10,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  150 => 15,  140 => 14,  122 => 13,  110 => 8,  100 => 7,  81 => 6,  69 => 26,  66 => 14,  64 => 13,  60 => 11,  58 => 7,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -181,6 +182,7 @@ class __TwigTemplate_06fd6a1e5be7705bc39669a6be9e1eb0bf4251aea0e3eb2fe95ca94c201
 <html>
     <head>
         <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">

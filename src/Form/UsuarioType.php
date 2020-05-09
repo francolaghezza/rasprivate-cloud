@@ -19,8 +19,9 @@ class UsuarioType extends AbstractType
             ->add('email',EmailType::class)
             ->add('usuario')
             ->add('password',PasswordType::class)
-            ->add('Registrar',SubmitType::class)
-        ;
+            ->add('Registrar',SubmitType::class,[
+                'attr' => ['class' => 'btn-dark'],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
