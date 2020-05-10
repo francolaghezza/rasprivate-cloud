@@ -55,12 +55,7 @@ body,html{
 .ref:hover{
     color: #00d1a0;
 }
-.upload-responsive{
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    border-radius: 150px;
-}
+
 .seccion{
     position: absolute;
     top: 100%;
@@ -82,16 +77,14 @@ article{
     width: 100%;
     height: 30px;
 }
-.panel{
-    height: 80vh;
-}
+
 .menu-lateral{
     position: fixed;
     top: 10%;
     left: 0;
-    width: 20%;
+    width: 10%;
+    min-width: 15%;
     height: 100%;
-    background-color: #343a40;
 }
 .redondo{
     border-radius: 50px;
@@ -99,12 +92,17 @@ article{
 .derecha{
     outline: none;
 }
-
-
+.archivo{
+    height: 10%;
+}
+.menu-responsive{
+    display: none;
+}
 @media (max-width: 576px) {
     body{
         overflow-x: hidden;
     }
+
     .navbar-nav{
         width: 80%;
     }
@@ -127,7 +125,13 @@ article{
         display: none;
     }
 }
-@media (max-width: 1170px) {
+@media (max-width: 767px) {
+    .menu-responsive{
+        display: block;
+    }
+}
+
+@media (max-width: 1624px) {
     .menu-lateral{
         display: none;
     }

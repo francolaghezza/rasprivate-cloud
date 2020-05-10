@@ -53,7 +53,9 @@ class ArchivosController extends AbstractController
 
                     if ($status_code == 200) {
                         $js = json_decode($result, true);
-                        $recurso = $js['resource'];
+                        foreach ($js as $value) {
+                            $recurso = $js['resource'];
+                        }
                         $post = array('apikey' => $api,'resource'=> $recurso);
                         $ch = curl_init();
                         curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/report');
@@ -68,7 +70,8 @@ class ArchivosController extends AbstractController
 
                         if ($status_code == 200) {
                             $js = json_decode($result, true);
-                            $respuesta = $js['positives']; //Antivirus que han detectado un virus
+
+                            $respuesta = $js["positives"];
                             if ($respuesta == 0){
                                 $usuario = $this->getUser();
                                 $nombre_usuario = $usuario->getUsername();
