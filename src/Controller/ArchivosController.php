@@ -52,9 +52,9 @@ class ArchivosController extends AbstractController
                     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
                     if ($status_code == 200) {
-                        $js = json_decode($result, true);
-                        foreach ($js as $value) {
-                            $recurso = $js['resource'];
+                        $json_1 = json_decode($result, true);
+                        foreach ($json_1 as $value) {
+                            $recurso = $json_1['resource'];
                         }
                         $post = array('apikey' => $api,'resource'=> $recurso);
                         $ch = curl_init();
@@ -69,9 +69,8 @@ class ArchivosController extends AbstractController
                         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
                         if ($status_code == 200) {
-                            $js = json_decode($result, true);
-
-                            $respuesta = $js["positives"];
+                            $json_2 = json_decode($result, true);
+                            $respuesta = $json_2["positives"];
                             if ($respuesta == 0){
                                 $usuario = $this->getUser();
                                 $nombre_usuario = $usuario->getUsername();
