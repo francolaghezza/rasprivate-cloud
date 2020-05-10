@@ -69,7 +69,6 @@ class ArchivosController extends AbstractController
                         if ($status_code == 200) {
                             $js = json_decode($result, true);
                             $respuesta = $js['positives']; //Antivirus que han detectado un virus
-
                             if ($respuesta == 0){
                                 $usuario = $this->getUser();
                                 $nombre_usuario = $usuario->getUsername();

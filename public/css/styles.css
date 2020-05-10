@@ -55,6 +55,12 @@ body,html{
 .ref:hover{
     color: #00d1a0;
 }
+.upload-responsive{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    border-radius: 150px;
+}
 .seccion{
     position: absolute;
     top: 100%;
@@ -113,10 +119,16 @@ article{
     .btn-responsive{
         margin-right: 4%;
     }
-    .menu-lateral{
+    .logo{
         display: none;
     }
+
     .footer-panel{
+        display: none;
+    }
+}
+@media (max-width: 1170px) {
+    .menu-lateral{
         display: none;
     }
 }

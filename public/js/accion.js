@@ -1,11 +1,11 @@
-$("table tbody tr").click(function() {
+$(".card").click(function() {
 
     //Obteniendo el nombre del archivo para editarlo
-    var nombre = $(this).find("td:first-child").text();
+    var nombre = $(this).find("input:first-child").val();
     $("#input_nombre").val(nombre);
 
     //Obteniendo el ID del archivo
-    var id_archivo = $(this).find("input:first-child").val();
+    var id_archivo = $(this).find("input:last-child").val();
 
     //Modificar archivo
     $("#editar_nombre").click(function () {
@@ -62,7 +62,7 @@ $(document).ready(function(){
     //Buscar archivo
     $("#buscar").on("keyup", function() {
         var archivo = $(this).val().toLowerCase();
-        $("#archivos tr").filter(function() {
+        $(".card").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(archivo) > -1)
         });
     });
