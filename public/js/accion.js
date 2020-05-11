@@ -181,16 +181,11 @@ $(document).ready(function(){
         }
     });
 
-
-
     //Cambiar contraseña
     $("#c_pass").click(function () {
 
         var pass1 = $("#pass1").val(); //Contraseña actual
-
         var pass2 = $("#pass2").val(); //Nueva contraseña
-
-        //console.log(pass1,pass2);
         var ruta = Routing.generate('pass');
         $.ajax({
             type:'POST',
@@ -199,23 +194,33 @@ $(document).ready(function(){
             async:true,
             dataType:"json",
             success: function (data) {
-                console.log(data);
+
                 if (data.pass == 0) {
                     $("#error_pass1").css({display:"flex"});
-                    pass1.val("");
+                    pass1 = "";
+                    pass2 = "";
                 }
                 else {
-                    var ruta2 = Routing.generate('c_pass');
-                    $.ajax({
-                        type:'POST',
-                        url:ruta2,
-                        data:({pass:pass2}),
-                        async:true,
-                        dataType:"json",
-                        success: function (data) {
-                            window.location.reload();
-                        }
-                    });
+                    if($("#pass1").val() !== $("#pass2").val() && $("#pass2").val().length >= 8){
+                        var ruta2 = Routing.generate('c_pass');
+                        $.ajax({
+                            type:'POST',
+                            url:ruta2,
+                            data:({pass:pass2}),
+                            async:true,
+                            dataType:"json",
+                            success: function (data) {
+                                $("#pass_changed").css({display:"flex"});
+                                pass1 = "";
+                                pass2 = "";
+                            }
+                        });
+                    }
+                    else {
+                        $("#error_pass1").css({display:"flex"});
+                        pass1 = "";
+                        pass2 = "";
+                    }
                 }
             }
         });

@@ -107,6 +107,10 @@ article{
     color: #222222;
     text-decoration: none;
 }
+.boton{
+    border: none;
+}
+
 @media (max-width: 576px) {
     body{
         overflow-x: hidden;

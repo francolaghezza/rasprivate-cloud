@@ -211,12 +211,18 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
             <div class=\"row justify-content-center\">
                 <div class=\"col-md-6\">
                     <div class=\"input-group mb-3\">
-                        <input type=\"password\" name=\"pass1\" id=\"pass1\" class=\"form-control\">
+                        <input type=\"password\" name=\"pass1\" id=\"pass1\" class=\"form-control boton\">
                         <div class=\"input-group-append\">
-                            <button class=\"btn btn-secondary\" type=\"button\" id=\"btn_pass1\">
+                            <button class=\"btn btn-light boton\" type=\"button\" id=\"btn_pass1\">
                                 <svg class=\"bi bi-eye\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                                     <path fill-rule=\"evenodd\" d=\"M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z\" clip-rule=\"evenodd\"/>
                                     <path fill-rule=\"evenodd\" d=\"M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                                <svg class=\"bi bi-eye-slash\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" style=\"display: none;\">
+                                    <path d=\"M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 00-2.79.588l.77.771A5.944 5.944 0 018 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0114.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z\"/>
+                                    <path d=\"M11.297 9.176a3.5 3.5 0 00-4.474-4.474l.823.823a2.5 2.5 0 012.829 2.829l.822.822zm-2.943 1.299l.822.822a3.5 3.5 0 01-4.474-4.474l.823.823a2.5 2.5 0 002.829 2.829z\"/>
+                                    <path d=\"M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 001.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 018 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709z\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M13.646 14.354l-12-12 .708-.708 12 12-.708.708z\" clip-rule=\"evenodd\"/>
                                 </svg>
                             </button>
                         </div>
@@ -225,7 +231,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
             </div>
             <div class=\"row justify-content-center\">
                 <div class=\"col-md-6\">
-                    <div class=\"input-group \">
+                    <div class=\"input-group\">
                         <label for=\"usuario\">Nueva contraseña:</label>
                     </div>
                 </div>
@@ -233,12 +239,18 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
             <div class=\"row justify-content-center\">
                 <div class=\"col-md-6\">
                     <div class=\"input-group mb-3\">
-                        <input type=\"password\" name=\"pass2\" id=\"pass2\" class=\"form-control\">
+                        <input type=\"password\" name=\"pass2\" id=\"pass2\" class=\"form-control boton\" pattern=\".{8,}\" placeholder=\"Al menos 8 caracteres\">
                         <div class=\"input-group-append\">
-                            <button class=\"btn btn-secondary\" type=\"button\" id=\"btn_pass2\">
+                            <button class=\"btn btn-light boton\" type=\"button\" id=\"btn_pass2\">
                                 <svg class=\"bi bi-eye\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                                     <path fill-rule=\"evenodd\" d=\"M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z\" clip-rule=\"evenodd\"/>
                                     <path fill-rule=\"evenodd\" d=\"M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                                <svg class=\"bi bi-eye-slash\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" style=\"display: none;\">
+                                    <path d=\"M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 00-2.79.588l.77.771A5.944 5.944 0 018 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0114.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z\"/>
+                                    <path d=\"M11.297 9.176a3.5 3.5 0 00-4.474-4.474l.823.823a2.5 2.5 0 012.829 2.829l.822.822zm-2.943 1.299l.822.822a3.5 3.5 0 01-4.474-4.474l.823.823a2.5 2.5 0 002.829 2.829z\"/>
+                                    <path d=\"M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 001.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 018 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709z\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M13.646 14.354l-12-12 .708-.708 12 12-.708.708z\" clip-rule=\"evenodd\"/>
                                 </svg>
                             </button>
                         </div>
@@ -250,10 +262,24 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <button type=\"button\" class=\"btn btn-secondary\" id=\"c_pass\">Cambiar contraseña</button>
                 </div>
             </div>
-            <div class=\"row justify-content-center\" style=\"display:none;\" id=\"error_pass1\">
+            ";
+        // line 166
+        echo "            <div class=\"row justify-content-center\" style=\"display:none;\" id=\"error_pass1\">
                 <div class=\"col-md-6\">
                     <div class=\"alert alert-danger alert-dismissible  mx-auto mt-2 show fade\" role=\"alert\">
                         La contraseña es incorrecta
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            ";
+        // line 177
+        echo "            <div class=\"row justify-content-center\" style=\"display:none;\" id=\"pass_changed\">
+                <div class=\"col-md-6\">
+                    <div class=\"alert alert-info alert-dismissible  mx-auto mt-2 show fade\" role=\"alert\">
+                        Contraseña cambiada correctamente
                         <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
                             <span aria-hidden=\"true\">&times;</span>
                         </button>
@@ -264,7 +290,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
     </div>
 
     ";
-        // line 167
+        // line 191
         echo "    <section class=\"modal fade\" id=\"email\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -278,8 +304,8 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                             <div class=\"row align-items-center\">
                                 <div class=\"col-md-9\">
                                     <input type=\"email\" id=\"input_email\" class=\"form-control\" value=\"";
-        // line 179
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 179, $this->source); })()), "user", [], "any", false, false, false, 179), "email", [], "any", false, false, false, 179), "html", null, true);
+        // line 203
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 203, $this->source); })()), "user", [], "any", false, false, false, 203), "email", [], "any", false, false, false, 203), "html", null, true);
         echo "\" required>
                                 </div>
                                 <div class=\"col-md-1\">
@@ -303,7 +329,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         </div>
     </section>
     ";
-        // line 202
+        // line 226
         echo "    <section class=\"modal fade\" id=\"usuario\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -317,8 +343,8 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                             <div class=\"row align-items-center\">
                                 <div class=\"col-md-9\">
                                     <input type=\"text\" id=\"input_usuario\" class=\"form-control\" value=\"";
-        // line 214
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 214, $this->source); })()), "user", [], "any", false, false, false, 214), "username", [], "any", false, false, false, 214), "html", null, true);
+        // line 238
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 238, $this->source); })()), "user", [], "any", false, false, false, 238), "username", [], "any", false, false, false, 238), "html", null, true);
         echo "\" required>
                                 </div>
                                 <div class=\"col-md-1\">
@@ -353,7 +379,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
 
     }
 
-    // line 240
+    // line 264
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -363,20 +389,20 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 241
+        // line 265
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 242
+        // line 266
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 243
+        // line 267
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 244
+        // line 268
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -400,7 +426,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
 
     public function getDebugInfo()
     {
-        return array (  380 => 244,  376 => 243,  372 => 242,  367 => 241,  357 => 240,  321 => 214,  307 => 202,  282 => 179,  268 => 167,  204 => 104,  189 => 91,  177 => 81,  162 => 68,  150 => 58,  128 => 38,  121 => 34,  111 => 26,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  406 => 268,  402 => 267,  398 => 266,  393 => 265,  383 => 264,  347 => 238,  333 => 226,  308 => 203,  294 => 191,  279 => 177,  267 => 166,  204 => 104,  189 => 91,  177 => 81,  162 => 68,  150 => 58,  128 => 38,  121 => 34,  111 => 26,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -518,12 +544,18 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
             <div class=\"row justify-content-center\">
                 <div class=\"col-md-6\">
                     <div class=\"input-group mb-3\">
-                        <input type=\"password\" name=\"pass1\" id=\"pass1\" class=\"form-control\">
+                        <input type=\"password\" name=\"pass1\" id=\"pass1\" class=\"form-control boton\">
                         <div class=\"input-group-append\">
-                            <button class=\"btn btn-secondary\" type=\"button\" id=\"btn_pass1\">
+                            <button class=\"btn btn-light boton\" type=\"button\" id=\"btn_pass1\">
                                 <svg class=\"bi bi-eye\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                                     <path fill-rule=\"evenodd\" d=\"M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z\" clip-rule=\"evenodd\"/>
                                     <path fill-rule=\"evenodd\" d=\"M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                                <svg class=\"bi bi-eye-slash\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" style=\"display: none;\">
+                                    <path d=\"M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 00-2.79.588l.77.771A5.944 5.944 0 018 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0114.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z\"/>
+                                    <path d=\"M11.297 9.176a3.5 3.5 0 00-4.474-4.474l.823.823a2.5 2.5 0 012.829 2.829l.822.822zm-2.943 1.299l.822.822a3.5 3.5 0 01-4.474-4.474l.823.823a2.5 2.5 0 002.829 2.829z\"/>
+                                    <path d=\"M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 001.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 018 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709z\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M13.646 14.354l-12-12 .708-.708 12 12-.708.708z\" clip-rule=\"evenodd\"/>
                                 </svg>
                             </button>
                         </div>
@@ -532,7 +564,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
             </div>
             <div class=\"row justify-content-center\">
                 <div class=\"col-md-6\">
-                    <div class=\"input-group \">
+                    <div class=\"input-group\">
                         <label for=\"usuario\">Nueva contraseña:</label>
                     </div>
                 </div>
@@ -540,12 +572,18 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
             <div class=\"row justify-content-center\">
                 <div class=\"col-md-6\">
                     <div class=\"input-group mb-3\">
-                        <input type=\"password\" name=\"pass2\" id=\"pass2\" class=\"form-control\">
+                        <input type=\"password\" name=\"pass2\" id=\"pass2\" class=\"form-control boton\" pattern=\".{8,}\" placeholder=\"Al menos 8 caracteres\">
                         <div class=\"input-group-append\">
-                            <button class=\"btn btn-secondary\" type=\"button\" id=\"btn_pass2\">
+                            <button class=\"btn btn-light boton\" type=\"button\" id=\"btn_pass2\">
                                 <svg class=\"bi bi-eye\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
                                     <path fill-rule=\"evenodd\" d=\"M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z\" clip-rule=\"evenodd\"/>
                                     <path fill-rule=\"evenodd\" d=\"M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z\" clip-rule=\"evenodd\"/>
+                                </svg>
+                                <svg class=\"bi bi-eye-slash\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" style=\"display: none;\">
+                                    <path d=\"M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 00-2.79.588l.77.771A5.944 5.944 0 018 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0114.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z\"/>
+                                    <path d=\"M11.297 9.176a3.5 3.5 0 00-4.474-4.474l.823.823a2.5 2.5 0 012.829 2.829l.822.822zm-2.943 1.299l.822.822a3.5 3.5 0 01-4.474-4.474l.823.823a2.5 2.5 0 002.829 2.829z\"/>
+                                    <path d=\"M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 001.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 018 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709z\"/>
+                                    <path fill-rule=\"evenodd\" d=\"M13.646 14.354l-12-12 .708-.708 12 12-.708.708z\" clip-rule=\"evenodd\"/>
                                 </svg>
                             </button>
                         </div>
@@ -557,10 +595,22 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <button type=\"button\" class=\"btn btn-secondary\" id=\"c_pass\">Cambiar contraseña</button>
                 </div>
             </div>
+            {# No se puede cambiar la contraseña #}
             <div class=\"row justify-content-center\" style=\"display:none;\" id=\"error_pass1\">
                 <div class=\"col-md-6\">
                     <div class=\"alert alert-danger alert-dismissible  mx-auto mt-2 show fade\" role=\"alert\">
                         La contraseña es incorrecta
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {# Contraseña cambiada correctamente #}
+            <div class=\"row justify-content-center\" style=\"display:none;\" id=\"pass_changed\">
+                <div class=\"col-md-6\">
+                    <div class=\"alert alert-info alert-dismissible  mx-auto mt-2 show fade\" role=\"alert\">
+                        Contraseña cambiada correctamente
                         <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
                             <span aria-hidden=\"true\">&times;</span>
                         </button>
