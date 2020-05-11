@@ -24,6 +24,8 @@ return [
         '/c_email' => [[['_route' => 'c_email', '_controller' => 'App\\Controller\\PerfilController::cambiarEmail'], null, null, null, false, false, null]],
         '/usuario' => [[['_route' => 'usuario', '_controller' => 'App\\Controller\\PerfilController::buscarUsuario'], null, null, null, false, false, null]],
         '/c_usuario' => [[['_route' => 'c_usuario', '_controller' => 'App\\Controller\\PerfilController::cambiarUsuario'], null, null, null, false, false, null]],
+        '/pass' => [[['_route' => 'pass', '_controller' => 'App\\Controller\\PerfilController::compruebaPass'], null, null, null, false, false, null]],
+        '/c_pass' => [[['_route' => 'c_pass', '_controller' => 'App\\Controller\\PerfilController::cambiarPass'], null, null, null, false, false, null]],
         '/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\RegistroController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],

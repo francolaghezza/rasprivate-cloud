@@ -98,6 +98,15 @@ article{
 .menu-responsive{
     display: none;
 }
+.icono{
+    text-decoration: none;
+    color:black;
+    width: 1.5em;
+}
+.icono:hover{
+    color: #222222;
+    text-decoration: none;
+}
 @media (max-width: 576px) {
     body{
         overflow-x: hidden;

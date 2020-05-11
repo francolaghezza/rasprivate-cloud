@@ -26,6 +26,8 @@ return [
     'c_email' => [[], ['_controller' => 'App\\Controller\\PerfilController::cambiarEmail'], [], [['text', '/c_email']], [], []],
     'usuario' => [[], ['_controller' => 'App\\Controller\\PerfilController::buscarUsuario'], [], [['text', '/usuario']], [], []],
     'c_usuario' => [[], ['_controller' => 'App\\Controller\\PerfilController::cambiarUsuario'], [], [['text', '/c_usuario']], [], []],
+    'pass' => [[], ['_controller' => 'App\\Controller\\PerfilController::compruebaPass'], [], [['text', '/pass']], [], []],
+    'c_pass' => [[], ['_controller' => 'App\\Controller\\PerfilController::cambiarPass'], [], [['text', '/c_pass']], [], []],
     'registro' => [[], ['_controller' => 'App\\Controller\\RegistroController::index'], [], [['text', '/registro']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],

@@ -30,7 +30,6 @@ class RegistroController extends AbstractController
 				$em->persist($usuario);
 				$em->flush();
 				$nombre_usuario = $usuario->getUsername();
-
                 mkdir('uploads/archivos/'.$nombre_usuario);
 				$this->addFlash('exito','Usuario registrado correctamente');
 				return $this->redirectToRoute('registro');

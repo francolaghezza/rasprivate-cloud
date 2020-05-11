@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class PerfilController extends AbstractController
 {
@@ -82,8 +83,44 @@ class PerfilController extends AbstractController
         $nombre_usuario = $request->request->get('usuario');
         $em = $this->getDoctrine()->getManager();
         $usuario = $this->getUser();
+        $oldname = $usuario->getUsername();
         $usuario->setUsuario($nombre_usuario);
+        rename('uploads/archivos/'.$oldname,'uploads/archivos/'.$nombre_usuario);
         $em->flush();
         return new JsonResponse(['usuario'=> $nombre_usuario]);
     }
+
+    /**
+     * @Route("/pass", options={"expose"=true}, name="pass")
+     */
+    public function compruebaPass(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $pass = $request->request->get('pass');
+            $usuario = $this->getUser();
+            $pass_usuario = $usuario->getPassword();
+            if (password_verify($pass, $pass_usuario)) {
+                return new JsonResponse(['pass'=> $pass]);
+            }
+            else{
+                return new JsonResponse(['pass'=> 0]);
+            }
+        }
+        else{
+            throw new \Exception("No puedes cambiar tu contraseña");
+        }
+    }
+
+    /**
+     * @Route("/c_pass", options={"expose"=true}, name="c_pass")
+     */
+    public function cambiarPass(Request $request,UserPasswordEncoderInterface $encoder){
+        $em = $this->getDoctrine()->getManager();
+        $usuario = $this->getUser();
+        $pass = $request->request->get('pass');
+        $encoded = $encoder->encodePassword($usuario, $pass);
+        $usuario->setPassword($encoded);
+        $em->flush();
+        return new JsonResponse(['usuario'=> $encoded]);
+    }
+
 }

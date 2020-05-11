@@ -68,8 +68,8 @@ $(document).ready(function(){
     });
 
     //Volver arriba
-    $("#home").click(function(event) {
-        event.preventDefault();
+    $("#home").click(function(e) {
+        e.preventDefault();
         $('html, body').animate({scrollTop: 0}, 600);
     });
 
@@ -179,6 +179,46 @@ $(document).ready(function(){
             $("#cambiar_usuario").hide();
             return false;
         }
+    });
+
+
+
+    //Cambiar contraseña
+    $("#c_pass").click(function () {
+
+        var pass1 = $("#pass1").val(); //Contraseña actual
+
+        var pass2 = $("#pass2").val(); //Nueva contraseña
+
+        //console.log(pass1,pass2);
+        var ruta = Routing.generate('pass');
+        $.ajax({
+            type:'POST',
+            url:ruta,
+            data:({pass:pass1}),
+            async:true,
+            dataType:"json",
+            success: function (data) {
+                console.log(data);
+                if (data.pass == 0) {
+                    $("#error_pass1").css({display:"flex"});
+                    pass1.val("");
+                }
+                else {
+                    var ruta2 = Routing.generate('c_pass');
+                    $.ajax({
+                        type:'POST',
+                        url:ruta2,
+                        data:({pass:pass2}),
+                        async:true,
+                        dataType:"json",
+                        success: function (data) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            }
+        });
     });
 });
 
