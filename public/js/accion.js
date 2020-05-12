@@ -181,6 +181,30 @@ $(document).ready(function(){
         }
     });
 
+    //Mostrar u ocultar contraseña
+
+    $("#btn_pass1").click(function () {
+       $("#show_icon_pass1").toggleClass("oculto");
+       $("#hide_icon_pass1").toggleClass("oculto");
+       if( $("#show_icon_pass1").hasClass("oculto")){
+           $("#pass1").attr('type', 'text');
+       }
+       else{
+           $("#pass1").attr('type', 'password');
+       }
+    });
+
+    $("#btn_pass2").click(function () {
+        $("#show_icon_pass2").toggleClass("oculto");
+        $("#hide_icon_pass2").toggleClass("oculto");
+        if( $("#show_icon_pass2").hasClass("oculto")){
+            $("#pass2").attr('type', 'text');
+        }
+        else{
+            $("#pass2").attr('type', 'password');
+        }
+    });
+
     //Cambiar contraseña
     $("#c_pass").click(function () {
 
@@ -195,13 +219,13 @@ $(document).ready(function(){
             dataType:"json",
             success: function (data) {
 
-                if (data.pass == 0) {
+                if (data.pass === 0) {
                     $("#error_pass1").css({display:"flex"});
                     pass1 = "";
                     pass2 = "";
                 }
                 else {
-                    if($("#pass1").val() !== $("#pass2").val() && $("#pass2").val().length >= 8){
+                    if( pass1 !== pass2 && pass2.length >= 8){
                         var ruta2 = Routing.generate('c_pass');
                         $.ajax({
                             type:'POST',

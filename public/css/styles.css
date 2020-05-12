@@ -110,6 +110,14 @@ article{
 .boton{
     border: none;
 }
+.oculto{
+    display: none;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
 
 @media (max-width: 576px) {
     body{
