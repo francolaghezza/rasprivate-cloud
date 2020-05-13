@@ -27,6 +27,13 @@ class ArchivosRepository extends ServiceEntityRepository
             ');
     }
 
+    public function eliminaArchivos($usuario_id){
+        return $this->getEntityManager()
+            ->createQuery('
+            DELETE FROM App:Archivos a
+            WHERE a.usuario = :usuario')->setParameter('usuario',$usuario_id)->getResult();
+    }
+
     // /**
     //  * @return Archivos[] Returns an array of Archivos objects
     //  */

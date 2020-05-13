@@ -249,5 +249,48 @@ $(document).ready(function(){
             }
         });
     });
+
+    //Eliminar cuenta
+    $("#btn_pass3").click(function () {
+        $("#show_icon_pass3").toggleClass("oculto");
+        $("#hide_icon_pass3").toggleClass("oculto");
+        if( $("#show_icon_pass3").hasClass("oculto")){
+            $("#pass3").attr('type', 'text');
+        }
+        else{
+            $("#pass3").attr('type', 'password');
+        }
+    });
+
+    $("#eliminar").click(function () {
+
+        var pass_eliminar = $("#pass3").val();
+        var usuario_eliminar = $("#usuario_eliminar").val();
+        var usuario_id = $("#usuario_id").val();
+
+        if(pass_eliminar.length > 0){
+            var ruta = Routing.generate('pass');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({pass:pass_eliminar}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    var ruta2 = Routing.generate('e_user');
+                    $.ajax({
+                        type:'POST',
+                        url:ruta2,
+                        data:({usuario_id:usuario_id,usuario:usuario_eliminar}),
+                        async:true,
+                        dataType:"json",
+                        success: function (data) {
+                            location = "http://127.0.0.1:8000/logout";
+                        }
+                    });
+                }
+            });
+        }
+    });
 });
 

@@ -123,4 +123,27 @@ class PerfilController extends AbstractController
         return new JsonResponse(['usuario'=> $encoded]);
     }
 
+    /**
+     * @Route("/e_user", options={"expose"=true}, name="e_user")
+     */
+    public function eliminarUsuario(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $usuario_id = $request->request->get('usuario_id');
+        $nombre_usuario = $request->request->get('usuario');
+        $this->getDoctrine()->getRepository(Archivos::class)->eliminaArchivos($usuario_id);
+        $this->getDoctrine()->getRepository(Usuarios::class)->eliminaUsuario($nombre_usuario);
+        $path = 'uploads/archivos/'.$nombre_usuario;
+        function removeDirectory($path) {
+            $files = glob($path . '/*');
+            foreach ($files as $file) {
+                is_dir($file) ? removeDirectory($file) : unlink($file);
+            }
+            rmdir($path);
+            return;
+        }
+        removeDirectory($path);
+        $em->flush();
+        return new JsonResponse(['usuario'=> $nombre_usuario]);
+    }
+
 }

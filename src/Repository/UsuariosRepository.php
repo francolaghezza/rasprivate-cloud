@@ -46,6 +46,13 @@ class UsuariosRepository extends ServiceEntityRepository implements PasswordUpgr
             WHERE u.usuario = :usuario')->setParameter('usuario',$nombre_usuario)->getResult();
     }
 
+    public function eliminaUsuario($nombre_usuario){
+        return $this->getEntityManager()
+            ->createQuery('
+            DELETE FROM App:Usuarios u
+            WHERE u.usuario = :usuario')->setParameter('usuario',$nombre_usuario)->getResult();
+    }
+
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
      */
