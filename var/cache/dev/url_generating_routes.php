@@ -30,6 +30,7 @@ return [
     'c_pass' => [[], ['_controller' => 'App\\Controller\\PerfilController::cambiarPass'], [], [['text', '/c_pass']], [], []],
     'e_user' => [[], ['_controller' => 'App\\Controller\\PerfilController::eliminarUsuario'], [], [['text', '/e_user']], [], []],
     'registro' => [[], ['_controller' => 'App\\Controller\\RegistroController::index'], [], [['text', '/registro']], [], []],
+    'reset' => [[], ['_controller' => 'App\\Controller\\ResetPasswordController::sendEmail'], [], [['text', '/reset']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'fos_js_routing_js' => [['_format'], ['_controller' => 'fos_js_routing.controller::indexAction', '_format' => 'js'], ['_format' => 'js|json'], [['variable', '.', 'js|json', '_format', true], ['text', '/js/routing']], [], []],

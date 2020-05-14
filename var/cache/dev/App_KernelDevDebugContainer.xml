@@ -362,6 +362,13 @@
         <argument type="service" id=".service_locator.pNNo5z3.App\Controller\RegistroController"/>
       </call>
     </service>
+    <service id="App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\ResetPasswordController"/>
+      </call>
+    </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -1265,6 +1272,12 @@
       <tag name="kernel.event_subscriber"/>
     </service>
     <service id="mailer.transport_factory.abstract" class="Symfony\Component\Mailer\Transport\AbstractTransportFactory" abstract="true">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+    </service>
+    <service id="mailer.transport_factory.gmail" class="Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory">
+      <tag name="mailer.transport_factory"/>
       <argument type="service" id="debug.event_dispatcher"/>
       <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger" on-invalid="ignore"/>
@@ -4905,6 +4918,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistroController" class="App\Controller\RegistroController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ResetPasswordController" class="App\Controller\ResetPasswordController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5144,22 +5160,30 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
+    <service id=".service_locator.BWknic2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mailer" type="service" id="mailer.mailer"/>
+      </argument>
+    </service>
     <service id=".service_locator.q6jLs_L" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.Z6GDf_W" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.7wugVPT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\PanelController::index" type="service" id=".service_locator.CY_hMZh"/>
         <argument key="App\Controller\PerfilController::cambiarPass" type="service" id=".service_locator.hszs.DW"/>
         <argument key="App\Controller\RegistroController::index" type="service" id=".service_locator.8Z_jHRB"/>
+        <argument key="App\Controller\ResetPasswordController::sendEmail" type="service" id=".service_locator.BWknic2"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.q6jLs_L"/>
         <argument key="App\Controller\PanelController:index" type="service" id=".service_locator.CY_hMZh"/>
         <argument key="App\Controller\PerfilController:cambiarPass" type="service" id=".service_locator.hszs.DW"/>
         <argument key="App\Controller\RegistroController:index" type="service" id=".service_locator.8Z_jHRB"/>
+        <argument key="App\Controller\ResetPasswordController:sendEmail" type="service" id=".service_locator.BWknic2"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.q6jLs_L"/>
       </argument>
     </service>
@@ -5477,6 +5501,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pNNo5z3" method="withContext"/>
     </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\ResetPasswordController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ResetPasswordController"/>
+      <argument>App\Controller\ResetPasswordController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
     <service id=".service_locator.pNNo5z3.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
@@ -5622,12 +5652,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.Z6GDf_W"/>
+      <argument type="service" id=".service_locator.7wugVPT"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.Z6GDf_W"/>
+      <argument type="service" id=".service_locator.7wugVPT"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6009,7 +6039,7 @@
     <service id="fos_js_routing.router" alias="router.default" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Z6GDf_W"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.7wugVPT"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

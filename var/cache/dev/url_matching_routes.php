@@ -28,6 +28,7 @@ return [
         '/c_pass' => [[['_route' => 'c_pass', '_controller' => 'App\\Controller\\PerfilController::cambiarPass'], null, null, null, false, false, null]],
         '/e_user' => [[['_route' => 'e_user', '_controller' => 'App\\Controller\\PerfilController::eliminarUsuario'], null, null, null, false, false, null]],
         '/registro' => [[['_route' => 'registro', '_controller' => 'App\\Controller\\RegistroController::index'], null, null, null, false, false, null]],
+        '/reset' => [[['_route' => 'reset', '_controller' => 'App\\Controller\\ResetPasswordController::sendEmail'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],
