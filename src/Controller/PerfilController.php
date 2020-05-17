@@ -52,7 +52,7 @@ class PerfilController extends AbstractController
         $usuario = $this->getUser();
         $usuario->setEmail($email);
         $em->flush();
-        return new JsonResponse(['email'=> $email]);
+        return new JsonResponse(['email'=> 'okay']);
     }
 
     /**
@@ -143,7 +143,7 @@ class PerfilController extends AbstractController
         }
         removeDirectory($path);
         $em->flush();
-        return new JsonResponse(['usuario'=> $nombre_usuario]);
+        return new JsonResponse(['usuario'=> 'borrado']);
     }
 
 }

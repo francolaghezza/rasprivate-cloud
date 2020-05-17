@@ -290,6 +290,18 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
             </div>
             ";
         // line 190
+        echo "            <div class=\"row justify-content-center\" style=\"display:none;\" id=\"error_cuenta\">
+                <div class=\"col-md-6\">
+                    <div class=\"alert alert-danger alert-dismissible  mx-auto mt-2 show fade\" role=\"alert\">
+                        No se puedo eliminar su cuenta
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            ";
+        // line 201
         echo "            <div class=\"row justify-content-center\" style=\"display:none;\" id=\"pass_changed\">
                 <div class=\"col-md-6\">
                     <div class=\"alert alert-info alert-dismissible  mx-auto mt-2 show fade\" role=\"alert\">
@@ -303,7 +315,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         </form>
     </div>
     ";
-        // line 203
+        // line 214
         echo "    <section class=\"modal fade\" id=\"eliminar_cuenta\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -337,12 +349,12 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <div class=\"modal-footer\">
                         <button type=\"button\" class=\"btn btn-outline-danger\" id=\"eliminar\">Eliminar</button>
                         <input type=\"hidden\" id=\"usuario_eliminar\" value=\"";
-        // line 235
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 235, $this->source); })()), "user", [], "any", false, false, false, 235), "username", [], "any", false, false, false, 235), "html", null, true);
+        // line 246
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 246, $this->source); })()), "user", [], "any", false, false, false, 246), "username", [], "any", false, false, false, 246), "html", null, true);
         echo "\">
                         <input type=\"hidden\" id=\"usuario_id\" value=\"";
-        // line 236
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 236, $this->source); })()), "user", [], "any", false, false, false, 236), "id", [], "any", false, false, false, 236), "html", null, true);
+        // line 247
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 247, $this->source); })()), "user", [], "any", false, false, false, 247), "id", [], "any", false, false, false, 247), "html", null, true);
         echo "\">
                     </div>
                 </form>
@@ -350,7 +362,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         </div>
     </section>
     ";
-        // line 243
+        // line 254
         echo "    <section class=\"modal fade\" id=\"email\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -362,13 +374,13 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <div class=\"modal-body\">
                         <div class=\"form-group\">
                             <div class=\"row align-items-center\">
-                                <div class=\"col-md-9\">
+                                <div class=\"col-9\">
                                     <input type=\"email\" id=\"input_email\" class=\"form-control\" value=\"";
-        // line 255
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 255, $this->source); })()), "user", [], "any", false, false, false, 255), "email", [], "any", false, false, false, 255), "html", null, true);
+        // line 266
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 266, $this->source); })()), "user", [], "any", false, false, false, 266), "email", [], "any", false, false, false, 266), "html", null, true);
         echo "\" required>
                                 </div>
-                                <div class=\"col-md-1\">
+                                <div class=\"col-1\">
                                     <span class=\"spinner-border\" role=\"status\" style=\"width: 1.5em; height: 1.5em; display: none;\" id=\"animacion\"></span>
                                     <svg id=\"no_valido\" class=\"bi bi-exclamation-circle\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"red\" xmlns=\"http://www.w3.org/2000/svg\">
                                         <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z\" clip-rule=\"evenodd\"/>
@@ -389,7 +401,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         </div>
     </section>
     ";
-        // line 278
+        // line 289
         echo "    <section class=\"modal fade\" id=\"usuario\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -401,13 +413,14 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <div class=\"modal-body\">
                         <div class=\"form-group\">
                             <div class=\"row align-items-center\">
-                                <div class=\"col-md-9\">
+                                <div class=\"col-9\">
                                     <input type=\"text\" id=\"input_usuario\" class=\"form-control\" value=\"";
-        // line 290
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 290, $this->source); })()), "user", [], "any", false, false, false, 290), "username", [], "any", false, false, false, 290), "html", null, true);
+        // line 301
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 301, $this->source); })()), "user", [], "any", false, false, false, 301), "username", [], "any", false, false, false, 301), "html", null, true);
         echo "\" required>
+
                                 </div>
-                                <div class=\"col-md-1\">
+                                <div class=\"col-1\">
                                     <span class=\"spinner-border\" role=\"status\" style=\"width: 1.5em; height: 1.5em; display: none;\" id=\"animacion_u\"></span>
                                     <svg id=\"no_valido_u\" class=\"bi bi-exclamation-circle\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"red\" xmlns=\"http://www.w3.org/2000/svg\">
                                         <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z\" clip-rule=\"evenodd\"/>
@@ -418,9 +431,11 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                                     </svg>
                                 </div>
                             </div>
+                            <small>Mínimo 6 caracteres sin caracteres especiales</small>
                         </div>
                     </div>
                     <div class=\"modal-footer\">
+
                         <button type=\"button\" class=\"btn btn-secondary\" id=\"cambiar_usuario\">Cambiar</button>
                     </div>
 
@@ -439,7 +454,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
 
     }
 
-    // line 316
+    // line 330
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -449,20 +464,20 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 317
+        // line 331
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 318
+        // line 332
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 319
+        // line 333
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 320
+        // line 334
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -486,7 +501,7 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
 
     public function getDebugInfo()
     {
-        return array (  466 => 320,  462 => 319,  458 => 318,  453 => 317,  443 => 316,  407 => 290,  393 => 278,  368 => 255,  354 => 243,  345 => 236,  341 => 235,  307 => 203,  293 => 190,  281 => 179,  267 => 166,  204 => 104,  189 => 91,  177 => 81,  162 => 68,  150 => 58,  128 => 38,  121 => 34,  111 => 26,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  481 => 334,  477 => 333,  473 => 332,  468 => 331,  458 => 330,  419 => 301,  405 => 289,  380 => 266,  366 => 254,  357 => 247,  353 => 246,  319 => 214,  305 => 201,  293 => 190,  281 => 179,  267 => 166,  204 => 104,  189 => 91,  177 => 81,  162 => 68,  150 => 58,  128 => 38,  121 => 34,  111 => 26,  93 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -679,6 +694,17 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     </div>
                 </div>
             </div>
+            {# No se puede eliminar la cuenta #}
+            <div class=\"row justify-content-center\" style=\"display:none;\" id=\"error_cuenta\">
+                <div class=\"col-md-6\">
+                    <div class=\"alert alert-danger alert-dismissible  mx-auto mt-2 show fade\" role=\"alert\">
+                        No se puedo eliminar su cuenta
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
             {# Contraseña cambiada correctamente #}
             <div class=\"row justify-content-center\" style=\"display:none;\" id=\"pass_changed\">
                 <div class=\"col-md-6\">
@@ -744,10 +770,10 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <div class=\"modal-body\">
                         <div class=\"form-group\">
                             <div class=\"row align-items-center\">
-                                <div class=\"col-md-9\">
+                                <div class=\"col-9\">
                                     <input type=\"email\" id=\"input_email\" class=\"form-control\" value=\"{{ app.user.email }}\" required>
                                 </div>
-                                <div class=\"col-md-1\">
+                                <div class=\"col-1\">
                                     <span class=\"spinner-border\" role=\"status\" style=\"width: 1.5em; height: 1.5em; display: none;\" id=\"animacion\"></span>
                                     <svg id=\"no_valido\" class=\"bi bi-exclamation-circle\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"red\" xmlns=\"http://www.w3.org/2000/svg\">
                                         <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z\" clip-rule=\"evenodd\"/>
@@ -779,10 +805,11 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                     <div class=\"modal-body\">
                         <div class=\"form-group\">
                             <div class=\"row align-items-center\">
-                                <div class=\"col-md-9\">
+                                <div class=\"col-9\">
                                     <input type=\"text\" id=\"input_usuario\" class=\"form-control\" value=\"{{ app.user.username }}\" required>
+
                                 </div>
-                                <div class=\"col-md-1\">
+                                <div class=\"col-1\">
                                     <span class=\"spinner-border\" role=\"status\" style=\"width: 1.5em; height: 1.5em; display: none;\" id=\"animacion_u\"></span>
                                     <svg id=\"no_valido_u\" class=\"bi bi-exclamation-circle\" style=\"width: 1.5em; height: 1.5em; display: none;\" viewBox=\"0 0 16 16\" fill=\"red\" xmlns=\"http://www.w3.org/2000/svg\">
                                         <path fill-rule=\"evenodd\" d=\"M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z\" clip-rule=\"evenodd\"/>
@@ -793,9 +820,11 @@ class __TwigTemplate_0a834fb49031b8ad13ca6fd6ec7e80918bde02e724ed4b0843e116c0a9a
                                     </svg>
                                 </div>
                             </div>
+                            <small>Mínimo 6 caracteres sin caracteres especiales</small>
                         </div>
                     </div>
                     <div class=\"modal-footer\">
+
                         <button type=\"button\" class=\"btn btn-secondary\" id=\"cambiar_usuario\">Cambiar</button>
                     </div>
 

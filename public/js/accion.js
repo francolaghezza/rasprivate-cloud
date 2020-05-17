@@ -277,17 +277,23 @@ $(document).ready(function(){
                 async:true,
                 dataType:"json",
                 success: function (data) {
-                    var ruta2 = Routing.generate('e_user');
-                    $.ajax({
-                        type:'POST',
-                        url:ruta2,
-                        data:({usuario_id:usuario_id,usuario:usuario_eliminar}),
-                        async:true,
-                        dataType:"json",
-                        success: function (data) {
-                            location = "http://127.0.0.1:8000/logout";
-                        }
-                    });
+                    if (data.pass === 0) {
+                        $("#eliminar_cuenta").modal('hide');
+                        $("#error_cuenta").css({display:"flex"});
+                    }
+                    else {
+                        var ruta2 = Routing.generate('e_user');
+                        $.ajax({
+                            type:'POST',
+                            url:ruta2,
+                            data:({usuario_id:usuario_id,usuario:usuario_eliminar}),
+                            async:true,
+                            dataType:"json",
+                            success: function (data) {
+                                location = "http://127.0.0.1:8000/logout";
+                            }
+                        });
+                    }
                 }
             });
         }
