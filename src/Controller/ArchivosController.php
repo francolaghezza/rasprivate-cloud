@@ -70,8 +70,10 @@ class ArchivosController extends AbstractController
 
                         if ($status_code == 200) {
                             $json_2 = json_decode($result, true);
-                            $respuesta = $json_2["positives"];
-                            if ($respuesta == 0){
+                            foreach ($json_2 as $value) {
+                                $respuesta = $json_2['positives'];
+                            }
+                            if ($respuesta === 0){
                                 $usuario = $this->getUser();
                                 $nombre_usuario = $usuario->getUsername();
                                 $almacenamientoActual = $usuario->getAlmacenamiento();
