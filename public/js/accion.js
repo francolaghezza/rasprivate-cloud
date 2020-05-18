@@ -291,6 +291,7 @@ $(document).ready(function(){
                             dataType:"json",
                             success: function (data) {
                                 location = "http://127.0.0.1:8000/logout";
+                                //location = "http://www.rasprivate.es/logout";
                             }
                         });
                     }

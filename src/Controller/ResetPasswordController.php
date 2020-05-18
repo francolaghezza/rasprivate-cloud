@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Usuarios;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
@@ -17,8 +18,8 @@ class ResetPasswordController extends AbstractController
      */
     public function sendEmail(Request $request,MailerInterface $mailer)
     {
-        //
-        $defaultData = array('message' => 'Escribe un mensaje aquí');
+
+        $defaultData = array('message' => 'Recupera tu contraseña');
         $form = $this->createFormBuilder($defaultData)
 
             ->add('email', EmailType::class)
@@ -32,17 +33,40 @@ class ResetPasswordController extends AbstractController
             $direccion_email = $form->get('email')->getData();
 
             if($direccion_email){
-                $email = (new Email())
+
+                $comprueba_email = $this->getDoctrine()
+                    ->getRepository(Usuarios::class)
+                    ->email($direccion_email);
+
+                $usuario = $this->getDoctrine()
+                    ->getRepository(Usuarios::class)
+                    ->obtenUsuario($direccion_email);
+                $nombre_usuario = $usuario[0]["usuario"];
+
+                if($comprueba_email){
+                   $email = (new TemplatedEmail())
                     ->from('rasprivatecloud@gmail.com')
-                    ->to($direccion_email)
-                    //->cc('cc@example.com')
-                    //->bcc('bcc@example.com')
-                    //->replyTo('fabien@example.com')
-                    //->priority(Email::PRIORITY_HIGH)
-                    ->subject('Time for Symfony Mailer!')
-                    ->text('Sending emails is fun again!')
-                    ->html('<p>See Twig integration for better HTML integration!</p>');
-                $mailer->send($email);
+                    ->to(new Address($direccion_email))
+                    ->subject('Tu nueva contraseña')
+                    ->htmlTemplate('email/email.html.twig')
+                    ->context([
+                        'usuario' => $nombre_usuario,
+                    ]);
+                   $mailer->send($email);
+                   $this->addFlash(
+                        'enviado',
+                        'Se ha enviado un email a esta dirección'
+                   );
+                   return $this->redirectToRoute('reset');
+                }
+                //El email no está registrado en la base de datos
+                else{
+                    $this->addFlash(
+                        'no_enviado',
+                        'Por favor, introduzca una dirección válida'
+                    );
+                    return $this->redirectToRoute('reset');
+                }
             }
         }
         return $this->render('reset_password/index.html.twig', [

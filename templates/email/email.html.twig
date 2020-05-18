@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Hola {{ usuario }} </h1>
+
+    <p>
+        Se ha solicitado un cambio de contraseña desde este email:
+    </p>
+
+    <p><code>{{ email.to[0].address }}</code></p>
+
+    <p>
+        <a href="#">Establece tu nueva contraseña</a>
+    </p>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script src="{{ asset('js/accion.js') }}"></script>
+{% endblock %}

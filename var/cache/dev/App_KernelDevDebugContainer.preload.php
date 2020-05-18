@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerSMx43vJ/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerDnTE6sU/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -245,13 +245,6 @@ $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleAwareListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleListener';
 $classes[] = 'Symfony\Component\Mailer\EventListener\EnvelopeListener';
 $classes[] = 'Symfony\Component\Mailer\EventListener\MessageLoggerListener';
-$classes[] = 'Symfony\Component\Mailer\Mailer';
-$classes[] = 'Symfony\Component\Mailer\Transport\Transports';
-$classes[] = 'Symfony\Component\Mailer\Transport';
-$classes[] = 'Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory';
-$classes[] = 'Symfony\Component\Mailer\Transport\NullTransportFactory';
-$classes[] = 'Symfony\Component\Mailer\Transport\SendmailTransportFactory';
-$classes[] = 'Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory';
 $classes[] = 'Symfony\Bundle\MakerBundle\Command\MakerCommand';
 $classes[] = 'Symfony\Bundle\MakerBundle\Maker\MakeAuthenticator';
 $classes[] = 'Symfony\Bundle\MakerBundle\Maker\MakeCommand';
