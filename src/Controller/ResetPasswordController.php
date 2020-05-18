@@ -6,10 +6,10 @@ use App\Entity\Usuarios;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 class ResetPasswordController extends AbstractController
 {
@@ -38,12 +38,13 @@ class ResetPasswordController extends AbstractController
                     ->getRepository(Usuarios::class)
                     ->email($direccion_email);
 
-                $usuario = $this->getDoctrine()
-                    ->getRepository(Usuarios::class)
-                    ->obtenUsuario($direccion_email);
-                $nombre_usuario = $usuario[0]["usuario"];
-
                 if($comprueba_email){
+
+                    $usuario = $this->getDoctrine()
+                        ->getRepository(Usuarios::class)
+                        ->obtenUsuario($direccion_email);
+                    $nombre_usuario = $usuario[0]["usuario"];
+
                    $email = (new TemplatedEmail())
                     ->from('rasprivatecloud@gmail.com')
                     ->to(new Address($direccion_email))
@@ -72,10 +73,6 @@ class ResetPasswordController extends AbstractController
         return $this->render('reset_password/index.html.twig', [
             'formulario' => $form->createView()
         ]);
-
-
-
-
 
     }
 }
