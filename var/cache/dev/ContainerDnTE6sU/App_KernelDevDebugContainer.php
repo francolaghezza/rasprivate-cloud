@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerDnuxG2y;
+namespace ContainerDnTE6sU;
 
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
@@ -44,6 +44,7 @@ class App_KernelDevDebugContainer extends Container
             'App\\Controller\\PanelController' => 'getPanelControllerService',
             'App\\Controller\\PerfilController' => 'getPerfilControllerService',
             'App\\Controller\\RegistroController' => 'getRegistroControllerService',
+            'App\\Controller\\ResetPasswordController' => 'getResetPasswordControllerService',
             'App\\Controller\\SecurityController' => 'getSecurityControllerService',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController' => 'getRedirectControllerService',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController' => 'getTemplateControllerService',
@@ -503,6 +504,23 @@ class App_KernelDevDebugContainer extends Container
         $this->services['App\\Controller\\RegistroController'] = $instance = new \App\Controller\RegistroController();
 
         $instance->setContainer(($this->privates['.service_locator.pNNo5z3'] ?? $this->get_ServiceLocator_PNNo5z3Service())->withContext('App\\Controller\\RegistroController', $this));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'App\Controller\ResetPasswordController' shared autowired service.
+     *
+     * @return \App\Controller\ResetPasswordController
+     */
+    protected function getResetPasswordControllerService()
+    {
+        include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\framework-bundle\\Controller\\AbstractController.php';
+        include_once \dirname(__DIR__, 4).'\\src\\Controller\\ResetPasswordController.php';
+
+        $this->services['App\\Controller\\ResetPasswordController'] = $instance = new \App\Controller\ResetPasswordController();
+
+        $instance->setContainer(($this->privates['.service_locator.pNNo5z3'] ?? $this->get_ServiceLocator_PNNo5z3Service())->withContext('App\\Controller\\ResetPasswordController', $this));
 
         return $instance;
     }

@@ -172,16 +172,17 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-2\" required>
                 <label for=\"inputPassword\" class=\"text-white\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-3\" required>
+                <div class=\"text-right\"><a class=\"text-dark text-decoration-none\" href=\"reset\">¿Has olvidado tu contraseña?</a></div>
                 <button class=\"btn btn-dark mb-3\" type=\"submit\">
                     Entrar
                 </button>
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 55
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
 
                 ";
-        // line 67
+        // line 68
         echo "            </form>
             <div class=\"text-white\">¿Todavía no tienes una cuenta? <strong><a class=\"text-white\" href=\"registro\">Crea una nueva</a></strong></div>
         </div>
@@ -219,7 +220,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
 
     public function getDebugInfo()
     {
-        return array (  185 => 67,  180 => 55,  171 => 49,  168 => 48,  160 => 45,  157 => 44,  155 => 43,  152 => 42,  148 => 40,  146 => 39,  116 => 11,  112 => 8,  102 => 7,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
+        return array (  186 => 68,  181 => 56,  171 => 49,  168 => 48,  160 => 45,  157 => 44,  155 => 43,  152 => 42,  148 => 40,  146 => 39,  116 => 11,  112 => 8,  102 => 7,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -275,6 +276,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                 <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-2\" required>
                 <label for=\"inputPassword\" class=\"text-white\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-3\" required>
+                <div class=\"text-right\"><a class=\"text-dark text-decoration-none\" href=\"reset\">¿Has olvidado tu contraseña?</a></div>
                 <button class=\"btn btn-dark mb-3\" type=\"submit\">
                     Entrar
                 </button>
