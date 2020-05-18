@@ -17,9 +17,8 @@ class ResetPasswordController extends AbstractController
     /**
      * @Route("/reset", name="reset")
      */
-    public function sendEmail(Request $request,MailerInterface $mailer)
+    public function sendEmail(Request $request, MailerInterface $mailer)
     {
-
         $defaultData = array('message' => 'Recupera tu contraseña');
         $form = $this->createFormBuilder($defaultData)
 
@@ -74,6 +73,5 @@ class ResetPasswordController extends AbstractController
         return $this->render('reset_password/index.html.twig', [
             'formulario' => $form->createView()
         ]);
-
     }
 }

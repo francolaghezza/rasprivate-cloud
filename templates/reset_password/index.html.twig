@@ -11,10 +11,9 @@
         {{ form_start(formulario) }}
         {{ form_row(formulario.email) }}
         {{ form_end(formulario) }}
-</div>
     {# Correo enviado #}
     {% for flash_message in app.session.flashbag.get('enviado') %}
-        <div class="alert alert-info alert-dismissible mx-auto mt-2 show fade" style="width: 20%">
+        <div class="alert alert-info alert-dismissible mx-auto mt-2 show fade">
             {{ flash_message }}
             <button type="button" class="close" data-dismiss="alert">
                 <span aria-hidden="true">&times;</span>
@@ -24,13 +23,15 @@
 
     {# Correo no enviado #}
     {% for flash_message in app.session.flashbag.get('no_enviado') %}
-        <div class="alert alert-danger alert-dismissible mx-auto mt-2 show fade" style="width: 20%">
+        <div class="alert alert-danger alert-dismissible mx-auto mt-2 show fade">
             {{ flash_message }}
             <button type="button" class="close" data-dismiss="alert">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
     {% endfor %}
+</div>
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

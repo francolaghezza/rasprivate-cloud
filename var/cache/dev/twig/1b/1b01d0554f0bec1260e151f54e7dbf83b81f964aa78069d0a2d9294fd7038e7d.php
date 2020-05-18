@@ -125,17 +125,16 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
         // line 13
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 13, $this->source); })()), 'form_end');
         echo "
-</div>
     ";
-        // line 16
+        // line 15
         echo "    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "session", [], "any", false, false, false, 16), "flashbag", [], "any", false, false, false, 16), "get", [0 => "enviado"], "method", false, false, false, 16));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "session", [], "any", false, false, false, 15), "flashbag", [], "any", false, false, false, 15), "get", [0 => "enviado"], "method", false, false, false, 15));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 17
-            echo "        <div class=\"alert alert-info alert-dismissible mx-auto mt-2 show fade\" style=\"width: 20%\">
+            // line 16
+            echo "        <div class=\"alert alert-info alert-dismissible mx-auto mt-2 show fade\">
             ";
-            // line 18
+            // line 17
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
             echo "
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
@@ -147,18 +146,18 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 23
         echo "
     ";
-        // line 26
+        // line 25
         echo "    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "session", [], "any", false, false, false, 26), "flashbag", [], "any", false, false, false, 26), "get", [0 => "no_enviado"], "method", false, false, false, 26));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "session", [], "any", false, false, false, 25), "flashbag", [], "any", false, false, false, 25), "get", [0 => "no_enviado"], "method", false, false, false, 25));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
-            // line 27
-            echo "        <div class=\"alert alert-danger alert-dismissible mx-auto mt-2 show fade\" style=\"width: 20%\">
+            // line 26
+            echo "        <div class=\"alert alert-danger alert-dismissible mx-auto mt-2 show fade\">
             ";
-            // line 28
+            // line 27
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
             echo "
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
@@ -170,6 +169,10 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 33
+        echo "</div>
+
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -178,7 +181,7 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
 
     }
 
-    // line 35
+    // line 36
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -188,20 +191,20 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 36
+        // line 37
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 37
+        // line 38
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 38
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 39
+        // line 40
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -225,7 +228,7 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
 
     public function getDebugInfo()
     {
-        return array (  205 => 39,  201 => 38,  197 => 37,  192 => 36,  182 => 35,  162 => 28,  159 => 27,  154 => 26,  151 => 24,  139 => 18,  136 => 17,  131 => 16,  126 => 13,  122 => 12,  118 => 11,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  208 => 40,  204 => 39,  200 => 38,  195 => 37,  185 => 36,  173 => 33,  161 => 27,  158 => 26,  153 => 25,  150 => 23,  138 => 17,  135 => 16,  130 => 15,  126 => 13,  122 => 12,  118 => 11,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -243,10 +246,9 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
         {{ form_start(formulario) }}
         {{ form_row(formulario.email) }}
         {{ form_end(formulario) }}
-</div>
     {# Correo enviado #}
     {% for flash_message in app.session.flashbag.get('enviado') %}
-        <div class=\"alert alert-info alert-dismissible mx-auto mt-2 show fade\" style=\"width: 20%\">
+        <div class=\"alert alert-info alert-dismissible mx-auto mt-2 show fade\">
             {{ flash_message }}
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
                 <span aria-hidden=\"true\">&times;</span>
@@ -256,13 +258,15 @@ class __TwigTemplate_c04c2d044c4aa17fb205149379f9124b3b878cb090c9639e2683a99c897
 
     {# Correo no enviado #}
     {% for flash_message in app.session.flashbag.get('no_enviado') %}
-        <div class=\"alert alert-danger alert-dismissible mx-auto mt-2 show fade\" style=\"width: 20%\">
+        <div class=\"alert alert-danger alert-dismissible mx-auto mt-2 show fade\">
             {{ flash_message }}
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\">
                 <span aria-hidden=\"true\">&times;</span>
             </button>
         </div>
     {% endfor %}
+</div>
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
