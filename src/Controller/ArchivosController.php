@@ -70,9 +70,22 @@ class ArchivosController extends AbstractController
 
                         if ($status_code == 200) {
                             $json_2 = json_decode($result, true);
-                            foreach ($json_2 as $value) {
-                                $respuesta = $json_2['positives'];
+                            $response_code = $json_2["response_code"];
+                            if ($response_code == 0){
+                                $this->addFlash(
+                                    'error_4',
+                                    'En estos momentos no podemos escanear el archivo, vuelva más tarde'
+                                );
+                                return $this->redirectToRoute('nuevo');
                             }
+                            elseif ($response_code == -2){
+                                $this->addFlash(
+                                    'error_4',
+                                    'En estos momentos no podemos escanear el archivo, vuelva más tarde'
+                                );
+                                return $this->redirectToRoute('nuevo');
+                            }
+                            $respuesta = $json_2["positives"];
                             if ($respuesta === 0){
                                 $usuario = $this->getUser();
                                 $nombre_usuario = $usuario->getUsername();
