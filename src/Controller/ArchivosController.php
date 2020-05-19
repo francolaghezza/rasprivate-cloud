@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+set_time_limit(0);
+
 use App\Entity\Archivos;
 use App\Entity\Usuarios;
 use App\Form\ArchivosType;
@@ -23,7 +25,7 @@ class ArchivosController extends AbstractController
         $archivo = new Archivos();
         $form = $this->createForm(ArchivosType::class,$archivo);
         $form->handleRequest($request);
-
+        $api = '33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
         if($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('nombre')->getData();
 
@@ -37,40 +39,39 @@ class ArchivosController extends AbstractController
                 //Si el archivo pesa menos de 32 MB
                 if ($kb <= 32768){
                     $file_name_with_full_path = realpath($file);
-                    $api = '33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
                     $api_key = getenv('VT_API_KEY') ? getenv('VT_API_KEY') : $api;
                     $cfile = curl_file_create($file_name_with_full_path);
                     $post = array('apikey' => $api_key,'file'=> $cfile);
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/scan');
-                    curl_setopt($ch, CURLOPT_POST, True);
+                    curl_setopt($ch, CURLOPT_POST, true);
                     curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
                     curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER ,True);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER ,true);
                     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-                    $result=curl_exec ($ch);
+                    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
+                    $result = curl_exec ($ch);
                     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
+                    curl_close($ch);
                     if ($status_code == 200) {
                         $json_1 = json_decode($result, true);
-                        foreach ($json_1 as $value) {
-                            $recurso = $json_1['resource'];
-                        }
+                        $recurso = $json_1['resource'];
                         $post = array('apikey' => $api,'resource'=> $recurso);
                         $ch = curl_init();
                         curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/report');
-                        curl_setopt($ch, CURLOPT_POST,1);
-                        curl_setopt($ch, CURLOPT_VERBOSE, 1); // remove this if your not debugging
-                        curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate'); // please compress data
+                        curl_setopt($ch, CURLOPT_POST,true);
+                        curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
                         curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER ,true);
                         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+                        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
                         $result = curl_exec ($ch);
                         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
                         if ($status_code == 200) {
                             $json_2 = json_decode($result, true);
                             $response_code = $json_2["response_code"];
+
                             if ($response_code == 0){
                                 $this->addFlash(
                                     'error_4',
