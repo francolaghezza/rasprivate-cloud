@@ -45,6 +45,8 @@ $(".card").click(function() {
 
     //Analizar archivo
     $("#analizar_nombre").click(function () {
+        $("#analizar").modal('hide');
+        $("#escaneando").modal('show');
         var ruta = Routing.generate('analizar');
         $.ajax({
             type:'POST',
@@ -53,9 +55,26 @@ $(".card").click(function() {
             async:true,
             dataType:"json",
             success: function (data) {
-                $("#analizar").modal('hide');
-                var link = data.analisis;
-                window.open(link, '_blank');
+
+                $("#escaneando").modal('hide');
+                $('#redirigiendo').modal('show');
+                var link = data.link;
+                var recurso = data.analisis;
+                var nueva_ruta = Routing.generate('report');
+                if(recurso.length > 0){
+                    $.ajax({
+                        type:'POST',
+                        url:nueva_ruta,
+                        data:({report:recurso}),
+                        async:true,
+                        dataType:"json",
+                        success: function (data) {
+                            $('#redirigiendo').modal('hide');
+                            window.location.reload();
+                            window.open(link, '_blank');
+                        }
+                    });
+                }
             }
         });
     });

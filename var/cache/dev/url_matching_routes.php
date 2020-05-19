@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/nuevo' => [[['_route' => 'nuevo', '_controller' => 'App\\Controller\\ArchivosController::index'], null, null, null, false, false, null]],
         '/analizar' => [[['_route' => 'analizar', '_controller' => 'App\\Controller\\ArchivosController::analizar'], null, null, null, false, false, null]],
+        '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\ArchivosController::report'], null, null, null, false, false, null]],
         '/editar' => [[['_route' => 'editar', '_controller' => 'App\\Controller\\ArchivosController::editar'], null, null, null, false, false, null]],
         '/borrar' => [[['_route' => 'borrar', '_controller' => 'App\\Controller\\ArchivosController::borrar'], null, null, null, false, false, null]],
         '/comprimir' => [[['_route' => 'comprimir', '_controller' => 'App\\Controller\\ArchivosController::comprimir'], null, null, null, false, false, null]],

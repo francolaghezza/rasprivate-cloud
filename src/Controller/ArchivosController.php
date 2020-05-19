@@ -120,7 +120,8 @@ class ArchivosController extends AbstractController
             if ($status_code == 200) {
                 $js = json_decode($result, true);
                 $link = $js['permalink'];
-                return new JsonResponse(['analisis'=> $link]);
+                $recurso = $js['resource'];
+                return new JsonResponse(['analisis'=> $recurso,'link'=> $link]);
             } else {
                 return new JsonResponse(['analisis'=> 0]);
             }
@@ -132,6 +133,35 @@ class ArchivosController extends AbstractController
                 'No se ha podido escanear el archivo en busca de virus'
             );
             return $this->redirectToRoute('panel');
+        }
+    }
+
+    /**
+     * @Route("/report", options={"expose"=true}, name="report")
+     */
+    public function report(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $report = $request->request->get('report');
+            $api_key = '33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
+            $post = array('apikey' => $api_key,'resource'=> $report);
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/report');
+            curl_setopt($ch, CURLOPT_POST,1);
+            curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
+            curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER ,true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
+            $result = curl_exec ($ch);
+            $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+            if ($status_code == 200) {
+                $js = json_decode($result, true);
+                return new JsonResponse(['resultado'=> $js]);
+            } else {
+                return new JsonResponse(['resultado'=> 0]);
+            }
+            curl_close ($ch);
         }
     }
 
