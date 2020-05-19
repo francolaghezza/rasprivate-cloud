@@ -16,6 +16,7 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'nuevo' => [[], ['_controller' => 'App\\Controller\\ArchivosController::index'], [], [['text', '/nuevo']], [], []],
+    'analizar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::analizar'], [], [['text', '/analizar']], [], []],
     'editar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::editar'], [], [['text', '/editar']], [], []],
     'borrar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::borrar'], [], [['text', '/borrar']], [], []],
     'comprimir' => [[], ['_controller' => 'App\\Controller\\ArchivosController::comprimir'], [], [['text', '/comprimir']], [], []],

@@ -26,6 +26,7 @@ $(".card").click(function() {
     //Párrafo de información al usuario
     $("#p_borrar").text("¿Desea eliminar "+nombre+"?");
     $("#p_comprimir").text("¿Desea comprimir "+nombre+"?");
+    $("#p_analizar").text("Se analizará "+nombre+" en busca de malware");
 
     //Eliminar archivo
     $("#eliminar_nombre").click(function () {
@@ -38,6 +39,23 @@ $(".card").click(function() {
             dataType:"json",
             success: function (data) {
                 window.location.reload();
+            }
+        });
+    });
+
+    //Analizar archivo
+    $("#analizar_nombre").click(function () {
+        var ruta = Routing.generate('analizar');
+        $.ajax({
+            type:'POST',
+            url:ruta,
+            data:({id:id_archivo}),
+            async:true,
+            dataType:"json",
+            success: function (data) {
+                $("#analizar").modal('hide');
+                var link = data.analisis;
+                window.open(link, '_blank');
             }
         });
     });

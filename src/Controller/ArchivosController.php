@@ -18,140 +18,27 @@ class ArchivosController extends AbstractController
 {
     /**
      * @Route("/nuevo", name="nuevo")
-     * @throws \Exception
      */
     public function index(Request $request)
     {
         $archivo = new Archivos();
         $form = $this->createForm(ArchivosType::class,$archivo);
         $form->handleRequest($request);
-        $api = '33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
+
         if($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('nombre')->getData();
 
             if ($file) {
                 $size = filesize($file);
+
                 //Almaceno la información en Kilobytes
                 $kb = $size/1024;
+
                 //Genero un número aleatorio para que ningún archivo se repita
-
                 $aleatorio = mt_rand(0,30000);
-                //Si el archivo pesa menos de 32 MB
-                if ($kb <= 32768){
-                    $file_name_with_full_path = realpath($file);
-                    $api_key = getenv('VT_API_KEY') ? getenv('VT_API_KEY') : $api;
-                    $cfile = curl_file_create($file_name_with_full_path);
-                    $post = array('apikey' => $api_key,'file'=> $cfile);
-                    $ch = curl_init();
-                    curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/scan');
-                    curl_setopt($ch, CURLOPT_POST, true);
-                    curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
-                    curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER ,true);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-                    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
-                    $result = curl_exec ($ch);
-                    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                    curl_close($ch);
-                    if ($status_code == 200) {
-                        $json_1 = json_decode($result, true);
-                        $recurso = $json_1['resource'];
-                        $post = array('apikey' => $api,'resource'=> $recurso);
-                        $ch = curl_init();
-                        curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/report');
-                        curl_setopt($ch, CURLOPT_POST,true);
-                        curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
-                        curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
-                        curl_setopt($ch, CURLOPT_RETURNTRANSFER ,true);
-                        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-                        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
-                        $result = curl_exec ($ch);
-                        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-                        if ($status_code == 200) {
-                            $json_2 = json_decode($result, true);
-                            $response_code = $json_2["response_code"];
-
-                            if ($response_code == 0){
-                                $this->addFlash(
-                                    'error_4',
-                                    'En estos momentos no podemos escanear el archivo, vuelva más tarde'
-                                );
-                                return $this->redirectToRoute('nuevo');
-                            }
-                            elseif ($response_code == -2){
-                                $this->addFlash(
-                                    'error_4',
-                                    'En estos momentos no podemos escanear el archivo, vuelva más tarde'
-                                );
-                                return $this->redirectToRoute('nuevo');
-                            }
-                            $respuesta = $json_2["positives"];
-                            if ($respuesta === 0){
-                                $usuario = $this->getUser();
-                                $nombre_usuario = $usuario->getUsername();
-                                $almacenamientoActual = $usuario->getAlmacenamiento();
-                                if($almacenamientoActual == 5242880 || $kb+$almacenamientoActual >= 5242880){
-                                    $this->addFlash(
-                                        'error_almacenamiento',
-                                        'El archivo es demasiado grande para su espacio de almacenamiento'
-                                    );
-                                    return $this->redirectToRoute('nuevo');
-                                }
-                                else{
-                                    try {
-                                        $file->move(
-                                            'uploads/archivos/'.$nombre_usuario,
-                                            $aleatorio.'-'.$file->getClientOriginalName()
-                                        );
-                                    } catch (FileException $e) {
-                                        $this->addFlash(
-                                            'error_0',
-                                            'No se ha podido subir el archivo'
-                                        );
-                                        return $this->redirectToRoute('nuevo');
-                                    }
-                                    $archivo->setNombre( $aleatorio.'-'.$file->getClientOriginalName());
-                                    $archivo->setSize($kb);
-                                    $usuario->setAlmacenamiento($almacenamientoActual+$kb);
-                                    $archivo->setUsuario($usuario);
-                                    $em = $this->getDoctrine()->getManager();
-                                    $em->persist($archivo);
-                                    $em->flush();
-                                    $this->addFlash(
-                                        'exito',
-                                        $aleatorio.'-'.$file->getClientOriginalName().' se ha subido correctamente'
-                                    );
-                                    return $this->redirectToRoute('panel');
-                                 }
-                            }
-                            else{ //Malware detectado
-                                $this->addFlash(
-                                    'error_malware',
-                                    'Se ha detectado un archivo malicioso'
-                                );
-                                return $this->redirectToRoute('nuevo');
-
-                            }
-                        } else {
-                            $this->addFlash(
-                                'error_1',
-                                'No se ha podido escanear el archivo en busca de virus'
-                            );
-                            return $this->redirectToRoute('nuevo');
-                        }
-
-                    } else {
-                        $this->addFlash(
-                            'error_2',
-                            'Ha ocurrido un error'
-                        );
-                        return $this->redirectToRoute('nuevo');
-                    }
-                    curl_close ($ch);
-                }
-                //El archivo pesa más de 32 MB y menos de 5GB
-                elseif($kb > 32769 && $kb <= 5242880){
+                //El archivo pesa menos de 5GB
+                if( $kb <= 5242880){
                     $usuario = $this->getUser();
                     $nombre_usuario = $usuario->getUsername();
                     $almacenamientoActual = $usuario->getAlmacenamiento();
@@ -202,6 +89,50 @@ class ArchivosController extends AbstractController
         return $this->render('archivos/index.html.twig', [
             'formulario' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/analizar", options={"expose"=true}, name="analizar")
+     */
+    public function analizar(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id);
+            $nombre_archivo = $archivo->getNombre();
+            $usuario = $this->getUser();
+            $nombre_usuario = $usuario->getUsername();
+            $ruta = "uploads/archivos/".$nombre_usuario."/".$nombre_archivo;
+            $api_key = '33264c168c4ceff990454fe7e562197da87a63e8feb68dbb3f1e06ed9e13f4bd';
+            $file_name_with_full_path = realpath($ruta);
+            $cfile = curl_file_create($file_name_with_full_path);
+            $post = array('apikey' => $api_key,'file'=> $cfile);
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://www.virustotal.com/vtapi/v2/file/scan');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
+            curl_setopt($ch, CURLOPT_USERAGENT, "gzip, My php curl client");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER ,true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
+            $result = curl_exec ($ch);
+            $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            if ($status_code == 200) {
+                $js = json_decode($result, true);
+                $link = $js['permalink'];
+                return new JsonResponse(['analisis'=> $link]);
+            } else {
+                return new JsonResponse(['analisis'=> 0]);
+            }
+            curl_close ($ch);
+        }
+        else{
+            $this->addFlash(
+                'error_1',
+                'No se ha podido escanear el archivo en busca de virus'
+            );
+            return $this->redirectToRoute('panel');
+        }
     }
 
     /**

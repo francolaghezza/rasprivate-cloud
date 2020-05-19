@@ -120,6 +120,12 @@
                             {% endif %}
                             <p class="card-text text-muted">{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</p>
                             <p class="card-text text-center">
+                                <button class="btn bg-transparent btn-md" data-toggle="modal" data-target="#analizar" title="Analizar">
+                                    <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+                                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </button>
                                 <button class="btn bg-transparent btn-md" data-toggle="modal" data-target="#editar" title="Editar">
                                     <svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"/>
@@ -263,6 +269,27 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="editar_nombre">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    {# Analizar un archivo #}
+    <section class="modal fade" id="analizar">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">Analizar archivo</span>
+                    <button type="button" data-dismiss="modal" class="close" aria-hidden="true" id="cancel">&times;</button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <p id="p_analizar"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="analizar_nombre">Analizar</button>
                     </div>
                 </form>
             </div>
