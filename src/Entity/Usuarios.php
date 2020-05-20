@@ -49,7 +49,7 @@ class Usuarios implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $token;
 

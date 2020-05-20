@@ -341,6 +341,13 @@
         <argument type="service" id=".service_locator.pNNo5z3.App\Controller\IndexController"/>
       </call>
     </service>
+    <service id="App\Controller\NuevaPassController" class="App\Controller\NuevaPassController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\NuevaPassController"/>
+      </call>
+    </service>
     <service id="App\Controller\PanelController" class="App\Controller\PanelController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -4909,6 +4916,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\NuevaPassController" class="App\Controller\NuevaPassController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\NuevaPassController" class="App\Controller\NuevaPassController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\NuevaPassController" class="App\Controller\NuevaPassController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PanelController" class="App\Controller\PanelController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PanelController" class="App\Controller\PanelController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PanelController" class="App\Controller\PanelController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5480,6 +5490,12 @@
     <service id=".service_locator.pNNo5z3.App\Controller\IndexController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\IndexController"/>
       <argument>App\Controller\IndexController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\NuevaPassController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\NuevaPassController"/>
+      <argument>App\Controller\NuevaPassController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pNNo5z3" method="withContext"/>
     </service>

@@ -22,6 +22,8 @@ return [
     'borrar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::borrar'], [], [['text', '/borrar']], [], []],
     'comprimir' => [[], ['_controller' => 'App\\Controller\\ArchivosController::comprimir'], [], [['text', '/comprimir']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
+    'nueva_pass' => [[], ['_controller' => 'App\\Controller\\NuevaPassController::index'], [], [['text', '/nuevapass']], [], []],
+    'newpass' => [[], ['_controller' => 'App\\Controller\\NuevaPassController::newPass'], [], [['text', '/newpass']], [], []],
     'panel' => [[], ['_controller' => 'App\\Controller\\PanelController::index'], [], [['text', '/panel']], [], []],
     'perfil' => [[], ['_controller' => 'App\\Controller\\PerfilController::index'], [], [['text', '/perfil']], [], []],
     'email' => [[], ['_controller' => 'App\\Controller\\PerfilController::buscarEmail'], [], [['text', '/email']], [], []],

@@ -225,9 +225,11 @@ $(document).ready(function(){
        $("#hide_icon_pass1").toggleClass("oculto");
        if( $("#show_icon_pass1").hasClass("oculto")){
            $("#pass1").attr('type', 'text');
+           $("#new_pass1").attr('type', 'text');
        }
        else{
            $("#pass1").attr('type', 'password');
+           $("#new_pass1").attr('type', 'password');
        }
     });
 
@@ -236,9 +238,11 @@ $(document).ready(function(){
         $("#hide_icon_pass2").toggleClass("oculto");
         if( $("#show_icon_pass2").hasClass("oculto")){
             $("#pass2").attr('type', 'text');
+            $("#new_pass2").attr('type', 'text');
         }
         else{
             $("#pass2").attr('type', 'password');
+            $("#new_pass2").attr('type', 'password');
         }
     });
 
@@ -285,6 +289,33 @@ $(document).ready(function(){
                 }
             }
         });
+    });
+
+    //Establecer contraseña
+    $("#establecer").click(function () {
+
+        var new_pass1 = $("#new_pass1").val();
+        var new_pass2 = $("#new_pass2").val();
+        var token = $("#token").val();
+        if(new_pass1.length >= 8 && new_pass2.length >= 8 && new_pass1 === new_pass2){
+            var ruta = Routing.generate('newpass');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({pass1:new_pass1,pass2:new_pass2,token:token}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    $("#new_pass_ok").removeClass("oculto");
+                }
+            });
+        }
+        else if(new_pass1.length < 8 || new_pass2.length < 8){
+            //No realizar ninguna acción
+        }
+        else{
+            $("#new_pass_error").removeClass("oculto");
+        }
     });
 
     //Eliminar cuenta

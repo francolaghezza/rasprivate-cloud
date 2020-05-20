@@ -54,6 +54,22 @@ class UsuariosRepository extends ServiceEntityRepository implements PasswordUpgr
             WHERE u.usuario = :usuario')->setParameters(array("usuario" => $nombre_usuario,"token" => $token))->getResult();
     }
 
+    public function getToken($token){
+        return $this->getEntityManager()
+            ->createQuery('
+            SELECT u.usuario
+            FROM App:Usuarios u
+            WHERE u.token = :token')->setParameter('token',$token)->getResult();
+    }
+
+    public function setPass($nombre_usuario,$hash){
+        return $this->getEntityManager()
+            ->createQuery('
+            UPDATE App:Usuarios u
+            SET u.password = :hash
+            WHERE u.usuario = :usuario')->setParameters(array("usuario" => $nombre_usuario,"hash" => $hash))->getResult();
+    }
+
     public function obtenUsuario($direccion_email){
         return $this->getEntityManager()
             ->createQuery('
