@@ -48,6 +48,11 @@ class Usuarios implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $token;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +90,18 @@ class Usuarios implements UserInterface
     public function setAlmacenamiento(string $almacenamiento): self
     {
         $this->almacenamiento = $almacenamiento;
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(string $token): self
+    {
+        $this->token = $token;
 
         return $this;
     }

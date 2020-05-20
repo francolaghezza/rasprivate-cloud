@@ -32,7 +32,9 @@
         "symfony/validator": "5.0.*",
         "symfony/web-link": "5.0.*",
         "symfony/yaml": "5.0.*",
-      "ext-curl": "*"
+      "ext-curl": "*",
+      "ext-zip": "*",
+      "ext-oauth": "*"
     },
     "require-dev": {
         "symfony/debug-pack": "*",

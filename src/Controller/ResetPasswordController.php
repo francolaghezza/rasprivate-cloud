@@ -19,6 +19,7 @@ class ResetPasswordController extends AbstractController
      */
     public function sendEmail(Request $request, MailerInterface $mailer)
     {
+
         $defaultData = array('message' => 'Recupera tu contraseña');
         $form = $this->createFormBuilder($defaultData)
 
@@ -45,6 +46,19 @@ class ResetPasswordController extends AbstractController
                         ->obtenUsuario($direccion_email);
                     $nombre_usuario = $usuario[0]["usuario"];
 
+                    function generaToken(){
+                        $token = "";
+                        $param = "0123456789abcdefghijklmnopqrstuvwxyz";
+                        $max = strlen($param)-1;
+                        for ($i = 0; $i < 25; $i++) {
+                            $token.=$param{mt_rand(0,$max)};
+                        }
+                        return $token;
+                    }
+                    $token = generaToken();
+                    $token_usuario = $this->getDoctrine()
+                        ->getRepository(Usuarios::class)
+                        ->setToken($nombre_usuario,$token);
                    $email = (new TemplatedEmail())
                     ->from('rasprivatecloud@gmail.com')
                     ->to(new Address($direccion_email))
@@ -52,6 +66,7 @@ class ResetPasswordController extends AbstractController
                     ->htmlTemplate('email/email.html.twig')
                     ->context([
                         'usuario' => $nombre_usuario,
+                        'token' => $token
                     ]);
                    $mailer->send($email);
                    $this->addFlash(
