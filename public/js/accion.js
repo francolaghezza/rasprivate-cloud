@@ -327,8 +327,8 @@ $(document).ready(function(){
                             async:true,
                             dataType:"json",
                             success: function (data) {
-                                location = "http://127.0.0.1:8000/logout";
-                                //location = "http://www.rasprivate.es/logout";
+                                //location = "http://127.0.0.1:8000/logout";
+                                location = 'http://www.rasprivate.es/logout';
                             }
                         });
                     }
@@ -337,4 +337,3 @@ $(document).ready(function(){
         }
     });
 });
-
