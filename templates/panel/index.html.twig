@@ -87,16 +87,6 @@
                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
                     </svg>
                     Papelera
-                    {% set contador = 0 %}
-                    <span class="badge badge-pill badge-light" id="archivos_borrados">
-                        {% for archivo in pagination %}
-                            {% set borrado = archivo.borrado %}
-                            {% if borrado == 'S' %}
-                                {% set contador = contador + 1 %}
-                            {% endif %}
-                        {% endfor %}
-                        {{ contador }}
-                    </span>
                 </h6>
             <a {% if utilizado == total %}class="text-white text-decoration-none disabled"{% endif %} href="nuevo"class="text-white text-decoration-none">
                 <svg class="bi bi-file-earmark-plus mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -414,8 +404,8 @@
     </section>
 
     {# Papelera de reciclaje #}
-    <section class="modal fade" id="papelera">
-            <div class="modal-dialog modal-dialog-centered">
+        <section class="modal fade" id="papelera">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h6 class="modal-title">Archivos eliminados</h6>
@@ -474,9 +464,24 @@
                             {% endif %}
                         {% endfor %}
                     </div>
+                    <div class="modal-footer">
+                        {% set contador = 0 %}
+                        {% for archivo in pagination %}
+                            {% set borrado = archivo.borrado %}
+                            {% if borrado == 'S' %}
+                                {% set contador = contador + 1 %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if contador > 0 and contador == 1%}
+                            <span>{{ contador }} archivo</span>
+                        {% elseif contador > 1 %}
+                            <span>{{ contador }} archivos</span>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </section>
+
     {# Restaurar archivo #}
     <section class="modal fade" id="restaurar">
         <div class="modal-dialog modal-dialog-centered">
