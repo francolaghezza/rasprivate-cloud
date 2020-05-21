@@ -37,13 +37,16 @@
                 </nav>
             </div>
         </header>
-       {# Almacenamiento #}
+       {# Menú lateral #}
         <div class="container text-white menu-lateral">
-            <p>Almacenamiento &nbsp;
-            <svg class="bi bi-folder" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.828 4a3 3 0 01-2.12-.879l-.83-.828A1 1 0 006.173 2H2.5a1 1 0 00-1 .981L1.546 4h-1L.5 3a2 2 0 012-2h3.672a2 2 0 011.414.586l.828.828A2 2 0 009.828 3v1z"/>
-                <path fill-rule="evenodd" d="M13.81 4H2.19a1 1 0 00-.996 1.09l.637 7a1 1 0 00.995.91h10.348a1 1 0 00.995-.91l.637-7A1 1 0 0013.81 4zM2.19 3A2 2 0 00.198 5.181l.637 7A2 2 0 002.826 14h10.348a2 2 0 001.991-1.819l.637-7A2 2 0 0013.81 3H2.19z" clip-rule="evenodd"/>
-            </svg></p>
+            <h6>
+                <svg class="bi bi-list-task mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2 2.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5V3a.5.5 0 00-.5-.5H2zM3 3H2v1h1V3z" clip-rule="evenodd"/>
+                    <path d="M5 3.5a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zM5.5 7a.5.5 0 000 1h9a.5.5 0 000-1h-9zm0 4a.5.5 0 000 1h9a.5.5 0 000-1h-9z"/>
+                    <path fill-rule="evenodd" d="M1.5 7a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5H2zm1 .5H2v1h1v-1z" clip-rule="evenodd"/>
+                </svg>
+                Almacenamiento
+           </h6>
             {% for usuario in almacenamiento %}
                 {% set total =  5242880 %}
                 {% set utilizado = usuario.almacenamiento %}
@@ -77,12 +80,19 @@
                 <p>{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
                     {% endif %}
                 {% endif %}
-            <a {% if utilizado == total  %}class="btn bg-light btn-md my-4 my-sm-0 redondo disabled boton"{% endif %} href="nuevo"class="btn bg-light btn-md my-4 my-sm-0 redondo boton">
-                <svg class="bi bi-file-plus" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 1H4a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V8h-1v5a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1h5V1z"/>
-                    <path fill-rule="evenodd" d="M13.5 1a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                    <path fill-rule="evenodd" d="M13 3.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                </svg> Archivo
+                <h6 data-toggle="modal" data-target="#papelera" title="Papelera">
+                    <svg class="bi bi-trash mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
+                    </svg>
+                    Papelera
+                </h6>
+            <a {% if utilizado == total %}class="text-white text-decoration-none disabled"{% endif %} href="nuevo"class="text-white text-decoration-none">
+                <svg class="bi bi-file-earmark-plus mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1H4a2 2 0 00-2 2v10a2 2 0 002 2h5v-1H4a1 1 0 01-1-1V3a1 1 0 011-1h5v2.5A1.5 1.5 0 0010.5 6H13v2h1V6L9 1z"/>
+                    <path fill-rule="evenodd" d="M13.5 10a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13v-1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
+                </svg> Nuevo archivo
             </a>
             {% endfor %}
         </div>
@@ -90,6 +100,8 @@
         <div class="container bg-dark mt-3">
             <div class="row" >
                 {% for archivo in pagination %}
+                    {% set borrado = archivo.borrado %}
+                    {% if borrado == 'N' %}
                 <div class="col-md-4 mt-3 mb-3">
                     {% set id = archivo.id %}
                     <div class="card">
@@ -132,7 +144,7 @@
                                         <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z" clip-rule="evenodd"/>
                                     </svg>
                                 </a>
-                                <a class="btn bg-transparent btn-md" data-toggle="modal" data-target="#borrar" title="Eliminar">
+                                <a class="btn bg-transparent btn-md" data-toggle="modal" data-target="#borrar" title="Mover a la papelera">
                                     <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
                                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
@@ -146,6 +158,7 @@
                                 {% set comprimido = ["cbr","jar","pit","rar","jar","tgz","dl_","bz2","cbz","war","zip","z01"] %}
                                 {% set ext_archivo = archivo.nombre | slice(-3, 3) %}
                                 {% if ext_archivo in comprimido %}
+
                                 {# El archivo ya está comprimido #}
                                 {% else %}
                                     <button class="btn bg-transparent btn-md" data-toggle="modal" data-target="#comprimir" title="Comprimir">
@@ -162,12 +175,15 @@
                         </div>
                     </div>
                 </div>
+                    {% endif %}
                 {% endfor %}
             </div>
+
             {# Paginación #}
             <div class="navigation">
                 {{ knp_pagination_render(pagination) }}
             </div>
+
             {# Menú #}
             <div class="container-fluid bg-light fixed-bottom text-center menu-responsive">
                 <div class="row align-items-center">
@@ -212,6 +228,7 @@
                     </button>
                 </div>
             {% endfor %}
+
             {# El archivo se ha eliminado #}
             {% for flash_message in app.session.flashbag.get('delete') %}
                 <div class="alert alert-info alert-dismissible w-50 mx-auto mt-2 show fade">
@@ -221,6 +238,7 @@
                     </button>
                 </div>
             {% endfor %}
+
             {# Este archivo ya está comprimido #}
             {% for flash_message in app.session.flashbag.get('error_zip') %}
                 <div class="alert alert-danger alert-dismissible w-50 mx-auto mt-2 show fade">
@@ -235,6 +253,8 @@
                     </button>
                 </div>
             {% endfor %}
+
+            {# Queda poco espacio de almacenamiento #}
             {% for usuario in almacenamiento %}
                 {% set utilizado = usuario.almacenamiento %}
                 {% if utilizado >= 4718592 %}
@@ -251,6 +271,7 @@
             {% endfor %}
         </div>
     </main>
+
     {# Editar un archivo #}
     <section class="modal fade" id="editar">
         <div class="modal-dialog modal-dialog-centered">
@@ -273,6 +294,7 @@
             </div>
         </div>
     </section>
+
     {# Escaneando #}
     <section class="modal bg-transparent border-0" id="escaneando">
         <div class="modal-dialog modal-dialog-centered bg-transparent border-0">
@@ -292,6 +314,7 @@
             </div>
         </div>
     </section>
+
     {# Redirigiendo #}
     <section class="modal bg-transparent border-0" id="redirigiendo">
         <div class="modal-dialog modal-dialog-centered bg-transparent border-0">
@@ -311,6 +334,7 @@
             </div>
         </div>
     </section>
+
     {# Analizar un archivo #}
     <section class="modal fade" id="analizar">
         <div class="modal-dialog modal-dialog-centered">
@@ -332,12 +356,13 @@
             </div>
         </div>
     </section>
-    {# Eliminar un archivo #}
+
+    {# Mover a la papelera #}
     <section class="modal fade" id="borrar">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="modal-title">Eliminar archivo</span>
+                    <span class="modal-title">Mover a la papelera</span>
                     <button type="button" data-dismiss="modal" class="close" aria-hidden="true" id="cancel">&times;</button>
                 </div>
                 <form>
@@ -348,12 +373,12 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="eliminar_nombre">Eliminar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+
     {# Comprimir un archivo #}
     <section class="modal fade" id="comprimir">
         <div class="modal-dialog modal-dialog-centered">
@@ -376,6 +401,71 @@
             </div>
         </div>
     </section>
+
+    {# Papelera de reciclaje #}
+    <section class="modal fade" id="papelera">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Archivos eliminados</h6>
+                        <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        {% for archivo in pagination %}
+                            {% set borrado = archivo.borrado %}
+                            {% if borrado == 'S' %}
+                                <div class="col-md-12 mt-3 mb-3">
+                                    {% set id = archivo.id %}
+                                    <div class="card">
+                                        {% set nombre = archivo.nombre %}
+                                        <input type="hidden" name="{{ nombre }}" value="{{ nombre }}">
+                                        <div class="card-body">
+                                            {% if archivo.nombre | length > 30 %}
+                                                {% for i in archivo.nombre | slice(0, 30) %}
+                                                {% endfor %}
+                                                <p class="card-title"> {{ archivo.nombre | slice(0, 30) ~ '...' }} </p>
+                                            {% else %}
+                                                <p class="card-title"> {{ archivo.nombre }} </p>
+                                            {% endif %}
+
+                                            {% set size = archivo.size %}
+                                            {% if size/1024 < 1 %}
+                                                {% set unidad = 'KB' %}
+                                                <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
+                                            {% elseif size/1024 >= 1 and size/1024 < 1023 %}
+                                                {% set unidad = 'MB' %}
+                                                {% set size = size/1024 %}
+                                                <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
+                                            {% else %}
+                                                {% set unidad = 'GB' %}
+                                                {% set size = size/1048576 %}
+                                                <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
+                                            {% endif %}
+                                            <p class="card-text text-muted">{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</p>
+                                            <p class="card-text text-center">
+                                                <button class="btn bg-transparent btn-md" data-toggle="modal" data-target="#editar" title="Editar">
+                                                    <svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"/>
+                                                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 00.5.5H4v.5a.5.5 0 00.5.5H5v.5a.5.5 0 00.5.5H6v-1.5a.5.5 0 00-.5-.5H5v-.5a.5.5 0 00-.5-.5H3z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                </button>
+                                                <button class="btn bg-transparent btn-md" data-toggle="modal" data-target="#analizar" title="Analizar">
+                                                    <svg class="bi bi-file-earmark-break" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M9 1H4a2 2 0 00-2 2v6h1V3a1 1 0 011-1h5v2.5A1.5 1.5 0 0010.5 6H13v3h1V6L9 1zm5 11h-1v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-1H2v1a2 2 0 002 2h8a2 2 0 002-2v-1zM0 10.5a.5.5 0 01.5-.5h15a.5.5 0 010 1H.5a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                </button>
+                                                <input type="hidden" name="{{ id }}" value="{{ id }}">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
     {# Pie de la página #}
     <div class="footer-panel text-center bg-dark text-white justify-content-center">
         <p>Rasprivate <script>document.write(new Date().getFullYear());</script></p>

@@ -38,7 +38,7 @@ class ArchivosController extends AbstractController
                 $aleatorio = mt_rand(0,30000);
 
                 //El archivo pesa menos de 5GB
-                if( $kb <= 5242880){
+                if( $kb <= 5242880 && $kb >= 1){
                     $usuario = $this->getUser();
                     $nombre_usuario = $usuario->getUsername();
                     $almacenamientoActual = $usuario->getAlmacenamiento();
@@ -66,6 +66,7 @@ class ArchivosController extends AbstractController
                         $archivo->setSize($kb);
                         $usuario->setAlmacenamiento($almacenamientoActual+$kb);
                         $archivo->setUsuario($usuario);
+                        $archivo->setBorrado("N");
                         $em = $this->getDoctrine()->getManager();
                         $em->persist($archivo);
                         $em->flush();
@@ -76,11 +77,11 @@ class ArchivosController extends AbstractController
                         return $this->redirectToRoute('panel');
                     }
                 }
-                //El archivo pesa más de 5GB
+                //El archivo pesa más de 5GB o es menor a 1KB
                 else{
                     $this->addFlash(
                         'error_size',
-                        'El archivo es demasiado grande'
+                        'No puedes subir este archivo'
                     );
                     return $this->redirectToRoute('nuevo');
                 }
@@ -197,13 +198,15 @@ class ArchivosController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $id = $request->request->get('id');
             $archivo = $em->getRepository(Archivos::class)->find($id);
-            $nombre = $archivo->getNombre();
+            //$nombre = $archivo->getNombre();
             $size = $archivo->getSize();
             $usuario = $this->getUser();
+            $archivo->setFecha(new \DateTime());
+            $archivo->setBorrado("S");
             $nombre_usuario = $usuario->getUsername();
             $almacenamiento = $usuario->getAlmacenamiento();
-            $em->remove($archivo);
-            unlink("uploads/archivos/$nombre_usuario/$nombre");
+            //$em->remove($archivo);
+            //unlink("uploads/archivos/$nombre_usuario/$nombre");
             $usuario-> setAlmacenamiento($almacenamiento-$size);
             $this->addFlash(
                 'delete',

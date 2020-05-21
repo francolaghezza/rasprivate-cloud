@@ -38,6 +38,11 @@ class Archivos
     private $fecha;
 
     /**
+     * @ORM\Column(type="string", length=1)
+     */
+    private $borrado;
+
+    /**
      * Archivos constructor.
      */
     public function __construct()
@@ -82,6 +87,18 @@ class Archivos
     public function setFecha(?\DateTimeInterface $fecha): self
     {
         $this->fecha = $fecha;
+
+        return $this;
+    }
+
+    public function getBorrado(): ?string
+    {
+        return $this->borrado;
+    }
+
+    public function setBorrado(?string $borrado): self
+    {
+        $this->borrado = $borrado;
 
         return $this;
     }
