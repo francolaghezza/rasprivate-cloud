@@ -118,7 +118,9 @@ article{
     outline: none;
     box-shadow: none;
 }
-
+#papelera_archivos:hover{
+    cursor: pointer;
+}
 @media (max-width: 576px) {
     body{
         overflow-x: hidden;

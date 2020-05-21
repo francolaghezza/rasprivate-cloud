@@ -20,6 +20,8 @@ return [
     'report' => [[], ['_controller' => 'App\\Controller\\ArchivosController::report'], [], [['text', '/report']], [], []],
     'editar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::editar'], [], [['text', '/editar']], [], []],
     'borrar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::borrar'], [], [['text', '/borrar']], [], []],
+    'restaurar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::restaurar'], [], [['text', '/restaurar']], [], []],
+    'definitivo' => [[], ['_controller' => 'App\\Controller\\ArchivosController::borradoDefinitivo'], [], [['text', '/definitivo']], [], []],
     'comprimir' => [[], ['_controller' => 'App\\Controller\\ArchivosController::comprimir'], [], [['text', '/comprimir']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
     'nueva_pass' => [[], ['_controller' => 'App\\Controller\\NuevaPassController::index'], [], [['text', '/nuevapass']], [], []],

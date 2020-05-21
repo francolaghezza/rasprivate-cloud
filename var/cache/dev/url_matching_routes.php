@@ -18,6 +18,8 @@ return [
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\ArchivosController::report'], null, null, null, false, false, null]],
         '/editar' => [[['_route' => 'editar', '_controller' => 'App\\Controller\\ArchivosController::editar'], null, null, null, false, false, null]],
         '/borrar' => [[['_route' => 'borrar', '_controller' => 'App\\Controller\\ArchivosController::borrar'], null, null, null, false, false, null]],
+        '/restaurar' => [[['_route' => 'restaurar', '_controller' => 'App\\Controller\\ArchivosController::restaurar'], null, null, null, false, false, null]],
+        '/definitivo' => [[['_route' => 'definitivo', '_controller' => 'App\\Controller\\ArchivosController::borradoDefinitivo'], null, null, null, false, false, null]],
         '/comprimir' => [[['_route' => 'comprimir', '_controller' => 'App\\Controller\\ArchivosController::comprimir'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\IndexController::index'], null, null, null, false, false, null]],
         '/nuevapass' => [[['_route' => 'nueva_pass', '_controller' => 'App\\Controller\\NuevaPassController::index'], null, null, null, false, false, null]],

@@ -198,16 +198,8 @@ class ArchivosController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $id = $request->request->get('id');
             $archivo = $em->getRepository(Archivos::class)->find($id);
-            //$nombre = $archivo->getNombre();
-            $size = $archivo->getSize();
-            $usuario = $this->getUser();
             $archivo->setFecha(new \DateTime());
             $archivo->setBorrado("S");
-            $nombre_usuario = $usuario->getUsername();
-            $almacenamiento = $usuario->getAlmacenamiento();
-            //$em->remove($archivo);
-            //unlink("uploads/archivos/$nombre_usuario/$nombre");
-            $usuario-> setAlmacenamiento($almacenamiento-$size);
             $this->addFlash(
                 'delete',
                 'Se ha eliminado un archivo'
@@ -217,6 +209,54 @@ class ArchivosController extends AbstractController
         }
         else{
             throw new \Exception("No puedes borrar este archivo");
+        }
+    }
+
+    /**
+     * @Route("/restaurar", options={"expose"=true}, name="restaurar")
+     */
+    public function restaurar(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id);
+            $archivo->setFecha(new \DateTime());
+            $archivo->setBorrado("N");
+            $em->flush();
+            return new JsonResponse(['id'=> $id]);
+        }
+        else{
+            //No realizar ninguna acción
+        }
+    }
+
+    /**
+     * @Route("/definitivo", options={"expose"=true}, name="definitivo")
+     */
+    public function borradoDefinitivo(Request $request){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id);
+            $nombre = $archivo->getNombre();
+            $size = $archivo->getSize();
+            $usuario = $this->getUser();
+            $archivo->setFecha(new \DateTime());
+            $archivo->setBorrado("S");
+            $nombre_usuario = $usuario->getUsername();
+            $almacenamiento = $usuario->getAlmacenamiento();
+            $em->remove($archivo);
+            unlink("uploads/archivos/$nombre_usuario/$nombre");
+            $usuario-> setAlmacenamiento($almacenamiento-$size);
+            $this->addFlash(
+                'delete',
+                'Se ha eliminado un archivo'
+            );
+            $em->flush();
+            return new JsonResponse(['id'=> $id]);
+        }
+        else{
+            //No realizar ninguna acción
         }
     }
 

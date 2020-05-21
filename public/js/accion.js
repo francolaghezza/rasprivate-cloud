@@ -26,11 +26,43 @@ $(".card").click(function() {
     //Párrafo de información al usuario
     $("#p_borrar").text("¿Desea eliminar "+nombre+"?");
     $("#p_comprimir").text("¿Desea comprimir "+nombre+"?");
+    $("#p_restaurar").text("¿Desea restaurar "+nombre+"?");
     $("#p_analizar").text("Se analizará "+nombre+" en busca de malware");
+    $("#p_borrar_definitivo").text("Se eliminará "+nombre+" definitivamente");
 
-    //Eliminar archivo
+    //Mover archivo a la papelera
     $("#eliminar_nombre").click(function () {
         var ruta = Routing.generate('borrar');
+        $.ajax({
+            type:'POST',
+            url:ruta,
+            data:({id:id_archivo}),
+            async:true,
+            dataType:"json",
+            success: function (data) {
+                window.location.reload();
+            }
+        });
+    });
+
+    //Restaurar archivo
+    $("#restaurar_nombre").click(function () {
+        var ruta = Routing.generate('restaurar');
+        $.ajax({
+            type:'POST',
+            url:ruta,
+            data:({id:id_archivo}),
+            async:true,
+            dataType:"json",
+            success: function (data) {
+                window.location.reload();
+            }
+        });
+    });
+
+    //Eliminar archivo definitivamente
+    $("#borrar_archivo_definitivo").click(function () {
+        var ruta = Routing.generate('definitivo');
         $.ajax({
             type:'POST',
             url:ruta,
