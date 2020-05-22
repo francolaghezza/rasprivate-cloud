@@ -21,13 +21,13 @@ class ArchivosController extends AbstractController
      */
     public function index(Request $request)
     {
+
         $archivo = new Archivos();
         $form = $this->createForm(ArchivosType::class,$archivo);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('nombre')->getData();
-
             if ($file) {
                 $size = filesize($file);
 
@@ -50,11 +50,13 @@ class ArchivosController extends AbstractController
                         return $this->redirectToRoute('nuevo');
                     }
                     else{
+
                         try {
                             $file->move(
                                 'uploads/archivos/'.$nombre_usuario,
                                 $aleatorio.'-'.$file->getClientOriginalName()
                             );
+
                         } catch (FileException $e) {
                             $this->addFlash(
                                 'error_3',
@@ -72,7 +74,7 @@ class ArchivosController extends AbstractController
                         $em->flush();
                         $this->addFlash(
                             'exito',
-                            $aleatorio.'-'.$file->getClientOriginalName().' se ha subido correctamente'
+                            $file->getClientOriginalName().' se ha subido correctamente'
                         );
                         return $this->redirectToRoute('panel');
                     }
@@ -309,6 +311,5 @@ class ArchivosController extends AbstractController
         else{
             throw new \Exception("No puedes comprimir este archivo");
         }
-
     }
 }
