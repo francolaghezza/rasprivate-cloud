@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+
 class RegistroController extends AbstractController
 {
     /**
@@ -31,8 +32,7 @@ class RegistroController extends AbstractController
 				$em->flush();
 				$nombre_usuario = $usuario->getUsername();
                 mkdir('uploads/archivos/'.$nombre_usuario);
-				$this->addFlash('exito','Usuario registrado correctamente');
-				return $this->redirectToRoute('registro');
+                return $this->redirectToRoute('app_login');
 		}
         return $this->render('registro/index.html.twig', [
             'formulario' => $form->createView()

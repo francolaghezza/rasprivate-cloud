@@ -39,7 +39,7 @@ class PerfilController extends AbstractController
             }
         }
         else{
-            throw new \Exception("No puedes cambiar tu email");
+            // No realizar ninguna acción
         }
     }
 
@@ -72,7 +72,7 @@ class PerfilController extends AbstractController
             }
         }
         else{
-            throw new \Exception("No puedes cambiar tu nombre de usuario");
+            // No realizar ninguna acción
         }
     }
 
@@ -106,7 +106,7 @@ class PerfilController extends AbstractController
             }
         }
         else{
-            throw new \Exception("No puedes cambiar tu contraseña");
+            // No realizar ninguna acción
         }
     }
 
@@ -120,7 +120,7 @@ class PerfilController extends AbstractController
         $encoded = $encoder->encodePassword($usuario, $pass);
         $usuario->setPassword($encoded);
         $em->flush();
-        return new JsonResponse(['usuario'=> $encoded]);
+        return new JsonResponse(['usuario'=> 'okay']);
     }
 
     /**
@@ -145,5 +145,4 @@ class PerfilController extends AbstractController
         $em->flush();
         return new JsonResponse(['usuario'=> 'borrado']);
     }
-
 }

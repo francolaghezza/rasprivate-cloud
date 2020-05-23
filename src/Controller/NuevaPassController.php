@@ -25,14 +25,11 @@ class NuevaPassController extends AbstractController
             return $this->redirectToRoute('index');
         }
         else{
-
-
             return $this->render('nueva_pass/index.html.twig', [
                 'controller_name' => 'NuevaPassController',
                 'token' => $token
             ]);
         }
-
     }
 
     /**
@@ -64,7 +61,7 @@ class NuevaPassController extends AbstractController
             }
         }
         else{
-            return new JsonResponse(['pass'=> 0]);
+            // No realizar ninguna acción
         }
     }
 }

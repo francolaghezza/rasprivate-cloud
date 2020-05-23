@@ -125,6 +125,30 @@ $(".card").click(function() {
             }
         });
     });
+
+    //Compartir archivo
+    $("#compartir_archivo").click(function () {
+
+        var email = $("#compartir_nombre").val();
+        var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+        if (exp.test(email) === true) {
+
+            var ruta = Routing.generate('compartir');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({id:id_archivo,email:email}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    window.location.reload();
+                }
+            });
+        }
+        else {
+            // No enviar nada
+        }
+    });
 });
 
 $(document).ready(function(){
@@ -141,6 +165,8 @@ $(document).ready(function(){
         e.preventDefault();
         $('html, body').animate({scrollTop: 0}, 600);
     });
+
+
 
     //Cambiar email
     $("#input_email").on("keyup",function () {

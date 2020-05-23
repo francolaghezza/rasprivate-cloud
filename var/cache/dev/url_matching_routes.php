@@ -21,6 +21,7 @@ return [
         '/restaurar' => [[['_route' => 'restaurar', '_controller' => 'App\\Controller\\ArchivosController::restaurar'], null, null, null, false, false, null]],
         '/definitivo' => [[['_route' => 'definitivo', '_controller' => 'App\\Controller\\ArchivosController::borradoDefinitivo'], null, null, null, false, false, null]],
         '/comprimir' => [[['_route' => 'comprimir', '_controller' => 'App\\Controller\\ArchivosController::comprimir'], null, null, null, false, false, null]],
+        '/compartir' => [[['_route' => 'compartir', '_controller' => 'App\\Controller\\ArchivosController::compartir'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\IndexController::index'], null, null, null, false, false, null]],
         '/nuevapass' => [[['_route' => 'nueva_pass', '_controller' => 'App\\Controller\\NuevaPassController::index'], null, null, null, false, false, null]],
         '/newpass' => [[['_route' => 'newpass', '_controller' => 'App\\Controller\\NuevaPassController::newPass'], null, null, null, false, false, null]],

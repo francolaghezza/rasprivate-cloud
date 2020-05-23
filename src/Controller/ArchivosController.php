@@ -5,7 +5,6 @@ namespace App\Controller;
 set_time_limit(0);
 
 use App\Entity\Archivos;
-use App\Entity\Usuarios;
 use App\Form\ArchivosType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -13,6 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 class ArchivosController extends AbstractController
 {
@@ -190,7 +191,7 @@ class ArchivosController extends AbstractController
             return new JsonResponse(['nombre'=> $nombre]);
         }
         else{
-            throw new \Exception("No puedes editar este archivo");
+           // No realizar ninguna acción
         }
     }
 
@@ -311,7 +312,40 @@ class ArchivosController extends AbstractController
             }
         }
         else{
-            throw new \Exception("No puedes comprimir este archivo");
+            // No realizar ninguna acción
+        }
+    }
+
+    /**
+     * @Route("/compartir", options={"expose"=true}, name="compartir")
+     */
+    public function compartir(Request $request, MailerInterface $mailer){
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $usuario = $this->getUser();
+            $nombre_usuario = $usuario->getUsername();
+            $id_archivo = $request->request->get('id');
+            $archivo = $em->getRepository(Archivos::class)->find($id_archivo);
+            $nombre_archivo = $archivo->getNombre();
+            $ruta = "uploads/archivos/".$nombre_usuario."/".$nombre_archivo;
+            $email_destino = $request->request->get('email');
+            $email = (new Email())
+                ->from('rasprivatecloud@gmail.com')
+                ->to($email_destino)
+                ->attachFromPath($ruta)
+                ->subject('Archivo compartido')
+                ->html('<p>'.$nombre_usuario.' ha compartido '.$nombre_archivo.'</p>');
+            $mailer->send($email);
+            if($email){
+                $this->addFlash(
+                    'compartido',
+                    'Archivo compartido correctamente'
+                );
+                return new JsonResponse(['email'=> 'enviado']);
+            }
+        }
+        else{
+            // No realizar ninguna acción
         }
     }
 }

@@ -23,6 +23,7 @@ return [
     'restaurar' => [[], ['_controller' => 'App\\Controller\\ArchivosController::restaurar'], [], [['text', '/restaurar']], [], []],
     'definitivo' => [[], ['_controller' => 'App\\Controller\\ArchivosController::borradoDefinitivo'], [], [['text', '/definitivo']], [], []],
     'comprimir' => [[], ['_controller' => 'App\\Controller\\ArchivosController::comprimir'], [], [['text', '/comprimir']], [], []],
+    'compartir' => [[], ['_controller' => 'App\\Controller\\ArchivosController::compartir'], [], [['text', '/compartir']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
     'nueva_pass' => [[], ['_controller' => 'App\\Controller\\NuevaPassController::index'], [], [['text', '/nuevapass']], [], []],
     'newpass' => [[], ['_controller' => 'App\\Controller\\NuevaPassController::newPass'], [], [['text', '/newpass']], [], []],
