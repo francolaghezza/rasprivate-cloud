@@ -28,8 +28,10 @@ class ArchivosController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('nombre')->getData();
+
             if ($file) {
                 $size = filesize($file);
+
 
                 //Almaceno la información en Kilobytes
                 $kb = $size/1024;
