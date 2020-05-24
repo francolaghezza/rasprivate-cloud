@@ -23,7 +23,7 @@ class Archivos
     private $usuario;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=100)
      */
     private $nombre;
 

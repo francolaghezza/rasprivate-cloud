@@ -123,7 +123,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
                         <a href=\"#\" class=\"nav-link\" id=\"home\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Privacidad</a>
+                        <a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>
                      <!--Botones de inicio de sesión o registro-->
@@ -194,10 +194,70 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
             </div>
         </div>
     </div>
+    ";
+        // line 93
+        echo "    <section class=\"modal fade\" id=\"privacidad\">
+        <div class=\"modal-dialog modal-dialog-centered\">
+            <div class=\"modal-content\">
+                <div class=\"modal-header\">
+                    <p class=\"modal-title\"><strong>Política de Privacidad</strong></p>
+                    <button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+                </div>
+                <div class=\"modal-body\">
+                    <p>El presente Política de Privacidad establece los términos en que Rasprivate Cloud
+                        usa y protege la información que es proporcionada por sus usuarios al momento de
+                        utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios.
+                        Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado,
+                        lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.
+                        Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le
+                        recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+                    </p>
+                    <p>
+                        <strong>Información que es recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto como&nbsp; su
+                        dirección de correo electrónico.</p>
+                    <p>
+                        <strong>Uso de la información recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener
+                        un registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros servicios. &nbsp;
+                    </p>
+                    <p>Rasprivate Cloud está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+                        Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún acceso no autorizado.
+                    </p>
+                    <p>
+                        <strong>Enlaces a Terceros</strong>
+                    </p>
+                    <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted de clic en estos enlaces
+                        y abandone nuestra página, ya no tenemos control sobre al sitio al que es redirigido y por lo tanto no somos responsables de los
+                        términos o privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias
+                        políticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.
+                    </p>
+                    <p>
+                        <strong>Control de su información personal</strong>
+                    </p>
+                    <p>Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido
+                        por un juez con un orden judicial.
+                    </p>
+                    <p>Rasprivate Cloud Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+                    </p>
+                    <p>Esta politica de privacidad se han generado en
+                        <a href=\"https://politicadeprivacidadplantilla.com/\" target=\"_blank\">politicadeprivacidadplantilla.com</a>.<br>
+                    </p>
+                </div>
+                <div class=\"modal-footer\">
+                    <p>Rasprivate Cloud, 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
-<!-- Pie de la página -->
-<footer class=\"footer text-center bg-dark text-white\">
-    <p>Rasprivate 2020</p>
+
+";
+        // line 152
+        echo "<footer class=\"footer text-center bg-dark text-white\">
+    <span>Rasprivate Cloud 2020</span>
 </footer>
 
 ";
@@ -209,7 +269,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
     }
 
-    // line 99
+    // line 157
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -219,12 +279,12 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 100
+        // line 158
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 101
+        // line 159
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -248,7 +308,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
 
     public function getDebugInfo()
     {
-        return array (  228 => 101,  223 => 100,  213 => 99,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  288 => 159,  283 => 158,  273 => 157,  259 => 152,  199 => 93,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -273,7 +333,7 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
                         <a href=\"#\" class=\"nav-link\" id=\"home\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Privacidad</a>
+                        <a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>
                      <!--Botones de inicio de sesión o registro-->
@@ -344,10 +404,68 @@ class __TwigTemplate_619fb9d05872ab449a2e0ecd6c8d99ed37214535b841d01f7056c690f59
             </div>
         </div>
     </div>
+    {# Política de privacidad #}
+    <section class=\"modal fade\" id=\"privacidad\">
+        <div class=\"modal-dialog modal-dialog-centered\">
+            <div class=\"modal-content\">
+                <div class=\"modal-header\">
+                    <p class=\"modal-title\"><strong>Política de Privacidad</strong></p>
+                    <button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+                </div>
+                <div class=\"modal-body\">
+                    <p>El presente Política de Privacidad establece los términos en que Rasprivate Cloud
+                        usa y protege la información que es proporcionada por sus usuarios al momento de
+                        utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios.
+                        Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado,
+                        lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.
+                        Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le
+                        recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+                    </p>
+                    <p>
+                        <strong>Información que es recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto como&nbsp; su
+                        dirección de correo electrónico.</p>
+                    <p>
+                        <strong>Uso de la información recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener
+                        un registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros servicios. &nbsp;
+                    </p>
+                    <p>Rasprivate Cloud está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+                        Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún acceso no autorizado.
+                    </p>
+                    <p>
+                        <strong>Enlaces a Terceros</strong>
+                    </p>
+                    <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted de clic en estos enlaces
+                        y abandone nuestra página, ya no tenemos control sobre al sitio al que es redirigido y por lo tanto no somos responsables de los
+                        términos o privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias
+                        políticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.
+                    </p>
+                    <p>
+                        <strong>Control de su información personal</strong>
+                    </p>
+                    <p>Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido
+                        por un juez con un orden judicial.
+                    </p>
+                    <p>Rasprivate Cloud Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+                    </p>
+                    <p>Esta politica de privacidad se han generado en
+                        <a href=\"https://politicadeprivacidadplantilla.com/\" target=\"_blank\">politicadeprivacidadplantilla.com</a>.<br>
+                    </p>
+                </div>
+                <div class=\"modal-footer\">
+                    <p>Rasprivate Cloud, 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
-<!-- Pie de la página -->
+
+{# Pie de la página #}
 <footer class=\"footer text-center bg-dark text-white\">
-    <p>Rasprivate 2020</p>
+    <span>Rasprivate Cloud 2020</span>
 </footer>
 
 {% endblock %}

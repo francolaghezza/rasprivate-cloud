@@ -7,36 +7,22 @@
 {% block body %}
 <body class="bg-dark">
     <main class="container-fluid">
+
         {# Menú de navegación #}
         <header class="row justify-content-center">
             <div class="container mt-5">
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                     <a class="navbarbrand"><img src="img/logo.png" class="logo" alt="logo"></a>
-                    <nav class="navbar-nav col-sm-4 ml-2">
-                        <input class="form-control" type="search" id="buscar" placeholder="Busca un archivo">
+                    <nav class="navbar-nav active-gray active-gray-1 searchbar">
+                        <input class="form-control bg-dark text-white" type="text" placeholder="Busca un archivo" id="buscar" aria-label="Search">
                     </nav>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/nuevo">Archivo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/perfil">Perfil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/logout">Salir</a>
-                            </li>
-                        </ul>
-                    </div>
                     <button class="navbar-toggler ml-auto">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </nav>
             </div>
         </header>
+
        {# Menú lateral #}
         <div class="container text-white menu-lateral">
             <h6>
@@ -53,52 +39,65 @@
                 {% set porcentaje = (utilizado/total)*100 %}
                 {% if utilizado/1024 < 1 %}
                 {% set unidad = 'KB' %}
-                    <div class="progress" style="height: 2px;width: 50%">
-                        <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}%; background-color: #00d1a0;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p>{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
-
+                    <p style="margin-top: 20px;margin-bottom: 30px;">{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
                 {% elseif utilizado/1024 >= 1 and utilizado/1024 < 1023 %}
                 {% set unidad = 'MB' %}
                 {% set utilizado = usuario.almacenamiento/1024 %}
-                    <div class="progress" style="height: 2px;width: 50%">
-                        <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}%; background-color: #00d1a0;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p>{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
+                    <p style="margin-top: 20px;margin-bottom: 30px;">{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
                 {% else %}
                     {% set unidad = 'GB' %}
                     {% set utilizado = usuario.almacenamiento/1048576 %}
                     {% if utilizado >= 4.5 %}
-                        <div class="progress" style="height: 2px;width: 50%">
+                        <div class="progress">
                             <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ; background-color: red;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <p>{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
+                        <p style="margin-top: 20px;margin-bottom: 30px;">{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
                     {% else %}
-                <div class="progress" style="height: 2px;width: 50%">
-                    <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}%; background-color: #00d1a0;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p>{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
+                <p style="margin-top: 20px;margin-bottom: 30px;">{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
                     {% endif %}
                 {% endif %}
-                <h6 data-toggle="modal" data-target="#papelera" title="Papelera" id="papelera_archivos">
 
+                <h6 data-toggle="modal" data-target="#papelera" title="Papelera" id="papelera_archivos" style="margin-bottom: 30px;">
                     <svg class="bi bi-trash mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
                     </svg>
                     Papelera
                 </h6>
-            <a {% if utilizado == total %}class="text-white text-decoration-none disabled"{% endif %} href="nuevo"class="text-white text-decoration-none">
-                <svg class="bi bi-file-earmark-plus mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 1H4a2 2 0 00-2 2v10a2 2 0 002 2h5v-1H4a1 1 0 01-1-1V3a1 1 0 011-1h5v2.5A1.5 1.5 0 0010.5 6H13v2h1V6L9 1z"/>
-                    <path fill-rule="evenodd" d="M13.5 10a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13v-1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                    <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                </svg> Nuevo archivo
-            </a>
+                <a {% if utilizado == total %}class="text-white text-decoration-none disabled"{% endif %} href="nuevo"class="text-white text-decoration-none">
+                    <svg class="bi bi-file-earmark-plus mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 1H4a2 2 0 00-2 2v10a2 2 0 002 2h5v-1H4a1 1 0 01-1-1V3a1 1 0 011-1h5v2.5A1.5 1.5 0 0010.5 6H13v2h1V6L9 1z"/>
+                        <path fill-rule="evenodd" d="M13.5 10a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13v-1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
+                    </svg> Nuevo archivo
+                </a>
+                <a href="perfil"class="text-white text-decoration-none" style="display: block;margin-top: 30px;">
+                    <svg class="bi bi-person-circle mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                    </svg> {{ app.user.username }}
+                </a>
+                <a href="logout"class="text-white text-decoration-none" style="display: block;margin-top: 30px;">
+                    <svg class="bi bi-box-arrow-in-right mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8.146 11.354a.5.5 0 0 1 0-.708L10.793 8 8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 1 8z"/>
+                        <path fill-rule="evenodd" d="M13.5 14.5A1.5 1.5 0 0 0 15 13V3a1.5 1.5 0 0 0-1.5-1.5h-8A1.5 1.5 0 0 0 4 3v1.5a.5.5 0 0 0 1 0V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 5 13v-1.5a.5.5 0 0 0-1 0V13a1.5 1.5 0 0 0 1.5 1.5h8z"/>
+                    </svg> Cerrar sesión
+                </a>
             {% endfor %}
         </div>
         {# Panel de archivos #}
-        <div class="container bg-dark mt-3">
+        <div class="container bg-dark mt-4" style="margin-left: 15%;">
             <div class="row" >
                 {% for archivo in pagination %}
                     {% set borrado = archivo.borrado %}
@@ -189,6 +188,16 @@
                     {% endif %}
                 {% endfor %}
             </div>
+
+            {# Panel vacío #}
+            {% for usuario in almacenamiento %}
+                {% set utilizado = usuario.almacenamiento %}
+                {% if utilizado == 0 %}
+                    <div class="centrado">
+                        <h4 class="text-center">Aquí se mostrarán tus archivos</h4>
+                    </div>
+                {% endif %}
+            {% endfor %}
 
             {# Paginación #}
             <div class="navigation">
@@ -546,6 +555,7 @@
             </div>
         </div>
     </section>
+
     {# Eliminar un archivo definitivamente #}
     <section class="modal fade" id="borrar_definitivo">
         <div class="modal-dialog modal-dialog-centered">
@@ -567,10 +577,6 @@
             </div>
         </div>
     </section>
-    {# Pie de la página #}
-    <div class="footer-panel text-center bg-dark text-white justify-content-center">
-        <p>Rasprivate <script>document.write(new Date().getFullYear());</script></p>
-    </div>
 </body>
 {% endblock %}
 {% block javascripts %}

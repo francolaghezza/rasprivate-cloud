@@ -98,7 +98,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t<div class=\"collapse navbar-collapse\" id=\"menu\">
 \t\t\t\t<nav class=\"navbar-nav\">
 \t\t\t\t\t<a href=\"#\" class=\"nav-link\">Home</a>
-\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Privacidad</a>
+\t\t\t\t\t<a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"nav-link\">Privacidad</a>
 \t\t\t\t\t<a href=\"#\" class=\"nav-link\">Manual del usuario</a>
 \t\t\t\t</nav>
 \t\t\t\t";
@@ -113,52 +113,111 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 </header>
 ";
         // line 31
+        echo "<section class=\"modal fade\" id=\"privacidad\">
+\t<div class=\"modal-dialog modal-dialog-centered\">
+\t\t<div class=\"modal-content\">
+\t\t\t<div class=\"modal-header\">
+\t\t\t\t<p class=\"modal-title\"><strong>Política de Privacidad</strong></p>
+\t\t\t\t<button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+\t\t\t</div>
+\t\t\t<div class=\"modal-body\">
+\t\t\t\t<p>El presente Política de Privacidad establece los términos en que Rasprivate Cloud
+\t\t\t\t\tusa y protege la información que es proporcionada por sus usuarios al momento de
+\t\t\t\t\tutilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios.
+\t\t\t\t\tCuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado,
+\t\t\t\t\tlo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.
+\t\t\t\t\tSin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le
+\t\t\t\t\trecomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+\t\t\t\t</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Información que es recogida</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto como&nbsp; su
+\t\t\t\t\tdirección de correo electrónico.</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Uso de la información recogida</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener
+\t\t\t\t\tun registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros servicios. &nbsp;
+\t\t\t\t</p>
+\t\t\t\t<p>Rasprivate Cloud está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+\t\t\t\t\tUsamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún acceso no autorizado.
+\t\t\t\t</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Enlaces a Terceros</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted de clic en estos enlaces
+\t\t\t\t\ty abandone nuestra página, ya no tenemos control sobre al sitio al que es redirigido y por lo tanto no somos responsables de los
+\t\t\t\t\ttérminos o privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias
+\t\t\t\t\tpolíticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.
+\t\t\t\t</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Control de su información personal</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido
+\t\t\t\t\tpor un juez con un orden judicial.
+\t\t\t\t</p>
+\t\t\t\t<p>Rasprivate Cloud Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+\t\t\t\t</p>
+\t\t\t\t<p>Esta politica de privacidad se han generado en
+\t\t\t\t\t<a href=\"https://politicadeprivacidadplantilla.com/\" target=\"_blank\">politicadeprivacidadplantilla.com</a>.<br>
+\t\t\t\t</p>
+\t\t\t</div>
+\t\t\t<div class=\"modal-footer\">
+\t\t\t\t<p>Rasprivate Cloud, 2020</p>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+</section>
+
+";
+        // line 89
         echo "<div class=\"container mt-5\">
 \t<div class=\"row justify-content-center align-items-center\">
 \t\t<div class=\"col-md-6\">
 \t\t\t<h1 class=\"h3 mb-3 font-weight-normal text-center\">Crea una cuenta</h1>
 
 \t\t\t";
-        // line 36
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 36, $this->source); })()), 'form_start');
+        // line 94
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 94, $this->source); })()), 'form_start');
         echo "
 
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col\">
 \t\t\t\t\t";
-        // line 40
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 40, $this->source); })()), "email", [], "any", false, false, false, 40), 'row');
+        // line 98
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 98, $this->source); })()), "email", [], "any", false, false, false, 98), 'row');
         echo "
 
 \t\t\t\t\t";
-        // line 42
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 42, $this->source); })()), "usuario", [], "any", false, false, false, 42), 'row');
+        // line 100
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 100, $this->source); })()), "usuario", [], "any", false, false, false, 100), 'row');
         echo "
 
 \t\t\t\t\t";
-        // line 44
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 44, $this->source); })()), "password", [], "any", false, false, false, 44), 'row');
+        // line 102
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 102, $this->source); })()), "password", [], "any", false, false, false, 102), 'row');
         echo "
 \t\t\t\t\t<div class=\"form-check mb-2\">
 \t\t\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\" required>
-\t\t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a href=\"#\" class=\"text-dark\">Política de privacidad</a></strong></label>
+\t\t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"text-dark text-decoration-none\">Política de privacidad</a></strong></label>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</div>
 
 \t\t\t";
-        // line 52
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 52, $this->source); })()), 'form_end');
+        // line 110
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 110, $this->source); })()), 'form_end');
         echo "
 \t\t\t";
-        // line 53
+        // line 111
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "flashes", [0 => "exito"], "method", false, false, false, 53));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 111, $this->source); })()), "flashes", [0 => "exito"], "method", false, false, false, 111));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 54
+            // line 112
             echo "\t\t\t\t<div class=\"alert alert-success\">
 \t\t\t\t\t";
-            // line 55
+            // line 113
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
 \t\t\t\t</div>
@@ -167,7 +226,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 58
+        // line 116
         echo "\t\t</div>
 \t</div>
 \t<a class=\"ref\"
@@ -204,7 +263,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
     public function getDebugInfo()
     {
-        return array (  171 => 58,  162 => 55,  159 => 54,  155 => 53,  151 => 52,  140 => 44,  135 => 42,  130 => 40,  123 => 36,  116 => 31,  106 => 22,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  230 => 116,  221 => 113,  218 => 112,  214 => 111,  210 => 110,  199 => 102,  194 => 100,  189 => 98,  182 => 94,  175 => 89,  116 => 31,  106 => 22,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -226,7 +285,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t<div class=\"collapse navbar-collapse\" id=\"menu\">
 \t\t\t\t<nav class=\"navbar-nav\">
 \t\t\t\t\t<a href=\"#\" class=\"nav-link\">Home</a>
-\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Privacidad</a>
+\t\t\t\t\t<a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"nav-link\">Privacidad</a>
 \t\t\t\t\t<a href=\"#\" class=\"nav-link\">Manual del usuario</a>
 \t\t\t\t</nav>
 \t\t\t\t{# Botones de inicio de sesión o registro #}
@@ -238,6 +297,64 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t</nav>
 \t</div>
 </header>
+{# Política de privacidad #}
+<section class=\"modal fade\" id=\"privacidad\">
+\t<div class=\"modal-dialog modal-dialog-centered\">
+\t\t<div class=\"modal-content\">
+\t\t\t<div class=\"modal-header\">
+\t\t\t\t<p class=\"modal-title\"><strong>Política de Privacidad</strong></p>
+\t\t\t\t<button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+\t\t\t</div>
+\t\t\t<div class=\"modal-body\">
+\t\t\t\t<p>El presente Política de Privacidad establece los términos en que Rasprivate Cloud
+\t\t\t\t\tusa y protege la información que es proporcionada por sus usuarios al momento de
+\t\t\t\t\tutilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios.
+\t\t\t\t\tCuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado,
+\t\t\t\t\tlo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.
+\t\t\t\t\tSin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le
+\t\t\t\t\trecomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+\t\t\t\t</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Información que es recogida</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto como&nbsp; su
+\t\t\t\t\tdirección de correo electrónico.</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Uso de la información recogida</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener
+\t\t\t\t\tun registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros servicios. &nbsp;
+\t\t\t\t</p>
+\t\t\t\t<p>Rasprivate Cloud está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+\t\t\t\t\tUsamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún acceso no autorizado.
+\t\t\t\t</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Enlaces a Terceros</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted de clic en estos enlaces
+\t\t\t\t\ty abandone nuestra página, ya no tenemos control sobre al sitio al que es redirigido y por lo tanto no somos responsables de los
+\t\t\t\t\ttérminos o privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias
+\t\t\t\t\tpolíticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.
+\t\t\t\t</p>
+\t\t\t\t<p>
+\t\t\t\t\t<strong>Control de su información personal</strong>
+\t\t\t\t</p>
+\t\t\t\t<p>Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido
+\t\t\t\t\tpor un juez con un orden judicial.
+\t\t\t\t</p>
+\t\t\t\t<p>Rasprivate Cloud Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+\t\t\t\t</p>
+\t\t\t\t<p>Esta politica de privacidad se han generado en
+\t\t\t\t\t<a href=\"https://politicadeprivacidadplantilla.com/\" target=\"_blank\">politicadeprivacidadplantilla.com</a>.<br>
+\t\t\t\t</p>
+\t\t\t</div>
+\t\t\t<div class=\"modal-footer\">
+\t\t\t\t<p>Rasprivate Cloud, 2020</p>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+</section>
+
 {# Crear una cuenta #}
 <div class=\"container mt-5\">
 \t<div class=\"row justify-content-center align-items-center\">
@@ -255,7 +372,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t{{ form_row(formulario.password) }}
 \t\t\t\t\t<div class=\"form-check mb-2\">
 \t\t\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\" required>
-\t\t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a href=\"#\" class=\"text-dark\">Política de privacidad</a></strong></label>
+\t\t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"text-dark text-decoration-none\">Política de privacidad</a></strong></label>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</div>

@@ -28,10 +28,12 @@ class RegistroController extends AbstractController
 					$form['password']->getData()
 				));
 				$usuario->setAlmacenamiento(0);
-				$em->persist($usuario);
-				$em->flush();
-				$nombre_usuario = $usuario->getUsername();
+				$nombre = $usuario->getUsername();
+				$nombre_usuario = strip_tags($nombre);
+				$usuario->setUsuario($nombre_usuario);
                 mkdir('uploads/archivos/'.$nombre_usuario);
+                $em->persist($usuario);
+                $em->flush();
                 return $this->redirectToRoute('app_login');
 		}
         return $this->render('registro/index.html.twig', [

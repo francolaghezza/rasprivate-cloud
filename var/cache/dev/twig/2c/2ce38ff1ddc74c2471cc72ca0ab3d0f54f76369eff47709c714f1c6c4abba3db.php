@@ -124,7 +124,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
                         <a href=\"/\" class=\"nav-link\" id=\"home\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Privacidad</a>
+                        <a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>
                     <!--Botones de inicio de sesión o registro-->
@@ -136,39 +136,98 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
             </nav>
         </div>
     </header>
+
+    ";
+        // line 36
+        echo "    <section class=\"modal fade\" id=\"privacidad\">
+        <div class=\"modal-dialog modal-dialog-centered\">
+            <div class=\"modal-content\">
+                <div class=\"modal-header\">
+                    <p class=\"modal-title\"><strong>Política de Privacidad</strong></p>
+                    <button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+                </div>
+                <div class=\"modal-body\">
+                    <p>El presente Política de Privacidad establece los términos en que Rasprivate Cloud
+                        usa y protege la información que es proporcionada por sus usuarios al momento de
+                        utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios.
+                        Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado,
+                        lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.
+                        Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le
+                        recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+                    </p>
+                    <p>
+                        <strong>Información que es recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto como&nbsp; su
+                        dirección de correo electrónico.</p>
+                    <p>
+                        <strong>Uso de la información recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener
+                        un registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros servicios. &nbsp;
+                    </p>
+                    <p>Rasprivate Cloud está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+                        Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún acceso no autorizado.
+                    </p>
+                    <p>
+                        <strong>Enlaces a Terceros</strong>
+                    </p>
+                    <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted de clic en estos enlaces
+                        y abandone nuestra página, ya no tenemos control sobre al sitio al que es redirigido y por lo tanto no somos responsables de los
+                        términos o privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias
+                        políticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.
+                    </p>
+                    <p>
+                        <strong>Control de su información personal</strong>
+                    </p>
+                    <p>Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido
+                        por un juez con un orden judicial.
+                    </p>
+                    <p>Rasprivate Cloud Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+                    </p>
+                    <p>Esta politica de privacidad se han generado en
+                        <a href=\"https://politicadeprivacidadplantilla.com/\" target=\"_blank\">politicadeprivacidadplantilla.com</a>.<br>
+                    </p>
+                </div>
+                <div class=\"modal-footer\">
+                    <p>Rasprivate Cloud, 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
 <div class=\"container mt-5 \">
     <div class=\"row justify-content-center\">
         <div class=\"col-md-6\">
             <h1 class=\"h3 mb-3 font-weight-normal text-center\">Iniciar sesión</h1>
             <form method=\"post\" class=\"\">
                 ";
-        // line 39
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 39, $this->source); })())) {
-            // line 40
+        // line 97
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 97, $this->source); })())) {
+            // line 98
             echo "                    <div class=\"alert alert-danger\">Usuario o contraseña incorrectos</div>
                 ";
         }
-        // line 42
+        // line 100
         echo "
                 ";
-        // line 43
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43)) {
-            // line 44
+        // line 101
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 101, $this->source); })()), "user", [], "any", false, false, false, 101)) {
+            // line 102
             echo "                    <div class=\"mb-3\">
                        ¿No eres ";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45), "username", [], "any", false, false, false, 45), "html", null, true);
+            // line 103
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 103, $this->source); })()), "user", [], "any", false, false, false, 103), "username", [], "any", false, false, false, 103), "html", null, true);
             echo " ? <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Cerrar sesión</a>
                     </div>
                 ";
         }
-        // line 48
+        // line 106
         echo "                <label for=\"inputEmail\" class=\"text-white\">Email</label>
                 <input type=\"email\" value=\"";
-        // line 49
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 49, $this->source); })()), "html", null, true);
+        // line 107
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 107, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control mb-2\" required>
                 <label for=\"inputPassword\" class=\"text-white\">Contraseña</label>
                 <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-3\" required>
@@ -177,14 +236,11 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                     Entrar
                 </button>
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 56
+        // line 114
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
-
-                ";
-        // line 68
-        echo "            </form>
-            <div class=\"text-white\">¿Todavía no tienes una cuenta? <strong><a class=\"text-white\" href=\"registro\">Crea una nueva</a></strong></div>
+            </form>
+            <div class=\"text-white\">¿Todavía no tienes una cuenta? <strong><a class=\"text-white text-decoration-none\" href=\"registro\">Crea una nueva</a></strong></div>
         </div>
     </div>
     <a class=\"ref\"
@@ -220,7 +276,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
 
     public function getDebugInfo()
     {
-        return array (  186 => 68,  181 => 56,  171 => 49,  168 => 48,  160 => 45,  157 => 44,  155 => 43,  152 => 42,  148 => 40,  146 => 39,  116 => 11,  112 => 8,  102 => 7,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
+        return array (  240 => 114,  230 => 107,  227 => 106,  219 => 103,  216 => 102,  214 => 101,  211 => 100,  207 => 98,  205 => 97,  142 => 36,  116 => 11,  112 => 8,  102 => 7,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -246,7 +302,7 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                 <div class=\"collapse navbar-collapse\" id=\"menu\">
                     <nav class=\"navbar-nav\">
                         <a href=\"/\" class=\"nav-link\" id=\"home\">Home</a>
-                        <a href=\"#\" class=\"nav-link\">Privacidad</a>
+                        <a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"nav-link\">Privacidad</a>
                         <a href=\"#\" class=\"nav-link\">Manual del usuario</a>
                     </nav>
                     <!--Botones de inicio de sesión o registro-->
@@ -258,6 +314,64 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
             </nav>
         </div>
     </header>
+
+    {# Política de privacidad #}
+    <section class=\"modal fade\" id=\"privacidad\">
+        <div class=\"modal-dialog modal-dialog-centered\">
+            <div class=\"modal-content\">
+                <div class=\"modal-header\">
+                    <p class=\"modal-title\"><strong>Política de Privacidad</strong></p>
+                    <button type=\"button\" data-dismiss=\"modal\" class=\"close\" aria-hidden=\"true\">&times;</button>
+                </div>
+                <div class=\"modal-body\">
+                    <p>El presente Política de Privacidad establece los términos en que Rasprivate Cloud
+                        usa y protege la información que es proporcionada por sus usuarios al momento de
+                        utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios.
+                        Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado,
+                        lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.
+                        Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le
+                        recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+                    </p>
+                    <p>
+                        <strong>Información que es recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,&nbsp; información de contacto como&nbsp; su
+                        dirección de correo electrónico.</p>
+                    <p>
+                        <strong>Uso de la información recogida</strong>
+                    </p>
+                    <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener
+                        un registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros servicios. &nbsp;
+                    </p>
+                    <p>Rasprivate Cloud está altamente comprometido para cumplir con el compromiso de mantener su información segura.
+                        Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún acceso no autorizado.
+                    </p>
+                    <p>
+                        <strong>Enlaces a Terceros</strong>
+                    </p>
+                    <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted de clic en estos enlaces
+                        y abandone nuestra página, ya no tenemos control sobre al sitio al que es redirigido y por lo tanto no somos responsables de los
+                        términos o privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias
+                        políticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.
+                    </p>
+                    <p>
+                        <strong>Control de su información personal</strong>
+                    </p>
+                    <p>Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido
+                        por un juez con un orden judicial.
+                    </p>
+                    <p>Rasprivate Cloud Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+                    </p>
+                    <p>Esta politica de privacidad se han generado en
+                        <a href=\"https://politicadeprivacidadplantilla.com/\" target=\"_blank\">politicadeprivacidadplantilla.com</a>.<br>
+                    </p>
+                </div>
+                <div class=\"modal-footer\">
+                    <p>Rasprivate Cloud, 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
 <div class=\"container mt-5 \">
     <div class=\"row justify-content-center\">
         <div class=\"col-md-6\">
@@ -281,19 +395,8 @@ class __TwigTemplate_cee54039a9cdaf60e2c40428119d61d31a08fc0241cdf19cdd6b6d9040f
                     Entrar
                 </button>
                 <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
-
-                {#
-                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                    See https://symfony.com/doc/current/security/remember_me.html
-
-                    <div class=\"checkbox mb-3\">
-                        <label>
-                            <input type=\"checkbox\" name=\"_remember_me\"> Remember me
-                        </label>
-                    </div>
-                #}
             </form>
-            <div class=\"text-white\">¿Todavía no tienes una cuenta? <strong><a class=\"text-white\" href=\"registro\">Crea una nueva</a></strong></div>
+            <div class=\"text-white\">¿Todavía no tienes una cuenta? <strong><a class=\"text-white text-decoration-none\" href=\"registro\">Crea una nueva</a></strong></div>
         </div>
     </div>
     <a class=\"ref\"
