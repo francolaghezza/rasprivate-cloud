@@ -580,57 +580,133 @@
                         <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
+                        <div class="row no-gutters">
                         {% for archivo in pagination %}
                             {% set borrado = archivo.borrado %}
                             {% if borrado == 'S' %}
-                                <div class="col-md-12 mt-3 mb-3">
-                                    {% set id = archivo.id %}
-                                    <div class="card">
-                                        {% set nombre = archivo.nombre %}
-                                        <input type="hidden" name="{{ nombre }}" value="{{ nombre }}">
-                                        <div class="card-body">
-                                            {% if archivo.nombre | length > 30 %}
-                                                {% for i in archivo.nombre | slice(0, 30) %}
-                                                {% endfor %}
-                                                <p class="card-title" title="{{ archivo.nombre }}"> {{ archivo.nombre | slice(0, 30) ~ '...' }} </p>
-                                            {% else %}
-                                                <p class="card-title" title="{{ archivo.nombre }}"> {{ archivo.nombre }} </p>
-                                            {% endif %}
-
-                                            {% set size = archivo.size %}
-                                            {% if size/1024 < 1 %}
-                                                {% set unidad = 'KB' %}
-                                                <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
-                                            {% elseif size/1024 >= 1 and size/1024 < 1023 %}
-                                                {% set unidad = 'MB' %}
-                                                {% set size = size/1024 %}
-                                                <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
-                                            {% else %}
-                                                {% set unidad = 'GB' %}
-                                                {% set size = size/1048576 %}
-                                                <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
-                                            {% endif %}
-                                            <p class="card-text text-muted">{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</p>
-                                            <p class="card-text text-center">
-                                                <button class="btn bg-transparent btn-md" title="Restaurar" data-toggle="modal" data-target="#restaurar">
-                                                    <svg class="bi bi-arrow-counterclockwise" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" d="M12.83 6.706a5 5 0 00-7.103-3.16.5.5 0 11-.454-.892A6 6 0 112.545 5.5a.5.5 0 11.91.417 5 5 0 109.375.789z" clip-rule="evenodd"/>
-                                                        <path fill-rule="evenodd" d="M7.854.146a.5.5 0 00-.708 0l-2.5 2.5a.5.5 0 000 .708l2.5 2.5a.5.5 0 10.708-.708L5.707 3 7.854.854a.5.5 0 000-.708z" clip-rule="evenodd"/>
-                                                    </svg>
-                                                </button>
-                                                <a class="btn bg-transparent btn-md" data-toggle="modal" data-target="#borrar_definitivo" title="Eliminar definitivamente">
-                                                    <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
-                                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
-                                                    </svg>
-                                                </a>
-                                                <input type="hidden" name="{{ id }}" value="{{ id }}">
-                                            </p>
+                                    <div class="col-6 mb-2">
+                                        {% set id = archivo.id %}
+                                        <div class="card">
+                                            {% set nombre = archivo.nombre %}
+                                            <input type="hidden" name="{{ nombre }}" value="{{ nombre }}">
+                                            <div class="card-body">
+                                                <div class="dropdown no-gutters">
+                                                    {% if archivo.nombre | length > 30 %}
+                                                        {% for i in archivo.nombre | slice(0, 30) %}
+                                                        {% endfor %}
+                                                        <button class="card-title btn dropdown-toggle bg-transparent btn-titulo" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ archivo.nombre }}">
+                                                            {{ archivo.nombre | slice(0, 30) ~ '...' }}
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                                            <button class="dropdown-item btn btn-md" type="button" data-toggle="modal" data-target="#restaurar">
+                                                                <svg class="bi bi-arrow-counterclockwise" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" d="M12.83 6.706a5 5 0 0 0-7.103-3.16.5.5 0 1 1-.454-.892A6 6 0 1 1 2.545 5.5a.5.5 0 1 1 .91.417 5 5 0 1 0 9.375.789z"/>
+                                                                    <path fill-rule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z"/>
+                                                                </svg>
+                                                                Restaurar
+                                                            </button>
+                                                            <a class="btn btn-md dropdown-item" data-toggle="modal" data-target="#borrar_definitivo">
+                                                                <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                                                </svg>
+                                                                Eliminar
+                                                            </a>
+                                                            <input type="hidden" name="{{ id }}" value="{{ id }}">
+                                                        </div>
+                                                    {% else %}
+                                                        <button class="card-title btn dropdown-toggle bg-transparent btn-titulo" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ archivo.nombre }}">
+                                                            {{ archivo.nombre }}
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                                            <button class="dropdown-item btn btn-md" type="button" data-toggle="modal" data-target="#restaurar">
+                                                                <svg class="bi bi-arrow-counterclockwise" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" d="M12.83 6.706a5 5 0 0 0-7.103-3.16.5.5 0 1 1-.454-.892A6 6 0 1 1 2.545 5.5a.5.5 0 1 1 .91.417 5 5 0 1 0 9.375.789z"/>
+                                                                    <path fill-rule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z"/>
+                                                                </svg>
+                                                                Restaurar
+                                                            </button>
+                                                            <a class="btn btn-md dropdown-item" data-toggle="modal" data-target="#borrar_definitivo">
+                                                                <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                                                </svg>
+                                                                Eliminar
+                                                            </a>
+                                                            <input type="hidden" name="{{ id }}" value="{{ id }}">
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    {% set nombre = archivo.nombre | slice(-3, 3) %}
+                                                    <div class="col-2">
+                                                        {% if nombre == 'pdf'%}
+                                                            <img src="../img/pdf.png" class="card-img" alt="pdf">
+                                                        {% elseif nombre == 'css' %}
+                                                            <img src="../img/css.png" class="card-img" alt="css">
+                                                        {% elseif nombre == 'csv' %}
+                                                            <img src="../img/csv.png" class="card-img" alt="csv">
+                                                        {% elseif nombre == 'ocx' %}
+                                                            <img src="../img/doc.png" class="card-img" alt="docx">
+                                                        {% elseif nombre == 'dvd' %}
+                                                            <img src="../img/dvd.png" class="card-img" alt="dvd">
+                                                        {% elseif nombre == 'exe' %}
+                                                            <img src="../img/exe.png" class="card-img" alt="exe">
+                                                        {% elseif nombre == 'tml' %}
+                                                            <img src="../img/html.png" class="card-img" alt="html">
+                                                        {% elseif nombre == 'iso' %}
+                                                            <img src="../img/iso.png" class="card-img" alt="iso">
+                                                        {% elseif nombre == 'jpg' %}
+                                                            <img src="../img/jpg.png" class="card-img" alt="jpg">
+                                                        {% elseif nombre == '.js' %}
+                                                            <img src="../img/js.png" class="card-img" alt="js">
+                                                        {% elseif nombre == 'mp3' %}
+                                                            <img src="../img/mp3.png" class="card-img" alt="mp3">
+                                                        {% elseif nombre == 'mp4' %}
+                                                            <img src="../img/mp4.png" class="card-img" alt="mp4">
+                                                        {% elseif nombre == 'png' %}
+                                                            <img src="../img/png.png" class="card-img" alt="png">
+                                                        {% elseif nombre == 'ptx' %}
+                                                            <img src="../img/ppt.png" class="card-img" alt="pptx">
+                                                        {% elseif nombre == 'sql' %}
+                                                            <img src="../img/sql.png" class="card-img" alt="sql">
+                                                        {% elseif nombre == 'txt' %}
+                                                            <img src="../img/txt.png" class="card-img" alt="txt">
+                                                        {% elseif nombre == 'lsx' %}
+                                                            <img src="../img/xls.png" class="card-img" alt="xlsx">
+                                                        {% elseif nombre == 'xml' %}
+                                                            <img src="../img/xml.png" class="card-img" alt="xml">
+                                                        {% elseif nombre == 'zip' %}
+                                                            <img src="../img/zip.png" class="card-img" alt="zip">
+                                                        {% elseif nombre == 'rar' %}
+                                                            <img src="../img/rar.png" class="card-img" alt="rar">
+                                                        {% else %}
+                                                            <img src="../img/none.png" class="card-img" alt="desconocido">
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="col-10">
+                                                        {% set size = archivo.size %}
+                                                        {% if size/1024 < 1 %}
+                                                            {% set unidad = 'KB' %}
+                                                            <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
+                                                        {% elseif size/1024 >= 1 and size/1024 < 1023 %}
+                                                            {% set unidad = 'MB' %}
+                                                            {% set size = size/1024 %}
+                                                            <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
+                                                        {% else %}
+                                                            {% set unidad = 'GB' %}
+                                                            {% set size = size/1048576 %}
+                                                            <p class="card-subtitle">{{ size |round(2, 'floor') }} {{ unidad }}</p>
+                                                        {% endif %}
+                                                        <p class="card-text text-muted">{{ archivo.fecha | date('d-m-Y')}} {{ archivo.fecha | date('H:i') }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                             {% endif %}
                         {% endfor %}
+                        </div>
                     </div>
                     <div class="modal-footer">
                         {% set contador = 0 %}
