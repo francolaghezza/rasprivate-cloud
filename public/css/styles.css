@@ -171,11 +171,44 @@ input[type="text"]::placeholder { color: whitesmoke; }
     background-position:center center;
     background-repeat: no-repeat;
 }
+.card{
+    width: 90%;
+}
+.card-body{
+    padding-left: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+.navigation{
+    margin-top: 20px;
+}
+.card-text{
+    margin: 0;
+    padding-left: 12px;
+}
+
+.card-subtitle{
+    padding-left: 12px;
+}
+
+.card-img{
+    padding-left: 12px;
+}
+
+.btn-titulo{
+    border: none;
+    box-shadow: none;
+}
+.btn-titulo:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
 @media (max-width: 576px) {
     body{
         overflow-x: hidden;
     }
-
     .navbar-nav{
         width: 80%;
     }

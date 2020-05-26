@@ -323,8 +323,10 @@ class ArchivosController extends AbstractController
         if ($request->isXmlHttpRequest()){
             $em = $this->getDoctrine()->getManager();
             $usuario = $this->getUser();
+            $email_usuario = $usuario->getEmail();
             $nombre_usuario = $usuario->getUsername();
             $id_archivo = $request->request->get('id');
+            $mensaje = $request->request->get('mensaje');
             $archivo = $em->getRepository(Archivos::class)->find($id_archivo);
             $nombre_archivo = $archivo->getNombre();
             $ruta = "uploads/archivos/".$nombre_usuario."/".$nombre_archivo;
@@ -334,7 +336,8 @@ class ArchivosController extends AbstractController
                 ->to($email_destino)
                 ->attachFromPath($ruta)
                 ->subject('Archivo compartido')
-                ->html('<p>'.$nombre_usuario.' ha compartido '.$nombre_archivo.'</p>');
+                ->html('<p>'.$nombre_usuario.' ('.$email_usuario.') ha compartido '.$nombre_archivo.'</p>'.
+                              '<p>'.$mensaje.'</p>');
             $mailer->send($email);
             if($email){
                 $this->addFlash(
