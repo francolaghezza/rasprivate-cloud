@@ -3,10 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Usuarios;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,8 +18,12 @@ class UsuarioType extends AbstractType
     {
         $builder
             ->add('email',EmailType::class)
-            ->add('usuario')
-            ->add('password',PasswordType::class)
+            ->add('usuario',TextType::class,[
+                'attr' => ['pattern' => '.{5,}']
+            ])
+            ->add('password',PasswordType::class,[
+                'attr' => ['pattern' => '.{8,}', 'placeholder' => 'Mínimo 8 caracteres']
+            ])
             ->add('Registrar',SubmitType::class,[
                 'attr' => ['class' => 'btn-dark'],
             ]);

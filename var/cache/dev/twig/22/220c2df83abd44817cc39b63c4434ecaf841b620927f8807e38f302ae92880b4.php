@@ -1110,49 +1110,47 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
             echo "                            ";
             $context["borrado"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "borrado", [], "any", false, false, false, 585);
             // line 586
-            echo "
-                            ";
-            // line 587
-            if (0 === twig_compare((isset($context["borrado"]) || array_key_exists("borrado", $context) ? $context["borrado"] : (function () { throw new RuntimeError('Variable "borrado" does not exist.', 587, $this->source); })()), "S")) {
-                // line 588
+            echo "                            ";
+            if (0 === twig_compare((isset($context["borrado"]) || array_key_exists("borrado", $context) ? $context["borrado"] : (function () { throw new RuntimeError('Variable "borrado" does not exist.', 586, $this->source); })()), "S")) {
+                // line 587
                 echo "                                    <div class=\"col-6 mb-2\">
                                         ";
+                // line 588
+                $context["id"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "id", [], "any", false, false, false, 588);
                 // line 589
-                $context["id"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "id", [], "any", false, false, false, 589);
-                // line 590
                 echo "                                        <div class=\"card\">
                                             ";
+                // line 590
+                $context["nombre"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 590);
                 // line 591
-                $context["nombre"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 591);
-                // line 592
                 echo "                                            <input type=\"hidden\" name=\"";
-                echo twig_escape_filter($this->env, (isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 592, $this->source); })()), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 591, $this->source); })()), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, (isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 592, $this->source); })()), "html", null, true);
+                echo twig_escape_filter($this->env, (isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 591, $this->source); })()), "html", null, true);
                 echo "\">
                                             <div class=\"card-body\">
                                                 <div class=\"dropdown no-gutters\">
                                                     ";
-                // line 595
-                if (1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 595)), 30)) {
-                    // line 596
+                // line 594
+                if (1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 594)), 30)) {
+                    // line 595
                     echo "                                                        ";
                     $context['_parent'] = $context;
-                    $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 596), 0, 30));
+                    $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 595), 0, 30));
                     foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                        // line 597
+                        // line 596
                         echo "                                                        ";
                     }
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 598
+                    // line 597
                     echo "                                                        <button class=\"card-title btn dropdown-toggle bg-transparent btn-titulo\" type=\"button\" id=\"dropdownMenu\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" title=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 598), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 597), "html", null, true);
                     echo "\">
                                                             ";
-                    // line 599
-                    echo twig_escape_filter($this->env, (twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 599), 0, 30) . "..."), "html", null, true);
+                    // line 598
+                    echo twig_escape_filter($this->env, (twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 598), 0, 30) . "..."), "html", null, true);
                     echo "
                                                         </button>
                                                         <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu\">
@@ -1171,21 +1169,21 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                                                                 Eliminar
                                                             </a>
                                                             <input type=\"hidden\" name=\"";
-                    // line 616
-                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 616, $this->source); })()), "html", null, true);
+                    // line 615
+                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 615, $this->source); })()), "html", null, true);
                     echo "\" value=\"";
-                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 616, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 615, $this->source); })()), "html", null, true);
                     echo "\">
                                                         </div>
                                                     ";
                 } else {
-                    // line 619
+                    // line 618
                     echo "                                                        <button class=\"card-title btn dropdown-toggle bg-transparent btn-titulo\" type=\"button\" id=\"dropdownMenu\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" title=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 619), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 618), "html", null, true);
                     echo "\">
                                                             ";
-                    // line 620
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 620), "html", null, true);
+                    // line 619
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 619), "html", null, true);
                     echo "
                                                         </button>
                                                         <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu\">
@@ -1204,182 +1202,182 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                                                                 Eliminar
                                                             </a>
                                                             <input type=\"hidden\" name=\"";
-                    // line 637
-                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 637, $this->source); })()), "html", null, true);
+                    // line 636
+                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 636, $this->source); })()), "html", null, true);
                     echo "\" value=\"";
-                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 637, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 636, $this->source); })()), "html", null, true);
                     echo "\">
                                                         </div>
                                                     ";
                 }
-                // line 640
+                // line 639
                 echo "                                                </div>
                                                 <div class=\"row no-gutters\">
                                                     ";
+                // line 641
+                $context["nombre"] = twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 641),  -3, 3);
                 // line 642
-                $context["nombre"] = twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "nombre", [], "any", false, false, false, 642),  -3, 3);
-                // line 643
                 echo "                                                    <div class=\"col-2\">
                                                         ";
-                // line 644
-                if (0 === twig_compare((isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 644, $this->source); })()), "pdf")) {
-                    // line 645
+                // line 643
+                if (0 === twig_compare((isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 643, $this->source); })()), "pdf")) {
+                    // line 644
                     echo "                                                            <img src=\"../img/pdf.png\" class=\"card-img\" alt=\"pdf\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 646
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 646, $this->source); })()), "css")) {
-                    // line 647
+                } elseif (0 === twig_compare(                // line 645
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 645, $this->source); })()), "css")) {
+                    // line 646
                     echo "                                                            <img src=\"../img/css.png\" class=\"card-img\" alt=\"css\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 648
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 648, $this->source); })()), "csv")) {
-                    // line 649
+                } elseif (0 === twig_compare(                // line 647
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 647, $this->source); })()), "csv")) {
+                    // line 648
                     echo "                                                            <img src=\"../img/csv.png\" class=\"card-img\" alt=\"csv\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 650
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 650, $this->source); })()), "ocx")) {
-                    // line 651
+                } elseif (0 === twig_compare(                // line 649
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 649, $this->source); })()), "ocx")) {
+                    // line 650
                     echo "                                                            <img src=\"../img/doc.png\" class=\"card-img\" alt=\"docx\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 652
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 652, $this->source); })()), "dvd")) {
-                    // line 653
+                } elseif (0 === twig_compare(                // line 651
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 651, $this->source); })()), "dvd")) {
+                    // line 652
                     echo "                                                            <img src=\"../img/dvd.png\" class=\"card-img\" alt=\"dvd\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 654
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 654, $this->source); })()), "exe")) {
-                    // line 655
+                } elseif (0 === twig_compare(                // line 653
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 653, $this->source); })()), "exe")) {
+                    // line 654
                     echo "                                                            <img src=\"../img/exe.png\" class=\"card-img\" alt=\"exe\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 656
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 656, $this->source); })()), "tml")) {
-                    // line 657
+                } elseif (0 === twig_compare(                // line 655
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 655, $this->source); })()), "tml")) {
+                    // line 656
                     echo "                                                            <img src=\"../img/html.png\" class=\"card-img\" alt=\"html\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 658
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 658, $this->source); })()), "iso")) {
-                    // line 659
+                } elseif (0 === twig_compare(                // line 657
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 657, $this->source); })()), "iso")) {
+                    // line 658
                     echo "                                                            <img src=\"../img/iso.png\" class=\"card-img\" alt=\"iso\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 660
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 660, $this->source); })()), "jpg")) {
-                    // line 661
+                } elseif (0 === twig_compare(                // line 659
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 659, $this->source); })()), "jpg")) {
+                    // line 660
                     echo "                                                            <img src=\"../img/jpg.png\" class=\"card-img\" alt=\"jpg\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 662
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 662, $this->source); })()), ".js")) {
-                    // line 663
+                } elseif (0 === twig_compare(                // line 661
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 661, $this->source); })()), ".js")) {
+                    // line 662
                     echo "                                                            <img src=\"../img/js.png\" class=\"card-img\" alt=\"js\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 664
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 664, $this->source); })()), "mp3")) {
-                    // line 665
+                } elseif (0 === twig_compare(                // line 663
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 663, $this->source); })()), "mp3")) {
+                    // line 664
                     echo "                                                            <img src=\"../img/mp3.png\" class=\"card-img\" alt=\"mp3\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 666
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 666, $this->source); })()), "mp4")) {
-                    // line 667
+                } elseif (0 === twig_compare(                // line 665
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 665, $this->source); })()), "mp4")) {
+                    // line 666
                     echo "                                                            <img src=\"../img/mp4.png\" class=\"card-img\" alt=\"mp4\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 668
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 668, $this->source); })()), "png")) {
-                    // line 669
+                } elseif (0 === twig_compare(                // line 667
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 667, $this->source); })()), "png")) {
+                    // line 668
                     echo "                                                            <img src=\"../img/png.png\" class=\"card-img\" alt=\"png\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 670
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 670, $this->source); })()), "ptx")) {
-                    // line 671
+                } elseif (0 === twig_compare(                // line 669
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 669, $this->source); })()), "ptx")) {
+                    // line 670
                     echo "                                                            <img src=\"../img/ppt.png\" class=\"card-img\" alt=\"pptx\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 672
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 672, $this->source); })()), "sql")) {
-                    // line 673
+                } elseif (0 === twig_compare(                // line 671
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 671, $this->source); })()), "sql")) {
+                    // line 672
                     echo "                                                            <img src=\"../img/sql.png\" class=\"card-img\" alt=\"sql\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 674
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 674, $this->source); })()), "txt")) {
-                    // line 675
+                } elseif (0 === twig_compare(                // line 673
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 673, $this->source); })()), "txt")) {
+                    // line 674
                     echo "                                                            <img src=\"../img/txt.png\" class=\"card-img\" alt=\"txt\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 676
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 676, $this->source); })()), "lsx")) {
-                    // line 677
+                } elseif (0 === twig_compare(                // line 675
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 675, $this->source); })()), "lsx")) {
+                    // line 676
                     echo "                                                            <img src=\"../img/xls.png\" class=\"card-img\" alt=\"xlsx\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 678
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 678, $this->source); })()), "xml")) {
-                    // line 679
+                } elseif (0 === twig_compare(                // line 677
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 677, $this->source); })()), "xml")) {
+                    // line 678
                     echo "                                                            <img src=\"../img/xml.png\" class=\"card-img\" alt=\"xml\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 680
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 680, $this->source); })()), "zip")) {
-                    // line 681
+                } elseif (0 === twig_compare(                // line 679
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 679, $this->source); })()), "zip")) {
+                    // line 680
                     echo "                                                            <img src=\"../img/zip.png\" class=\"card-img\" alt=\"zip\">
                                                         ";
-                } elseif (0 === twig_compare(                // line 682
-(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 682, $this->source); })()), "rar")) {
-                    // line 683
+                } elseif (0 === twig_compare(                // line 681
+(isset($context["nombre"]) || array_key_exists("nombre", $context) ? $context["nombre"] : (function () { throw new RuntimeError('Variable "nombre" does not exist.', 681, $this->source); })()), "rar")) {
+                    // line 682
                     echo "                                                            <img src=\"../img/rar.png\" class=\"card-img\" alt=\"rar\">
                                                         ";
                 } else {
-                    // line 685
+                    // line 684
                     echo "                                                            <img src=\"../img/none.png\" class=\"card-img\" alt=\"desconocido\">
                                                         ";
                 }
-                // line 687
+                // line 686
                 echo "                                                    </div>
                                                     <div class=\"col-10\">
                                                         ";
+                // line 688
+                $context["size"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "size", [], "any", false, false, false, 688);
                 // line 689
-                $context["size"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "size", [], "any", false, false, false, 689);
-                // line 690
                 echo "                                                        ";
-                if (-1 === twig_compare(((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 690, $this->source); })()) / 1024), 1)) {
-                    // line 691
+                if (-1 === twig_compare(((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 689, $this->source); })()) / 1024), 1)) {
+                    // line 690
                     echo "                                                            ";
                     $context["unidad"] = "KB";
-                    // line 692
+                    // line 691
                     echo "                                                            <p class=\"card-subtitle\">";
-                    echo twig_escape_filter($this->env, twig_round((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 692, $this->source); })()), 2, "floor"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_round((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 691, $this->source); })()), 2, "floor"), "html", null, true);
                     echo " ";
-                    echo twig_escape_filter($this->env, (isset($context["unidad"]) || array_key_exists("unidad", $context) ? $context["unidad"] : (function () { throw new RuntimeError('Variable "unidad" does not exist.', 692, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["unidad"]) || array_key_exists("unidad", $context) ? $context["unidad"] : (function () { throw new RuntimeError('Variable "unidad" does not exist.', 691, $this->source); })()), "html", null, true);
                     echo "</p>
                                                         ";
-                } elseif ((0 <= twig_compare((                // line 693
-(isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 693, $this->source); })()) / 1024), 1) && -1 === twig_compare(((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 693, $this->source); })()) / 1024), 1023))) {
-                    // line 694
+                } elseif ((0 <= twig_compare((                // line 692
+(isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 692, $this->source); })()) / 1024), 1) && -1 === twig_compare(((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 692, $this->source); })()) / 1024), 1023))) {
+                    // line 693
                     echo "                                                            ";
                     $context["unidad"] = "MB";
-                    // line 695
+                    // line 694
                     echo "                                                            ";
-                    $context["size"] = ((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 695, $this->source); })()) / 1024);
-                    // line 696
+                    $context["size"] = ((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 694, $this->source); })()) / 1024);
+                    // line 695
                     echo "                                                            <p class=\"card-subtitle\">";
-                    echo twig_escape_filter($this->env, twig_round((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 696, $this->source); })()), 2, "floor"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_round((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 695, $this->source); })()), 2, "floor"), "html", null, true);
                     echo " ";
-                    echo twig_escape_filter($this->env, (isset($context["unidad"]) || array_key_exists("unidad", $context) ? $context["unidad"] : (function () { throw new RuntimeError('Variable "unidad" does not exist.', 696, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["unidad"]) || array_key_exists("unidad", $context) ? $context["unidad"] : (function () { throw new RuntimeError('Variable "unidad" does not exist.', 695, $this->source); })()), "html", null, true);
                     echo "</p>
                                                         ";
                 } else {
-                    // line 698
+                    // line 697
                     echo "                                                            ";
                     $context["unidad"] = "GB";
-                    // line 699
+                    // line 698
                     echo "                                                            ";
-                    $context["size"] = ((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 699, $this->source); })()) / 1048576);
-                    // line 700
+                    $context["size"] = ((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 698, $this->source); })()) / 1048576);
+                    // line 699
                     echo "                                                            <p class=\"card-subtitle\">";
-                    echo twig_escape_filter($this->env, twig_round((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 700, $this->source); })()), 2, "floor"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_round((isset($context["size"]) || array_key_exists("size", $context) ? $context["size"] : (function () { throw new RuntimeError('Variable "size" does not exist.', 699, $this->source); })()), 2, "floor"), "html", null, true);
                     echo " ";
-                    echo twig_escape_filter($this->env, (isset($context["unidad"]) || array_key_exists("unidad", $context) ? $context["unidad"] : (function () { throw new RuntimeError('Variable "unidad" does not exist.', 700, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["unidad"]) || array_key_exists("unidad", $context) ? $context["unidad"] : (function () { throw new RuntimeError('Variable "unidad" does not exist.', 699, $this->source); })()), "html", null, true);
                     echo "</p>
                                                         ";
                 }
-                // line 702
+                // line 701
                 echo "                                                        <p class=\"card-text text-muted\">";
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 702), "d-m-Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 701), "d-m-Y"), "html", null, true);
                 echo " ";
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 702), "H:i"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["archivo"], "fecha", [], "any", false, false, false, 701), "H:i"), "html", null, true);
                 echo "</p>
                                                     </div>
                                                 </div>
@@ -1388,66 +1386,66 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                                     </div>
                             ";
             }
-            // line 709
+            // line 708
             echo "                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['archivo'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 710
+        // line 709
         echo "                        </div>
                     </div>
                     <div class=\"modal-footer\">
                         ";
-        // line 713
+        // line 712
         $context["contador"] = 0;
-        // line 714
+        // line 713
         echo "                        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 714, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 713, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["archivo"]) {
+            // line 714
+            echo "                            ";
+            $context["borrado"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "borrado", [], "any", false, false, false, 714);
             // line 715
             echo "                            ";
-            $context["borrado"] = twig_get_attribute($this->env, $this->source, $context["archivo"], "borrado", [], "any", false, false, false, 715);
-            // line 716
-            echo "                            ";
-            if (0 === twig_compare((isset($context["borrado"]) || array_key_exists("borrado", $context) ? $context["borrado"] : (function () { throw new RuntimeError('Variable "borrado" does not exist.', 716, $this->source); })()), "S")) {
-                // line 717
+            if (0 === twig_compare((isset($context["borrado"]) || array_key_exists("borrado", $context) ? $context["borrado"] : (function () { throw new RuntimeError('Variable "borrado" does not exist.', 715, $this->source); })()), "S")) {
+                // line 716
                 echo "                                ";
-                $context["contador"] = ((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 717, $this->source); })()) + 1);
-                // line 718
+                $context["contador"] = ((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 716, $this->source); })()) + 1);
+                // line 717
                 echo "                            ";
             }
-            // line 719
+            // line 718
             echo "                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['archivo'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 720
+        // line 719
         echo "                        ";
-        if ((1 === twig_compare((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 720, $this->source); })()), 0) && 0 === twig_compare((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 720, $this->source); })()), 1))) {
-            // line 721
+        if ((1 === twig_compare((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 719, $this->source); })()), 0) && 0 === twig_compare((isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 719, $this->source); })()), 1))) {
+            // line 720
             echo "                            <span>";
-            echo twig_escape_filter($this->env, (isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 721, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 720, $this->source); })()), "html", null, true);
             echo " archivo</span>
                         ";
-        } elseif (1 === twig_compare(        // line 722
-(isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 722, $this->source); })()), 1)) {
-            // line 723
+        } elseif (1 === twig_compare(        // line 721
+(isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 721, $this->source); })()), 1)) {
+            // line 722
             echo "                            <span>";
-            echo twig_escape_filter($this->env, (isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 723, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["contador"]) || array_key_exists("contador", $context) ? $context["contador"] : (function () { throw new RuntimeError('Variable "contador" does not exist.', 722, $this->source); })()), "html", null, true);
             echo " archivos</span>
                         ";
         }
-        // line 725
+        // line 724
         echo "                    </div>
                 </div>
             </div>
         </section>
 
     ";
-        // line 731
+        // line 730
         echo "    <section class=\"modal fade\" id=\"restaurar\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -1470,7 +1468,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
     </section>
 
     ";
-        // line 753
+        // line 752
         echo "    <section class=\"modal fade\" id=\"borrar_definitivo\">
         <div class=\"modal-dialog modal-dialog-centered\">
             <div class=\"modal-content\">
@@ -1501,7 +1499,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     }
 
-    // line 775
+    // line 774
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -1511,20 +1509,20 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 776
+        // line 775
         echo "    ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
     <script src=\"";
-        // line 777
+        // line 776
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 778
+        // line 777
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
     <script src=\"";
-        // line 779
+        // line 778
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/accion.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -1548,7 +1546,7 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
 
     public function getDebugInfo()
     {
-        return array (  1528 => 779,  1524 => 778,  1520 => 777,  1515 => 776,  1505 => 775,  1474 => 753,  1451 => 731,  1444 => 725,  1438 => 723,  1436 => 722,  1431 => 721,  1428 => 720,  1422 => 719,  1419 => 718,  1416 => 717,  1413 => 716,  1410 => 715,  1405 => 714,  1403 => 713,  1398 => 710,  1392 => 709,  1379 => 702,  1371 => 700,  1368 => 699,  1365 => 698,  1357 => 696,  1354 => 695,  1351 => 694,  1349 => 693,  1342 => 692,  1339 => 691,  1336 => 690,  1334 => 689,  1330 => 687,  1326 => 685,  1322 => 683,  1320 => 682,  1317 => 681,  1315 => 680,  1312 => 679,  1310 => 678,  1307 => 677,  1305 => 676,  1302 => 675,  1300 => 674,  1297 => 673,  1295 => 672,  1292 => 671,  1290 => 670,  1287 => 669,  1285 => 668,  1282 => 667,  1280 => 666,  1277 => 665,  1275 => 664,  1272 => 663,  1270 => 662,  1267 => 661,  1265 => 660,  1262 => 659,  1260 => 658,  1257 => 657,  1255 => 656,  1252 => 655,  1250 => 654,  1247 => 653,  1245 => 652,  1242 => 651,  1240 => 650,  1237 => 649,  1235 => 648,  1232 => 647,  1230 => 646,  1227 => 645,  1225 => 644,  1222 => 643,  1220 => 642,  1216 => 640,  1208 => 637,  1188 => 620,  1183 => 619,  1175 => 616,  1155 => 599,  1150 => 598,  1144 => 597,  1139 => 596,  1137 => 595,  1128 => 592,  1126 => 591,  1123 => 590,  1121 => 589,  1118 => 588,  1116 => 587,  1113 => 586,  1110 => 585,  1106 => 584,  1095 => 575,  1071 => 552,  1048 => 530,  1025 => 508,  1004 => 488,  983 => 468,  967 => 454,  954 => 443,  930 => 420,  925 => 416,  913 => 410,  910 => 409,  905 => 408,  902 => 406,  896 => 405,  884 => 395,  881 => 394,  878 => 393,  873 => 392,  870 => 390,  858 => 384,  850 => 378,  845 => 377,  842 => 375,  830 => 369,  827 => 368,  822 => 367,  819 => 365,  807 => 359,  804 => 358,  799 => 357,  797 => 356,  791 => 355,  785 => 351,  782 => 350,  779 => 349,  774 => 348,  769 => 345,  766 => 344,  763 => 342,  757 => 341,  744 => 334,  736 => 332,  733 => 331,  730 => 330,  722 => 328,  719 => 327,  716 => 326,  714 => 325,  707 => 324,  704 => 323,  701 => 322,  699 => 321,  695 => 319,  691 => 317,  687 => 315,  685 => 314,  682 => 313,  680 => 312,  677 => 311,  675 => 310,  672 => 309,  670 => 308,  667 => 307,  665 => 306,  662 => 305,  660 => 304,  657 => 303,  655 => 302,  652 => 301,  650 => 300,  647 => 299,  645 => 298,  642 => 297,  640 => 296,  637 => 295,  635 => 294,  632 => 293,  630 => 292,  627 => 291,  625 => 290,  622 => 289,  620 => 288,  617 => 287,  615 => 286,  612 => 285,  610 => 284,  607 => 283,  605 => 282,  602 => 281,  600 => 280,  597 => 279,  595 => 278,  592 => 277,  590 => 276,  587 => 275,  585 => 274,  581 => 272,  572 => 269,  561 => 260,  558 => 259,  556 => 258,  553 => 257,  550 => 256,  547 => 255,  538 => 248,  535 => 247,  532 => 246,  523 => 239,  520 => 238,  518 => 237,  498 => 222,  484 => 211,  479 => 210,  470 => 207,  458 => 197,  455 => 196,  453 => 195,  450 => 194,  447 => 193,  444 => 192,  435 => 185,  432 => 184,  429 => 183,  420 => 176,  417 => 175,  415 => 174,  395 => 159,  381 => 148,  376 => 147,  370 => 146,  365 => 145,  363 => 144,  354 => 141,  352 => 140,  349 => 139,  347 => 138,  344 => 137,  341 => 136,  338 => 135,  334 => 134,  330 => 132,  295 => 98,  292 => 96,  276 => 86,  259 => 74,  249 => 66,  246 => 65,  239 => 63,  232 => 61,  229 => 60,  222 => 58,  215 => 56,  212 => 55,  209 => 54,  206 => 53,  203 => 52,  196 => 50,  189 => 48,  186 => 47,  183 => 46,  180 => 45,  178 => 44,  172 => 43,  165 => 41,  162 => 40,  159 => 39,  156 => 38,  153 => 37,  150 => 36,  147 => 35,  143 => 34,  132 => 25,  116 => 10,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  1526 => 778,  1522 => 777,  1518 => 776,  1513 => 775,  1503 => 774,  1472 => 752,  1449 => 730,  1442 => 724,  1436 => 722,  1434 => 721,  1429 => 720,  1426 => 719,  1420 => 718,  1417 => 717,  1414 => 716,  1411 => 715,  1408 => 714,  1403 => 713,  1401 => 712,  1396 => 709,  1390 => 708,  1377 => 701,  1369 => 699,  1366 => 698,  1363 => 697,  1355 => 695,  1352 => 694,  1349 => 693,  1347 => 692,  1340 => 691,  1337 => 690,  1334 => 689,  1332 => 688,  1328 => 686,  1324 => 684,  1320 => 682,  1318 => 681,  1315 => 680,  1313 => 679,  1310 => 678,  1308 => 677,  1305 => 676,  1303 => 675,  1300 => 674,  1298 => 673,  1295 => 672,  1293 => 671,  1290 => 670,  1288 => 669,  1285 => 668,  1283 => 667,  1280 => 666,  1278 => 665,  1275 => 664,  1273 => 663,  1270 => 662,  1268 => 661,  1265 => 660,  1263 => 659,  1260 => 658,  1258 => 657,  1255 => 656,  1253 => 655,  1250 => 654,  1248 => 653,  1245 => 652,  1243 => 651,  1240 => 650,  1238 => 649,  1235 => 648,  1233 => 647,  1230 => 646,  1228 => 645,  1225 => 644,  1223 => 643,  1220 => 642,  1218 => 641,  1214 => 639,  1206 => 636,  1186 => 619,  1181 => 618,  1173 => 615,  1153 => 598,  1148 => 597,  1142 => 596,  1137 => 595,  1135 => 594,  1126 => 591,  1124 => 590,  1121 => 589,  1119 => 588,  1116 => 587,  1113 => 586,  1110 => 585,  1106 => 584,  1095 => 575,  1071 => 552,  1048 => 530,  1025 => 508,  1004 => 488,  983 => 468,  967 => 454,  954 => 443,  930 => 420,  925 => 416,  913 => 410,  910 => 409,  905 => 408,  902 => 406,  896 => 405,  884 => 395,  881 => 394,  878 => 393,  873 => 392,  870 => 390,  858 => 384,  850 => 378,  845 => 377,  842 => 375,  830 => 369,  827 => 368,  822 => 367,  819 => 365,  807 => 359,  804 => 358,  799 => 357,  797 => 356,  791 => 355,  785 => 351,  782 => 350,  779 => 349,  774 => 348,  769 => 345,  766 => 344,  763 => 342,  757 => 341,  744 => 334,  736 => 332,  733 => 331,  730 => 330,  722 => 328,  719 => 327,  716 => 326,  714 => 325,  707 => 324,  704 => 323,  701 => 322,  699 => 321,  695 => 319,  691 => 317,  687 => 315,  685 => 314,  682 => 313,  680 => 312,  677 => 311,  675 => 310,  672 => 309,  670 => 308,  667 => 307,  665 => 306,  662 => 305,  660 => 304,  657 => 303,  655 => 302,  652 => 301,  650 => 300,  647 => 299,  645 => 298,  642 => 297,  640 => 296,  637 => 295,  635 => 294,  632 => 293,  630 => 292,  627 => 291,  625 => 290,  622 => 289,  620 => 288,  617 => 287,  615 => 286,  612 => 285,  610 => 284,  607 => 283,  605 => 282,  602 => 281,  600 => 280,  597 => 279,  595 => 278,  592 => 277,  590 => 276,  587 => 275,  585 => 274,  581 => 272,  572 => 269,  561 => 260,  558 => 259,  556 => 258,  553 => 257,  550 => 256,  547 => 255,  538 => 248,  535 => 247,  532 => 246,  523 => 239,  520 => 238,  518 => 237,  498 => 222,  484 => 211,  479 => 210,  470 => 207,  458 => 197,  455 => 196,  453 => 195,  450 => 194,  447 => 193,  444 => 192,  435 => 185,  432 => 184,  429 => 183,  420 => 176,  417 => 175,  415 => 174,  395 => 159,  381 => 148,  376 => 147,  370 => 146,  365 => 145,  363 => 144,  354 => 141,  352 => 140,  349 => 139,  347 => 138,  344 => 137,  341 => 136,  338 => 135,  334 => 134,  330 => 132,  295 => 98,  292 => 96,  276 => 86,  259 => 74,  249 => 66,  246 => 65,  239 => 63,  232 => 61,  229 => 60,  222 => 58,  215 => 56,  212 => 55,  209 => 54,  206 => 53,  203 => 52,  196 => 50,  189 => 48,  186 => 47,  183 => 46,  180 => 45,  178 => 44,  172 => 43,  165 => 41,  162 => 40,  159 => 39,  156 => 38,  153 => 37,  150 => 36,  147 => 35,  143 => 34,  132 => 25,  116 => 10,  113 => 8,  103 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -2138,7 +2136,6 @@ class __TwigTemplate_4c0c04308c1f6efb675458543edd7d55f2c667ceba5c5ba0e0156c2aa96
                         <div class=\"row no-gutters\">
                         {% for archivo in pagination %}
                             {% set borrado = archivo.borrado %}
-
                             {% if borrado == 'S' %}
                                     <div class=\"col-6 mb-2\">
                                         {% set id = archivo.id %}

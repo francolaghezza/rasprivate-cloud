@@ -1,154 +1,157 @@
-$(".card").click(function() {
+$(function() {
+    $(".card").click(function() {
 
-    //Obteniendo el nombre del archivo para editarlo
-    var nombre = $(this).find("input:first-child").val();
-    $("#input_nombre").val(nombre);
+        //Obteniendo el nombre del archivo para editarlo
+        var nombre = $(this).find("input:first-child").val();
+        $("#input_nombre").val(nombre);
 
-    //Obteniendo el ID del archivo
-    var id_archivo = $(this).find("input:last-child").val();
+        //Obteniendo el ID del archivo
+        var id_archivo = $(this).find("input:last-child").val();
 
-    //Modificar archivo
-    $("#editar_nombre").click(function () {
-        var new_nombre =  $("#input_nombre").val();
-        var ruta = Routing.generate('editar');
-        $.ajax({
-            type:'POST',
-            url:ruta,
-            data:({id:id_archivo,nombre:new_nombre}),
-            async:true,
-            dataType:"json",
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    });
-
-    //Párrafo de información al usuario
-    $("#p_borrar").text("¿Desea eliminar "+nombre+"?");
-    $("#p_comprimir").text("¿Desea comprimir "+nombre+"?");
-    $("#p_restaurar").text("¿Desea restaurar "+nombre+"?");
-    $("#p_analizar").text("Se analizará "+nombre+" en busca de malware");
-    $("#p_borrar_definitivo").text("Se eliminará "+nombre+" definitivamente");
-
-    //Mover archivo a la papelera
-    $("#eliminar_nombre").click(function () {
-        var ruta = Routing.generate('borrar');
-        $.ajax({
-            type:'POST',
-            url:ruta,
-            data:({id:id_archivo}),
-            async:true,
-            dataType:"json",
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    });
-
-    //Restaurar archivo
-    $("#restaurar_nombre").click(function () {
-        var ruta = Routing.generate('restaurar');
-        $.ajax({
-            type:'POST',
-            url:ruta,
-            data:({id:id_archivo}),
-            async:true,
-            dataType:"json",
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    });
-
-    //Eliminar archivo definitivamente
-    $("#borrar_archivo_definitivo").click(function () {
-        var ruta = Routing.generate('definitivo');
-        $.ajax({
-            type:'POST',
-            url:ruta,
-            data:({id:id_archivo}),
-            async:true,
-            dataType:"json",
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    });
-
-    //Analizar archivo
-    $("#analizar_nombre").click(function () {
-        $("#analizar").modal('hide');
-        $("#escaneando").modal('show');
-        var ruta = Routing.generate('analizar');
-        $.ajax({
-            type:'POST',
-            url:ruta,
-            data:({id:id_archivo}),
-            async:true,
-            dataType:"json",
-            success: function (data) {
-
-                $("#escaneando").modal('hide');
-                $('#redirigiendo').modal('show');
-                var link = data.link;
-                var recurso = data.analisis;
-                var nueva_ruta = Routing.generate('report');
-                if(recurso.length > 0){
-                    $.ajax({
-                        type:'POST',
-                        url:nueva_ruta,
-                        data:({report:recurso}),
-                        async:true,
-                        dataType:"json",
-                        success: function (data) {
-                            $('#redirigiendo').modal('hide');
-                            window.location.reload();
-                            window.open(link, '_blank');
-                        }
-                    });
-                }
-            }
-        });
-    });
-
-    //Comprimiendo archivos
-    $("#comprimir_nombre").click(function () {
-        var ruta = Routing.generate('comprimir');
-        $.ajax({
-            type:'POST',
-            url:ruta,
-            data:({id:id_archivo}),
-            async:true,
-            dataType:"json",
-            success: function (data) {
-                window.location.reload();
-            }
-        });
-    });
-
-    //Compartir archivo
-    $("#compartir_archivo").click(function () {
-        var email = $("#compartir_nombre").val();
-        var mensaje = $("#compartir_mensaje").val();
-        var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
-        if (exp.test(email) === true) {
-            var ruta = Routing.generate('compartir');
+        //Modificar archivo
+        $("#editar_nombre").click(function () {
+            var new_nombre =  $("#input_nombre").val();
+            var ruta = Routing.generate('editar');
             $.ajax({
                 type:'POST',
                 url:ruta,
-                data:({id:id_archivo,email:email,mensaje:mensaje}),
+                data:({id:id_archivo,nombre:new_nombre}),
                 async:true,
                 dataType:"json",
                 success: function (data) {
                     window.location.reload();
                 }
             });
-        }
-        else {
-            // No enviar nada
-        }
+        });
+
+        //Párrafo de información al usuario
+        $("#p_borrar").text("¿Desea eliminar "+nombre+"?");
+        $("#p_comprimir").text("¿Desea comprimir "+nombre+"?");
+        $("#p_restaurar").text("¿Desea restaurar "+nombre+"?");
+        $("#p_analizar").text("Se analizará "+nombre+" en busca de malware");
+        $("#p_borrar_definitivo").text("Se eliminará "+nombre+" definitivamente");
+
+        //Mover archivo a la papelera
+        $("#eliminar_nombre").click(function () {
+            var ruta = Routing.generate('borrar');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({id:id_archivo}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    window.location.reload();
+                }
+            });
+        });
+
+        //Restaurar archivo
+        $("#restaurar_nombre").click(function () {
+            var ruta = Routing.generate('restaurar');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({id:id_archivo}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    window.location.reload();
+                }
+            });
+        });
+
+        //Eliminar archivo definitivamente
+        $("#borrar_archivo_definitivo").click(function () {
+            var ruta = Routing.generate('definitivo');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({id:id_archivo}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    window.location.reload();
+                }
+            });
+        });
+
+        //Analizar archivo
+        $("#analizar_nombre").click(function () {
+            $("#analizar").modal('hide');
+            $("#escaneando").modal('show');
+            var ruta = Routing.generate('analizar');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({id:id_archivo}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+
+                    $("#escaneando").modal('hide');
+                    $('#redirigiendo').modal('show');
+                    var link = data.link;
+                    var recurso = data.analisis;
+                    var nueva_ruta = Routing.generate('report');
+                    if(recurso.length > 0){
+                        $.ajax({
+                            type:'POST',
+                            url:nueva_ruta,
+                            data:({report:recurso}),
+                            async:true,
+                            dataType:"json",
+                            success: function (data) {
+                                $('#redirigiendo').modal('hide');
+                                window.location.reload();
+                                window.open(link, '_blank');
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        //Comprimiendo archivos
+        $("#comprimir_nombre").click(function () {
+            var ruta = Routing.generate('comprimir');
+            $.ajax({
+                type:'POST',
+                url:ruta,
+                data:({id:id_archivo}),
+                async:true,
+                dataType:"json",
+                success: function (data) {
+                    window.location.reload();
+                }
+            });
+        });
+
+        //Compartir archivo
+        $("#compartir_archivo").click(function () {
+            var email = $("#compartir_nombre").val();
+            var mensaje = $("#compartir_mensaje").val();
+            var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+            if (exp.test(email) === true) {
+                var ruta = Routing.generate('compartir');
+                $.ajax({
+                    type:'POST',
+                    url:ruta,
+                    data:({id:id_archivo,email:email,mensaje:mensaje}),
+                    async:true,
+                    dataType:"json",
+                    success: function (data) {
+                        window.location.reload();
+                    }
+                });
+            }
+            else {
+                // No enviar nada
+            }
+        });
     });
 });
+
 
 $(document).ready(function(){
     //Buscar archivo

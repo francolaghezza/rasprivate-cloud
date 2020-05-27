@@ -95,24 +95,22 @@
 
 			<div class="row">
 				<div class="col">
+					<small class="text-danger oculto" id="email_no_valido">La dirección de correo ya existe</small>
 					{{ form_row(formulario.email) }}
 
+
+					<small class="text-danger oculto" id="usuario_no_valido">El nombre de usuario ya existe</small>
 					{{ form_row(formulario.usuario) }}
 
 					{{ form_row(formulario.password) }}
-					<div class="form-check mb-2">
-						<input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-						<label class="form-check-label" for="exampleCheck1">Acepto la <strong><a data-toggle="modal" data-target="#privacidad" title="Política de privacidad" href="#" class="text-dark text-decoration-none">Política de privacidad</a></strong></label>
-					</div>
 				</div>
+			</div>
+			<div class="form-check mb-2">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+				<label class="form-check-label" for="exampleCheck1">Acepto la <strong><a data-toggle="modal" data-target="#privacidad" title="Política de privacidad" href="#" class="text-dark text-decoration-none">Política de privacidad</a></strong></label>
 			</div>
 
 			{{ form_end(formulario) }}
-			{% for message in app.flashes('exito') %}
-				<div class="alert alert-success">
-					{{ message }}
-				</div>
-			{% endfor %}
 		</div>
 	</div>
 	<a class="ref"
@@ -129,3 +127,76 @@
 </div>
 </body>
 {% endblock %}
+ {% block javascripts %}
+	 {{ parent() }}
+	 <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+	 <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+	 <script>
+		 $( document ).ready(function() {
+
+		 	//Compruebo email
+		 	$("#usuario_email").on("keyup",function () {
+				var email = $(this).val();
+				var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+				if (exp.test(email) === true) {
+					email = $(this).val();
+					var ruta = Routing.generate('email');
+					$.ajax({
+						type:'POST',
+						url:ruta,
+						data:({email:email}),
+						async:true,
+						dataType:"json",
+						success: function (data) {
+							if(data.email === 0){
+								$("#email_no_valido").toggleClass("oculto");
+								$("#usuario_Registrar").prop('disabled', true);
+							}
+							else {
+								$("#email_no_valido").addClass("oculto");
+								if($("#usuario_no_valido").hasClass("oculto")){
+									$("#usuario_Registrar").prop('disabled', false);
+								}
+							}
+						}
+					});
+				}
+				else {
+					// NO hacer nada
+				}
+			});
+
+		 	//Compruebo nombre de usuario
+		 	$("#usuario_usuario").on("keyup",function () {
+				var nombre_usuario = $(this).val();
+				var exp = new RegExp(/^([a-zA-Z0-9]{5,15})+$/);
+				if (exp.test(nombre_usuario) === true){
+					nombre_usuario = $(this).val();
+					var ruta = Routing.generate('usuario');
+					$.ajax({
+						type:'POST',
+						url:ruta,
+						data:({usuario:nombre_usuario}),
+						async:true,
+						dataType:"json",
+						success: function (data) {
+							if(data.usuario === 0){
+								$("#usuario_no_valido").removeClass("oculto");
+								$("#usuario_Registrar").prop('disabled', true);
+							}
+							else {
+								$("#usuario_no_valido").addClass("oculto");
+								if($("#email_no_valido").hasClass("oculto")){
+									$("#usuario_Registrar").prop('disabled', false);
+								}
+							}
+						}
+					});
+				}
+				else{
+					// NO hacer nada
+				}
+			});
+		 });
+	 </script>
+ {% endblock %}

@@ -27,6 +27,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -184,50 +185,35 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col\">
+\t\t\t\t\t<small class=\"text-danger oculto\" id=\"email_no_valido\">La dirección de correo ya existe</small>
 \t\t\t\t\t";
-        // line 98
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 98, $this->source); })()), "email", [], "any", false, false, false, 98), 'row');
+        // line 99
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 99, $this->source); })()), "email", [], "any", false, false, false, 99), 'row');
+        echo "
+
+
+\t\t\t\t\t<small class=\"text-danger oculto\" id=\"usuario_no_valido\">El nombre de usuario ya existe</small>
+\t\t\t\t\t";
+        // line 103
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 103, $this->source); })()), "usuario", [], "any", false, false, false, 103), 'row');
         echo "
 
 \t\t\t\t\t";
-        // line 100
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 100, $this->source); })()), "usuario", [], "any", false, false, false, 100), 'row');
+        // line 105
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 105, $this->source); })()), "password", [], "any", false, false, false, 105), 'row');
         echo "
-
-\t\t\t\t\t";
-        // line 102
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 102, $this->source); })()), "password", [], "any", false, false, false, 102), 'row');
-        echo "
-\t\t\t\t\t<div class=\"form-check mb-2\">
-\t\t\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\" required>
-\t\t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"text-dark text-decoration-none\">Política de privacidad</a></strong></label>
-\t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"form-check mb-2\">
+\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\" required>
+\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"text-dark text-decoration-none\">Política de privacidad</a></strong></label>
 \t\t\t</div>
 
 \t\t\t";
-        // line 110
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 110, $this->source); })()), 'form_end');
+        // line 113
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 113, $this->source); })()), 'form_end');
         echo "
-\t\t\t";
-        // line 111
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 111, $this->source); })()), "flashes", [0 => "exito"], "method", false, false, false, 111));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 112
-            echo "\t\t\t\t<div class=\"alert alert-success\">
-\t\t\t\t\t";
-            // line 113
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-\t\t\t\t</div>
-\t\t\t";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 116
-        echo "\t\t</div>
+\t\t</div>
 \t</div>
 \t<a class=\"ref\"
 \t   href=\"https://unsplash.com/@vinhan?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge\"
@@ -251,6 +237,105 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
     }
 
+    // line 130
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 131
+        echo "\t ";
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+\t <script src=\"";
+        // line 132
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
+        echo "\"></script>
+\t <script src=\"";
+        // line 133
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
+        echo "\"></script>
+\t <script>
+\t\t \$( document ).ready(function() {
+
+\t\t \t//Compruebo email
+\t\t \t\$(\"#usuario_email\").on(\"keyup\",function () {
+\t\t\t\tvar email = \$(this).val();
+\t\t\t\tvar exp = new RegExp(/^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+\$/);
+\t\t\t\tif (exp.test(email) === true) {
+\t\t\t\t\temail = \$(this).val();
+\t\t\t\t\tvar ruta = Routing.generate('email');
+\t\t\t\t\t\$.ajax({
+\t\t\t\t\t\ttype:'POST',
+\t\t\t\t\t\turl:ruta,
+\t\t\t\t\t\tdata:({email:email}),
+\t\t\t\t\t\tasync:true,
+\t\t\t\t\t\tdataType:\"json\",
+\t\t\t\t\t\tsuccess: function (data) {
+\t\t\t\t\t\t\tif(data.email === 0){
+\t\t\t\t\t\t\t\t\$(\"#email_no_valido\").toggleClass(\"oculto\");
+\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', true);
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\telse {
+\t\t\t\t\t\t\t\t\$(\"#email_no_valido\").addClass(\"oculto\");
+\t\t\t\t\t\t\t\tif(\$(\"#usuario_no_valido\").hasClass(\"oculto\")){
+\t\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', false);
+\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t}
+\t\t\t\t\t});
+\t\t\t\t}
+\t\t\t\telse {
+\t\t\t\t\t// NO hacer nada
+\t\t\t\t}
+\t\t\t});
+
+\t\t \t//Compruebo nombre de usuario
+\t\t \t\$(\"#usuario_usuario\").on(\"keyup\",function () {
+\t\t\t\tvar nombre_usuario = \$(this).val();
+\t\t\t\tvar exp = new RegExp(/^([a-zA-Z0-9]{5,15})+\$/);
+\t\t\t\tif (exp.test(nombre_usuario) === true){
+\t\t\t\t\tnombre_usuario = \$(this).val();
+\t\t\t\t\tvar ruta = Routing.generate('usuario');
+\t\t\t\t\t\$.ajax({
+\t\t\t\t\t\ttype:'POST',
+\t\t\t\t\t\turl:ruta,
+\t\t\t\t\t\tdata:({usuario:nombre_usuario}),
+\t\t\t\t\t\tasync:true,
+\t\t\t\t\t\tdataType:\"json\",
+\t\t\t\t\t\tsuccess: function (data) {
+\t\t\t\t\t\t\tif(data.usuario === 0){
+\t\t\t\t\t\t\t\t\$(\"#usuario_no_valido\").removeClass(\"oculto\");
+\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', true);
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\telse {
+\t\t\t\t\t\t\t\t\$(\"#usuario_no_valido\").addClass(\"oculto\");
+\t\t\t\t\t\t\t\tif(\$(\"#email_no_valido\").hasClass(\"oculto\")){
+\t\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', false);
+\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t}
+\t\t\t\t\t});
+\t\t\t\t}
+\t\t\t\telse{
+\t\t\t\t\t// NO hacer nada
+\t\t\t\t}
+\t\t\t});
+\t\t });
+\t </script>
+ ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "registro/index.html.twig";
@@ -263,7 +348,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
     public function getDebugInfo()
     {
-        return array (  230 => 116,  221 => 113,  218 => 112,  214 => 111,  210 => 110,  199 => 102,  194 => 100,  189 => 98,  182 => 94,  175 => 89,  116 => 31,  106 => 22,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  260 => 133,  256 => 132,  251 => 131,  241 => 130,  214 => 113,  203 => 105,  198 => 103,  191 => 99,  183 => 94,  176 => 89,  117 => 31,  107 => 22,  92 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -365,24 +450,22 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col\">
+\t\t\t\t\t<small class=\"text-danger oculto\" id=\"email_no_valido\">La dirección de correo ya existe</small>
 \t\t\t\t\t{{ form_row(formulario.email) }}
 
+
+\t\t\t\t\t<small class=\"text-danger oculto\" id=\"usuario_no_valido\">El nombre de usuario ya existe</small>
 \t\t\t\t\t{{ form_row(formulario.usuario) }}
 
 \t\t\t\t\t{{ form_row(formulario.password) }}
-\t\t\t\t\t<div class=\"form-check mb-2\">
-\t\t\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\" required>
-\t\t\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"text-dark text-decoration-none\">Política de privacidad</a></strong></label>
-\t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"form-check mb-2\">
+\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\" required>
+\t\t\t\t<label class=\"form-check-label\" for=\"exampleCheck1\">Acepto la <strong><a data-toggle=\"modal\" data-target=\"#privacidad\" title=\"Política de privacidad\" href=\"#\" class=\"text-dark text-decoration-none\">Política de privacidad</a></strong></label>
 \t\t\t</div>
 
 \t\t\t{{ form_end(formulario) }}
-\t\t\t{% for message in app.flashes('exito') %}
-\t\t\t\t<div class=\"alert alert-success\">
-\t\t\t\t\t{{ message }}
-\t\t\t\t</div>
-\t\t\t{% endfor %}
 \t\t</div>
 \t</div>
 \t<a class=\"ref\"
@@ -398,6 +481,79 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t</a>
 </div>
 </body>
-{% endblock %}", "registro/index.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\registro\\index.html.twig");
+{% endblock %}
+ {% block javascripts %}
+\t {{ parent() }}
+\t <script src=\"{{ asset('bundles/fosjsrouting/js/router.min.js') }}\"></script>
+\t <script src=\"{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}\"></script>
+\t <script>
+\t\t \$( document ).ready(function() {
+
+\t\t \t//Compruebo email
+\t\t \t\$(\"#usuario_email\").on(\"keyup\",function () {
+\t\t\t\tvar email = \$(this).val();
+\t\t\t\tvar exp = new RegExp(/^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+\$/);
+\t\t\t\tif (exp.test(email) === true) {
+\t\t\t\t\temail = \$(this).val();
+\t\t\t\t\tvar ruta = Routing.generate('email');
+\t\t\t\t\t\$.ajax({
+\t\t\t\t\t\ttype:'POST',
+\t\t\t\t\t\turl:ruta,
+\t\t\t\t\t\tdata:({email:email}),
+\t\t\t\t\t\tasync:true,
+\t\t\t\t\t\tdataType:\"json\",
+\t\t\t\t\t\tsuccess: function (data) {
+\t\t\t\t\t\t\tif(data.email === 0){
+\t\t\t\t\t\t\t\t\$(\"#email_no_valido\").toggleClass(\"oculto\");
+\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', true);
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\telse {
+\t\t\t\t\t\t\t\t\$(\"#email_no_valido\").addClass(\"oculto\");
+\t\t\t\t\t\t\t\tif(\$(\"#usuario_no_valido\").hasClass(\"oculto\")){
+\t\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', false);
+\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t}
+\t\t\t\t\t});
+\t\t\t\t}
+\t\t\t\telse {
+\t\t\t\t\t// NO hacer nada
+\t\t\t\t}
+\t\t\t});
+
+\t\t \t//Compruebo nombre de usuario
+\t\t \t\$(\"#usuario_usuario\").on(\"keyup\",function () {
+\t\t\t\tvar nombre_usuario = \$(this).val();
+\t\t\t\tvar exp = new RegExp(/^([a-zA-Z0-9]{5,15})+\$/);
+\t\t\t\tif (exp.test(nombre_usuario) === true){
+\t\t\t\t\tnombre_usuario = \$(this).val();
+\t\t\t\t\tvar ruta = Routing.generate('usuario');
+\t\t\t\t\t\$.ajax({
+\t\t\t\t\t\ttype:'POST',
+\t\t\t\t\t\turl:ruta,
+\t\t\t\t\t\tdata:({usuario:nombre_usuario}),
+\t\t\t\t\t\tasync:true,
+\t\t\t\t\t\tdataType:\"json\",
+\t\t\t\t\t\tsuccess: function (data) {
+\t\t\t\t\t\t\tif(data.usuario === 0){
+\t\t\t\t\t\t\t\t\$(\"#usuario_no_valido\").removeClass(\"oculto\");
+\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', true);
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\telse {
+\t\t\t\t\t\t\t\t\$(\"#usuario_no_valido\").addClass(\"oculto\");
+\t\t\t\t\t\t\t\tif(\$(\"#email_no_valido\").hasClass(\"oculto\")){
+\t\t\t\t\t\t\t\t\t\$(\"#usuario_Registrar\").prop('disabled', false);
+\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t}
+\t\t\t\t\t});
+\t\t\t\t}
+\t\t\t\telse{
+\t\t\t\t\t// NO hacer nada
+\t\t\t\t}
+\t\t\t});
+\t\t });
+\t </script>
+ {% endblock %}", "registro/index.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\registro\\index.html.twig");
     }
 }
