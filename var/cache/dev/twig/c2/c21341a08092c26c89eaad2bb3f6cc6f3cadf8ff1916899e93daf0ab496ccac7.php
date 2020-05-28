@@ -141,6 +141,6 @@ class __TwigTemplate_2755980975a8e4a05f27c3eef7fa8bbc61328855487d058b60957e31cc8
     <button>{{ options.button }}</button>
 
 </form>
-", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\xampp\\htdocs\\rasprivate\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
+", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\xampp\\htdocs\\proyecto\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
     }
 }

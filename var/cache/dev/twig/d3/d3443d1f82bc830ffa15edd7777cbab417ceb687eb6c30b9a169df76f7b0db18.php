@@ -155,6 +155,6 @@ class __TwigTemplate_f94740657bcdf9e9770c12c4888d1753f9ea7a755fd19ccac1a5d8168a9
     </div>
 
 </form>
-", "@KnpPaginator/Pagination/twitter_bootstrap_v4_filtration.html.twig", "C:\\xampp\\htdocs\\rasprivate\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v4_filtration.html.twig");
+", "@KnpPaginator/Pagination/twitter_bootstrap_v4_filtration.html.twig", "C:\\xampp\\htdocs\\proyecto\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v4_filtration.html.twig");
     }
 }

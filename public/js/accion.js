@@ -1,5 +1,5 @@
 $(function() {
-    $(".card").click(function() {
+    $(".dropdown-menu").click(function() {
 
         //Obteniendo el nombre del archivo para editarlo
         var nombre = $(this).find("input:first-child").val();
@@ -8,10 +8,13 @@ $(function() {
         //Obteniendo el ID del archivo
         var id_archivo = $(this).find("input:last-child").val();
 
-        //Modificar archivo
+        //Editar archivo
         $("#editar_nombre").click(function () {
+            $("#editar").modal('hide');
+            $("#editando").modal('show');
             var new_nombre =  $("#input_nombre").val();
             var ruta = Routing.generate('editar');
+
             $.ajax({
                 type:'POST',
                 url:ruta,
@@ -19,6 +22,7 @@ $(function() {
                 async:true,
                 dataType:"json",
                 success: function (data) {
+                    $("#editando").modal('hide');
                     window.location.reload();
                 }
             });
@@ -33,6 +37,8 @@ $(function() {
 
         //Mover archivo a la papelera
         $("#eliminar_nombre").click(function () {
+            $("#borrar").modal('hide');
+            $("#eliminando").modal('show');
             var ruta = Routing.generate('borrar');
             $.ajax({
                 type:'POST',
@@ -41,6 +47,7 @@ $(function() {
                 async:true,
                 dataType:"json",
                 success: function (data) {
+                    $("#eliminando").modal('hide');
                     window.location.reload();
                 }
             });
@@ -48,6 +55,9 @@ $(function() {
 
         //Restaurar archivo
         $("#restaurar_nombre").click(function () {
+            $("#restaurar").modal('hide');
+            $("#papelera").modal('hide');
+            $("#restaurando").modal('show');
             var ruta = Routing.generate('restaurar');
             $.ajax({
                 type:'POST',
@@ -56,6 +66,7 @@ $(function() {
                 async:true,
                 dataType:"json",
                 success: function (data) {
+                    $("#restaurando").modal('hide');
                     window.location.reload();
                 }
             });
@@ -63,6 +74,9 @@ $(function() {
 
         //Eliminar archivo definitivamente
         $("#borrar_archivo_definitivo").click(function () {
+            $("#borrar_definitivo").modal('hide');
+            $("#papelera").modal('hide');
+            $("#eliminando").modal('show');
             var ruta = Routing.generate('definitivo');
             $.ajax({
                 type:'POST',
@@ -71,6 +85,7 @@ $(function() {
                 async:true,
                 dataType:"json",
                 success: function (data) {
+                    $("#eliminando").modal('hide');
                     window.location.reload();
                 }
             });
@@ -114,6 +129,8 @@ $(function() {
 
         //Comprimiendo archivos
         $("#comprimir_nombre").click(function () {
+            $('#comprimir').modal('hide');
+            $('#comprimiendo').modal('show');
             var ruta = Routing.generate('comprimir');
             $.ajax({
                 type:'POST',
@@ -122,6 +139,7 @@ $(function() {
                 async:true,
                 dataType:"json",
                 success: function (data) {
+                    $('#comprimiendo').modal('hide');
                     window.location.reload();
                 }
             });
@@ -133,6 +151,8 @@ $(function() {
             var mensaje = $("#compartir_mensaje").val();
             var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
             if (exp.test(email) === true) {
+                $('#compartir').modal('hide');
+                $('#compartiendo').modal('show');
                 var ruta = Routing.generate('compartir');
                 $.ajax({
                     type:'POST',
@@ -141,6 +161,7 @@ $(function() {
                     async:true,
                     dataType:"json",
                     success: function (data) {
+                        $('#compartiendo').modal('hide');
                         window.location.reload();
                     }
                 });
