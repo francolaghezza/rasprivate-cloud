@@ -199,6 +199,25 @@
 					// NO hacer nada
 				}
 			});
+			 function compruebaPass(){
+				 pass1 = $("#usuario_password").val();
+				 pass2 = $("#usuario_password_verify").val();
+
+				 if (pass1 == pass2){
+					 $("#usuario_Registrar").prop('disabled', false);
+				 }
+				 else{
+					 $("#usuario_Registrar").prop('disabled', true);
+				 }
+			 }
+			 $("#usuario_password").on("keyup",function () {
+				 var pass1 = $(this).val();
+				 compruebaPass();
+			 });
+			 $("#usuario_password_verify").on("keyup",function () {
+				 var pass2 = $(this).val();
+				 compruebaPass();
+			 });
 		 });
 	 </script>
  {% endblock %}

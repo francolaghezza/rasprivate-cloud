@@ -330,6 +330,28 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t// NO hacer nada
 \t\t\t\t}
 \t\t\t});
+\t\t\t function compruebaPass(){
+\t\t\t\t pass1 = \$(\"#usuario_password\").val();
+\t\t\t\t pass2 = \$(\"#usuario_password_verify\").val();
+
+\t\t\t\t if (pass1 == pass2){
+\t\t\t\t\t \$(\"#usuario_Registrar\").prop('disabled', false);
+\t\t\t\t }
+\t\t\t\t else{
+\t\t\t\t\t \$(\"#usuario_Registrar\").prop('disabled', true);
+\t\t\t\t }
+\t\t\t }
+\t\t\t \$(\"#usuario_password\").on(\"keyup\",function () {
+\t\t\t\t var pass1 = \$(this).val();
+\t\t\t\t compruebaPass();
+\t\t\t });
+\t\t\t \$(\"#usuario_password_verify\").on(\"keyup\",function () {
+\t\t\t\t var pass2 = \$(this).val();
+\t\t\t\t compruebaPass();
+\t\t\t });
+
+
+
 \t\t });
 \t </script>
  ";
@@ -559,6 +581,28 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t// NO hacer nada
 \t\t\t\t}
 \t\t\t});
+\t\t\t function compruebaPass(){
+\t\t\t\t pass1 = \$(\"#usuario_password\").val();
+\t\t\t\t pass2 = \$(\"#usuario_password_verify\").val();
+
+\t\t\t\t if (pass1 == pass2){
+\t\t\t\t\t \$(\"#usuario_Registrar\").prop('disabled', false);
+\t\t\t\t }
+\t\t\t\t else{
+\t\t\t\t\t \$(\"#usuario_Registrar\").prop('disabled', true);
+\t\t\t\t }
+\t\t\t }
+\t\t\t \$(\"#usuario_password\").on(\"keyup\",function () {
+\t\t\t\t var pass1 = \$(this).val();
+\t\t\t\t compruebaPass();
+\t\t\t });
+\t\t\t \$(\"#usuario_password_verify\").on(\"keyup\",function () {
+\t\t\t\t var pass2 = \$(this).val();
+\t\t\t\t compruebaPass();
+\t\t\t });
+
+
+
 \t\t });
 \t </script>
  {% endblock %}", "registro/index.html.twig", "C:\\xampp\\htdocs\\proyecto\\templates\\registro\\index.html.twig");
