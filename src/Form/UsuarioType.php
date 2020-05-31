@@ -22,7 +22,13 @@ class UsuarioType extends AbstractType
                 'attr' => ['pattern' => '.{5,}']
             ])
             ->add('password',PasswordType::class,[
-                'attr' => ['pattern' => '.{8,}', 'placeholder' => 'Mínimo 8 caracteres']
+                'attr' => ['pattern' => '.{8,}', 'placeholder' => 'Mínimo 8 caracteres'],
+                'required' => true
+            ])
+            ->add('password_verify',PasswordType::class,[
+                'attr' => ['pattern' => '.{8,}', 'placeholder' => 'Repita la contraseña'],
+                'mapped' => false,
+                'required' => true
             ])
             ->add('Registrar',SubmitType::class,[
                 'attr' => ['class' => 'btn-dark'],

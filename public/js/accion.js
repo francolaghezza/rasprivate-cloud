@@ -189,16 +189,14 @@ $(document).ready(function(){
         $('html, body').animate({scrollTop: 0}, 600);
     });
 
-
-
     //Cambiar email
     $("#input_email").on("keyup",function () {
         $("#valido").css({display:"none"});
         $("#no_valido").css({display:"block"});
-        var email = $(this).val();
+        let email = $(this).val();
         var exp = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
         if (exp.test(email) === true){
-            email = $(this).val();
+            let email = $(this).val();
             var ruta = Routing.generate('email');
             $("#no_valido").css({display:"none"});
             $("#valido").css({display:"none"});
@@ -249,10 +247,10 @@ $(document).ready(function(){
     $("#input_usuario").on("keyup",function () {
         $("#valido_u").css({display:"none"});
         $("#no_valido_u").css({display:"block"});
-        var usuario = $(this).val();
+        let usuario = $(this).val();
         var exp = new RegExp(/^([a-zA-Z0-9]{6,15})+$/);
         if (exp.test(usuario) === true){
-            usuario = $(this).val();
+            let usuario = $(this).val();
             var ruta = Routing.generate('usuario');
             $("#no_valido_u").css({display:"none"});
             $("#valido_u").css({display:"none"});

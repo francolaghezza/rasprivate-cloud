@@ -80,18 +80,47 @@ article{
     height: 30px;
 }
 
+.main-panel{
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .menu-lateral{
     position: fixed;
     top: 10%;
     left: 0;
-    width: 15%;
+    width: 12%;
     height: 100%;
+    min-width: 200px;
+    padding-left: 20px;
+    margin-right: 10px;
+}
+.menu-nuevo{
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 12%;
+    height: 100%;
+    min-width: 200px;
+    padding-left: 20px;
+    margin-right: 10px;
+}
+
+.panel{
+    position: absolute;
+    top: 0;
+    left: 15%;
+    overflow: auto;
 }
 
 .progress{
     position: fixed;
     height: 3px;
     width: 10%;
+    min-width: 150px;
 }
 
 .progress-bar{
@@ -109,6 +138,9 @@ article{
 }
 .menu-responsive{
     display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 .icono{
     text-decoration: none;
@@ -171,6 +203,15 @@ input[type="text"]::placeholder { color: whitesmoke; }
     background-position:center center;
     background-repeat: no-repeat;
 }
+.expand{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+}
+.expand:hover{
+    cursor: pointer;
+}
 .card{
     width: 90%;
 }
@@ -206,9 +247,7 @@ input[type="text"]::placeholder { color: whitesmoke; }
     border: none;
 }
 @media (max-width: 576px) {
-    body{
-        overflow-x: hidden;
-    }
+
     .navbar-nav{
         width: 80%;
     }
@@ -234,14 +273,54 @@ input[type="text"]::placeholder { color: whitesmoke; }
         width:75%;
     }
 }
-@media (max-width: 767px) {
+.animate{
+    transform: translate(100%);
+    transition: 0.5s all;
+    z-index: 100;
+    background-color: #343a40;
+    position: fixed;
+    width: 15%;
+}
+.usuario{
+    display: none;
+}
+@media (max-width: 768px) {
     .menu-responsive{
         display: block;
     }
+    .menu-nuevo{
+        display: none;
+    }
     .searchbar{
-        width:75%;
+        width:50%;
     }
     .logo{
         display: none;
+    }
+    .usuario{
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .btn-titulo {
+        font-size: small;
+    }
+}
+
+@media (max-width: 1405px) {
+    .menu-lateral{
+        left: -50%;
+        transition: 0.5s all;
+        background-color: #343a40;
+        z-index: 100;
+        width: 15%;
+    }
+    .panel{
+        top: 0;
+        left: 5%;
+    }
+    .usuario{
+        display: block;
     }
 }

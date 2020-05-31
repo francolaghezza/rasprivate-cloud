@@ -202,6 +202,11 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
         // line 105
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 105, $this->source); })()), "password", [], "any", false, false, false, 105), 'row');
         echo "
+
+\t\t\t\t\t";
+        // line 107
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 107, $this->source); })()), "password_verify", [], "any", false, false, false, 107), 'row');
+        echo "
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t\t<div class=\"form-check mb-2\">
@@ -210,8 +215,8 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t</div>
 
 \t\t\t";
-        // line 113
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 113, $this->source); })()), 'form_end');
+        // line 115
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulario"]) || array_key_exists("formulario", $context) ? $context["formulario"] : (function () { throw new RuntimeError('Variable "formulario" does not exist.', 115, $this->source); })()), 'form_end');
         echo "
 \t\t</div>
 \t</div>
@@ -237,7 +242,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
     }
 
-    // line 130
+    // line 132
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -247,16 +252,16 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 131
+        // line 133
         echo "\t ";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 \t <script src=\"";
-        // line 132
+        // line 134
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/fosjsrouting/js/router.min.js"), "html", null, true);
         echo "\"></script>
 \t <script src=\"";
-        // line 133
+        // line 135
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_js_routing_js", ["callback" => "fos.Router.setData"]);
         echo "\"></script>
 \t <script>
@@ -348,7 +353,7 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 
     public function getDebugInfo()
     {
-        return array (  260 => 133,  256 => 132,  251 => 131,  241 => 130,  214 => 113,  203 => 105,  198 => 103,  191 => 99,  183 => 94,  176 => 89,  117 => 31,  107 => 22,  92 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  265 => 135,  261 => 134,  256 => 133,  246 => 132,  219 => 115,  208 => 107,  203 => 105,  198 => 103,  191 => 99,  183 => 94,  176 => 89,  117 => 31,  107 => 22,  92 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -458,6 +463,8 @@ class __TwigTemplate_243180377d8beaf8516021cf417f737e43c2d6fcd11bca379bd8701261b
 \t\t\t\t\t{{ form_row(formulario.usuario) }}
 
 \t\t\t\t\t{{ form_row(formulario.password) }}
+
+\t\t\t\t\t{{ form_row(formulario.password_verify) }}
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t\t<div class=\"form-check mb-2\">

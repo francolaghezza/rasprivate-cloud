@@ -15,12 +15,12 @@ class ArchivosType extends AbstractType
     {
         $builder
             ->add('nombre',FileType::class,[
-            'label' => 'Sube un archivo',
             'mapped' => false,
             'required' => true
             ])
-            ->add('Subir',SubmitType::class)
-        ;
+            ->add('Subir',SubmitType::class,[
+            'attr' => ['class' => 'btn-outline-light']
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

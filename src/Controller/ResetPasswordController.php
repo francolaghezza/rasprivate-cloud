@@ -24,7 +24,9 @@ class ResetPasswordController extends AbstractController
         $form = $this->createFormBuilder($defaultData)
 
             ->add('email', EmailType::class)
-            ->add('Enviar', SubmitType::class)
+            ->add('Enviar', SubmitType::class,[
+                'attr' => ['class' => 'btn-outline-light'],
+            ])
             ->getForm();
 
         $form->handleRequest($request);

@@ -5,24 +5,71 @@
     {{ parent() }}
 {% endblock %}
 {% block body %}
-<body class="bg-dark">
+<body class="bg-dark" style="overflow-x: hidden;">
     {# Menú de navegación #}
     <header class="row justify-content-center">
-        <div class="container mt-5">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container mt-5 ">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" >
                 <a class="navbarbrand"><img src="img/logo.png" class="logo" alt="logo"></a>
                 <nav class="navbar-nav active-gray active-gray-1 searchbar">
                     <input class="form-control bg-dark text-white" type="text" placeholder="Busca un archivo" id="buscar" aria-label="Search">
                 </nav>
-                <button class="navbar-toggler ml-auto">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="dropdown ml-auto usuario">
+                    <button class="btn bg-transparent dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg class="bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
+                            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
+                        </svg>
+                        {{ app.user.username }}
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/perfil">Perfil</a>
+                        <a class="dropdown-item" href="/nuevo">Nuevo archivo</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#papelera" title="Papelera" href="#">Papelera</a>
+                        <a class="dropdown-item" href="#">
+                            {% for usuario in almacenamiento %}
+                            {% set total =  5242880 %}
+                            {% set utilizado = usuario.almacenamiento %}
+                            {% set porcentaje = (utilizado/total)*100 %}
+                            {% if utilizado/1024 < 1 %}
+                                {% set unidad = 'KB' %}
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
+                            {% elseif utilizado/1024 >= 1 and utilizado/1024 < 1023 %}
+                                {% set unidad = 'MB' %}
+                                {% set utilizado = usuario.almacenamiento/1024 %}
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p style="margin-top: 10px;">{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
+                            {% else %}
+                                {% set unidad = 'GB' %}
+                                {% set utilizado = usuario.almacenamiento/1048576 %}
+                                {% if utilizado >= 4.5 %}
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ; background-color: red;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p style="margin-top: 10px;">{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
+                                {% else %}
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: {{ porcentaje }}% ;" aria-valuenow="{{ porcentaje }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p style="margin-top: 10px;">{{ utilizado |round(2, 'floor')}} {{ unidad }} de 5 GB utilizado</p>
+                                {% endif %}
+                            {% endif %}
+                            {% endfor %}
+                        </a>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
-<main class="container-fluid">
+<main class="main-panel">
     {# Menú lateral #}
-    <div class="container text-white menu-lateral">
+    <div class="text-white menu-lateral">
             <h6>
                 <svg class="bi bi-list-task mr-1" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M2 2.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5V3a.5.5 0 00-.5-.5H2zM3 3H2v1h1V3z" clip-rule="evenodd"/>
@@ -94,6 +141,7 @@
                 </a>
             {% endfor %}
         </div>
+
     {# Menú #}
     <div class="container-fluid bg-light fixed-bottom text-center menu-responsive">
         <div class="row align-items-center">
@@ -127,10 +175,12 @@
                 </a>
             </div>
         </div>
+
     </div>
+
     {# Panel de archivos #}
-    <div class="container mt-4" style="margin-left: 15%;">
-            <div class="row">
+    <div class="container mt-4 panel">
+            <div class="row no-gutters">
                 {% for archivo in pagination %}
                     {% set borrado = archivo.borrado %}
                     {% if borrado == 'N' %}
@@ -298,7 +348,7 @@
                                         <img src="../img/mp3.png" class="card-img" alt="mp3">
                                     {% elseif nombre == 'mp4' %}
                                         <img src="../img/mp4.png" class="card-img" alt="mp4">
-                                    {% elseif nombre == 'png' %}
+                                    {% elseif nombre == 'PNG' or nombre == 'png' %}
                                         <img src="../img/png.png" class="card-img" alt="png">
                                     {% elseif nombre == 'ptx' %}
                                         <img src="../img/ppt.png" class="card-img" alt="pptx">
@@ -750,7 +800,7 @@
                                                             <img src="../img/mp3.png" class="card-img" alt="mp3">
                                                         {% elseif nombre == 'mp4' %}
                                                             <img src="../img/mp4.png" class="card-img" alt="mp4">
-                                                        {% elseif nombre == 'png' %}
+                                                        {% elseif nombre == 'PNG' or nombre == 'png' %}
                                                             <img src="../img/png.png" class="card-img" alt="png">
                                                         {% elseif nombre == 'ptx' %}
                                                             <img src="../img/ppt.png" class="card-img" alt="pptx">
@@ -862,4 +912,11 @@
     <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
     <script src="{{ asset('js/accion.js') }}"></script>
+    <script>
+        $(function () {
+           $("#boton-menu").click(function () {
+              $(".menu-lateral").toggleClass("animate");
+           });
+        });
+    </script>
 {% endblock %}

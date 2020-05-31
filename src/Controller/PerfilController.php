@@ -17,8 +17,13 @@ class PerfilController extends AbstractController
      */
     public function index()
     {
+        $em = $this->getDoctrine()->getManager();
+        $usuario = $this->getUser();
+        $query = $em->getRepository(Archivos::class)->findBy(['usuario'=>$usuario]);
+        $almacenamiento = $em->getRepository(Usuarios::class)->almacenamiento($usuario);
         return $this->render('perfil/index.html.twig', [
             'controller_name' => 'PerfilController',
+            'almacenamiento'=> $almacenamiento
         ]);
     }
 

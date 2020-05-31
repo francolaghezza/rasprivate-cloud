@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \Container8vmpyro\App_KernelDevDebugContainer([
     'container.build_hash' => '8vmpyro',
-    'container.build_id' => '79588ff1',
-    'container.build_time' => 1590681985,
+    'container.build_id' => '698b1c91',
+    'container.build_time' => 1590748023,
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container8vmpyro');

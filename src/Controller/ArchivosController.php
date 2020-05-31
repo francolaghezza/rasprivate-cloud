@@ -5,6 +5,7 @@ namespace App\Controller;
 set_time_limit(0);
 
 use App\Entity\Archivos;
+use App\Entity\Usuarios;
 use App\Form\ArchivosType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -26,6 +27,10 @@ class ArchivosController extends AbstractController
         $archivo = new Archivos();
         $form = $this->createForm(ArchivosType::class,$archivo);
         $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        $usuario = $this->getUser();
+        $query = $em->getRepository(Archivos::class)->findBy(['usuario'=>$usuario]);
+        $almacenamiento = $em->getRepository(Usuarios::class)->almacenamiento($usuario);
 
         if($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('nombre')->getData();
@@ -93,6 +98,7 @@ class ArchivosController extends AbstractController
             }
         }
         return $this->render('archivos/index.html.twig', [
+            'almacenamiento'=> $almacenamiento,
             'formulario' => $form->createView()
         ]);
     }
