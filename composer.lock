@@ -23,7 +23,8 @@
             "require": {
                 "doctrine/lexer": "1.*",
                 "ext-tokenizer": "*",
-                "php": "^7.1"
+                "php": "^7.1",
+                "symfony/http-kernel": "5.1.5"
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
